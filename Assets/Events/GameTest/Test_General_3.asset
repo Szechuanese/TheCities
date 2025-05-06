@@ -1,0 +1,32 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 30bd606990110e648b269e6bbe3bc667, type: 3}
+  m_Name: Test_General_3
+  m_EditorClassIdentifier: 
+  eventId: Test_General_3
+  title: "\u6D4B\u8BD5\u4E8B\u4EF63"
+  description: "\u5982\u679C\u4F60\u770B\u5230\u8FD9\u4E2A\u4E8B\u4EF6\uFF0C\u90A3\u4E48\u4EE3\u8868\u591A\u7279\u8D28\u5224\u5B9A\u6CA1\u6709\u95EE\u9898"
+  tags: []
+  singleUse: 0
+  isImportant: 0
+  choices:
+  - text: "\u56DE\u5230\u901A\u7528\u6D4B\u8BD5\u4E8B\u4EF61"
+    description: 
+    nextEventId: start_event
+    isChallenge: 0
+    challengeTraitId: 
+    successChancePerPoint: 0
+    nextEventIdSuccess: 
+    nextEventIdFailure: 
+    traitRequirements: []
+    traitChanges: []
+    characterChanges: []

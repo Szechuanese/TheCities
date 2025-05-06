@@ -1,0 +1,37 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 30bd606990110e648b269e6bbe3bc667, type: 3}
+  m_Name: Demo_Begin_Ambition_Adventure
+  m_EditorClassIdentifier: 
+  eventId: D_B_A_A
+  title: "\u4E00\u6B21\u523A\u6FC0\u7684\u5192\u9669"
+  description: "\u4E00\u6B21\u6E05\u9192\u4E4B\u68A6\uFF0C\u4F60\u603B\u662F\u5E7B\u60F3\u57CE\u5E02\u5916\u7684\u5730\u65B9\u3002\u90A3\u7247\u904D\u5E03\u6574\u7247\u5927\u9646\u7684\u7D2B\u8272\u6811\u6797\uFF0C\u5B83\u7591\u70B9\u91CD\u91CD\uFF0C\u4E5F\u4E0D\u88AB\u5141\u8BB8\u8FDB\u5165\u3002\u4F46\u4F60\u53BB\u8FC7\u3002\u5728\u68A6\u91CC\uFF0C\u4F60\u548C\u53E6\u4E00\u4E2A\u4EBA\u4E00\u8D77\u8FDB\u5165\u90A3\u7247\u6797\u5730\uFF0C\u7FFB\u8D8A\u5E9F\u65E7\u7684\u8F68\u9053\u7AD9\uFF0C\u770B\u89C1\u4E86\u6C89\u6CA1\u5728\u6C34\u5E93\u5E95\u90E8\u7684\u8F66\u7AD9\u5927\u5385\u3002\r\n\u90A3\u4E00\u5929\u4F60\u4EC0\u4E48\u4E5F\u6CA1\u5E26\u56DE\u6765\uFF0C\u4F46\u4F60\u53D1\u8A93\uFF0C\u90A3\u662F\u4F60\u4EBA\u751F\u4E2D\u6700\u771F\u5B9E\u7684\u4E00\u4E2A\u4E0B\u5348\u3002\r"
+  tags: []
+  singleUse: 0
+  isImportant: 0
+  choices:
+  - text: "\u201C\u4EBA\u5C31\u4F1A\u6D3B\u8FD9\u4E00\u6B21\uFF0C\u4E3A\u4EC0\u4E48\u4E0D\u5462\u3002\u201D"
+    description: "\u201C\u5931\u6E29\u6CB3\u6D41\u8FC7\u67F1\u826F\u5E1B\uFF0C\u800C\u6211\u8FD8\u5728\u5317\u65B9\u57CE\u3002\u201D"
+    nextEventId: Test_start_event
+    isChallenge: 0
+    challengeTraitId: 
+    successChancePerPoint: 0
+    nextEventIdSuccess: 
+    nextEventIdFailure: 
+    traitRequirements: []
+    traitChanges:
+    - traitId: 
+      changeAmount: 0
+    characterChanges:
+    - characterId: Bold
+      changeAmount: 1
+    priority: 1

@@ -1,0 +1,69 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 30bd606990110e648b269e6bbe3bc667, type: 3}
+  m_Name: TestStartSecondEvent
+  m_EditorClassIdentifier: 
+  eventId: T_S_S_E
+  title: "\u4ED6\u6311\u4E86\u6311\u7709\uFF0C\u63A5\u7740\u8BF4\uFF1A"
+  description: "\u201C\u4F60\u6765\u516C\u53F8\u4E5F\u4E0D\u77ED\u4E86\uFF0C\u662F\u65F6\u5019\u4E3A\u516C\u53F8\u4E0A\u4E0A\u5FC3\u4E86\u3002\u53BB\u5C0F\u5341\u5B57\u8857\uFF0C\u627E\u4E00\u4E2A\u5E26\u7EA2\u6846\u773C\u955C\u7684\u4EBA\uFF0C\u8DDF\u4ED6\u804A\u804A\uFF0C\u6700\u540E\u628A\u4E8B\u60C5\u5199\u6210\u62A5\u544A\u201D\u8BF4\u5B8C\uFF0C\u8FE6\u5E1B\u68F1\u8F6C\u8EAB\u79BB\u5F00\u4E86"
+  tags: []
+  singleUse: 0
+  isImportant: 0
+  choices:
+  - text: "\u804A\u4E9B\u4EC0\u4E48B\u73A9\u610F\u513F\uFF1F\u4F60\u8FB9\u60F3\u8FB9\u4E0D\u60C5\u613F\u7684\u8D77\u4E86\u8EAB"
+    description: 
+    requiredTrait: 
+    requiredValue: 0
+    nextEventId: 
+    isChallenge: 0
+    challengeTraitId: 
+    successChancePerPoint: 0
+    nextEventIdSuccess: 
+    nextEventIdFailure: 
+    traitChanges: []
+    characterChanges: []
+  - text: "\u201C\u563F\uFF01\u4F60\u4ED6\u5988\u53EB\u6211\u804A\u5565\u201D\u4F60\u5927\u558A\u9053"
+    description: 
+    requiredTrait: 
+    requiredValue: 0
+    nextEventId: 
+    isChallenge: 0
+    challengeTraitId: 
+    successChancePerPoint: 0
+    nextEventIdSuccess: 
+    nextEventIdFailure: 
+    traitChanges: []
+    characterChanges: []
+  - text: "\u4F60\u5FFD\u7136\u773C\u76AE\u4E00\u6C89\uFF0C\u4E00\u9635\u56F0\u610F\u88AD\u6765\uFF0C\u4F60\u5012\u5934\u5C31\u7761"
+    description: 
+    requiredTrait: 
+    requiredValue: 0
+    nextEventId: 
+    isChallenge: 0
+    challengeTraitId: 
+    successChancePerPoint: 0
+    nextEventIdSuccess: 
+    nextEventIdFailure: 
+    traitChanges: []
+    characterChanges: []
+  - text: "\u6D4B\u8BD5\u6309\u94AE"
+    description: 
+    requiredTrait: 
+    requiredValue: 0
+    nextEventId: Test_start_event
+    isChallenge: 0
+    challengeTraitId: 
+    successChancePerPoint: 0
+    nextEventIdSuccess: 
+    nextEventIdFailure: 
+    traitChanges: []
+    characterChanges: []

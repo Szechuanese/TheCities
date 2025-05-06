@@ -1,0 +1,33 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 30bd606990110e648b269e6bbe3bc667, type: 3}
+  m_Name: EventWin
+  m_EditorClassIdentifier: 
+  eventId: E_Win
+  title: "\u4F60\u77E5\u9053\u7684\uFF0C\u5C31\u662F\u62A5\u544A"
+  description: "\"\u4E0D\u8981\u6709\u592A\u591A\u538B\u529B\uFF0C\u6B63\u5E38\u62A5\u544A\u5C31\u597D\u3002\u516C\u53F8\u4E5F\u662F\u4E3A\u4E86\u7ED9\u53D7\u96BE\u5BB6\u5C5E\u4E00\u4E2A\u6170\u85C9\uFF0C\u8C03\u67E5\u4E8B\u4EF6\u771F\u76F8\u662F\u5168\u4F53X\u57CE\u4EBA\u7684\u613F\u671B\u3002\""
+  tags: []
+  singleUse: 0
+  isImportant: 0
+  choices:
+  - text: "\u201C\u597D\u5427\u201D"
+    description: "\u4E5F\u8BB8\u4F60\u5E94\u8BE5\u81EA\u5DF1\u53BB\u770B\u770B"
+    requiredTrait: 
+    requiredValue: 0
+    nextEventId: 11
+    isChallenge: 0
+    challengeTraitId: 
+    successChancePerPoint: 0
+    nextEventIdSuccess: 
+    nextEventIdFailure: 
+    traitChanges: []
+    characterChanges: []

@@ -1,0 +1,106 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 30bd606990110e648b269e6bbe3bc667, type: 3}
+  m_Name: Test_General_1
+  m_EditorClassIdentifier: 
+  eventId: Test_General_1
+  title: "\u8FD9\u662F\u4E00\u4E2A\u6D4B\u8BD5"
+  description: "\u8FD9\u4E2A\u6D4B\u8BD5\u5C06\u7528\u4E8E\u5927\u591A\u6570\u6D4B\u8BD5\uFF0C\u4E3A\u4E86\u65B9\u4FBF\u5F00\u53D1\u8005\u4F7F\u7528"
+  tags:
+  - entrypoint
+  singleUse: 0
+  isImportant: 0
+  choices:
+  - text: "\u6D4B\u8BD5\u9009\u9879"
+    description: "\u8FD9\u4E2A\u9009\u9879\u662F\u7528\u6765\u67E5\u770B\u8D85\u8FC7\u9700\u6C42\u7684\u60AC\u6881\u662F\u5426\u4F1A\u4E0B\u653E"
+    nextEventId: Test_General_2
+    isChallenge: 0
+    challengeTraitId: 
+    successChancePerPoint: 0
+    nextEventIdSuccess: 
+    nextEventIdFailure: 
+    traitRequirements:
+    - traitId: Talon
+      requiredValue: 1
+    traitChanges: []
+    characterChanges: []
+    priority: 2
+  - text: "\u70B9\u51FB\u6B64\u9009\u9879\u5C06\u4F1A\u5207\u6362\u81F3\u6311\u6218\u4E8B\u4EF6"
+    description: "\u6311\u6218\u4E8B\u4EF6"
+    nextEventId: 
+    isChallenge: 1
+    challengeTraitId: Talon
+    successChancePerPoint: 0.25
+    nextEventIdSuccess: Test_Challenge_Win_1
+    nextEventIdFailure: Test_Challenge_Fail_1
+    traitRequirements: []
+    traitChanges: []
+    characterChanges: []
+    priority: 1
+  - text: "\u5360\u4F4D\u5361\u7247"
+    description: "\u8FD9\u4E2A\u9009\u9879\u5355\u7EAF\u662F\u7528\u6765\u9694\u5F00\u4F4D\u7F6E"
+    nextEventId: start_event
+    isChallenge: 0
+    challengeTraitId: 
+    successChancePerPoint: 0
+    nextEventIdSuccess: 
+    nextEventIdFailure: 
+    traitRequirements: []
+    traitChanges: []
+    characterChanges: []
+    priority: 0
+  - text: "\u6D4B\u8BD5"
+    description: "\u4E24\u4E2A\u7279\u8D28"
+    nextEventId: start_event
+    isChallenge: 0
+    challengeTraitId: 
+    successChancePerPoint: 0
+    nextEventIdSuccess: 
+    nextEventIdFailure: 
+    traitRequirements:
+    - traitId: Talon
+      requiredValue: 2
+    traitChanges: []
+    characterChanges: []
+    priority: 0
+  - text: "\u591A\u7279\u8D28\u5224\u65AD\u9009\u9879\u6D4B\u8BD5"
+    description: "\u8FD9\u4E2A\u9009\u9879\u5C06\u4F1A\u5224\u65AD\u4F60\u662F\u5426\u5177\u6709\u8DB3\u591F\u7684\u7279\u8D28"
+    nextEventId: Test_General_3
+    isChallenge: 0
+    challengeTraitId: 
+    successChancePerPoint: 0
+    nextEventIdSuccess: 
+    nextEventIdFailure: 
+    traitRequirements:
+    - traitId: Talon
+      requiredValue: 2
+    - traitId: Thigmata
+      requiredValue: 2
+    - traitId: Fang
+      requiredValue: 2
+    traitChanges: []
+    characterChanges: []
+    priority: 1
+  - text: "\u6311\u6218\u4E8B\u4EF62"
+    description: 1
+    nextEventId: 
+    isChallenge: 1
+    challengeTraitId: Talon
+    successChancePerPoint: 1
+    nextEventIdSuccess: Test_Challenge_Win_1
+    nextEventIdFailure: Test_Challenge_Fail_1
+    traitRequirements:
+    - traitId: Talon
+      requiredValue: 2
+    traitChanges: []
+    characterChanges: []
+    priority: 1

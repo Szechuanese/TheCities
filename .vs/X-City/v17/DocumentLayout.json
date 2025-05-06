@@ -1,0 +1,431 @@
+{
+  "Version": 1,
+  "WorkspaceRootPath": "D:\\unitycourses\\X-City\\",
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{EFC21178-BC08-89E6-C84E-96F0A98FB60B}|Assembly-CSharp.csproj|d:\\unitycourses\\x-city\\assets\\script\\region\\regionpanelmanager.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{EFC21178-BC08-89E6-C84E-96F0A98FB60B}|Assembly-CSharp.csproj|solutionrelative:assets\\script\\region\\regionpanelmanager.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{EFC21178-BC08-89E6-C84E-96F0A98FB60B}|Assembly-CSharp.csproj|D:\\unitycourses\\X-City\\assets\\script\\event\\eventcardcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{EFC21178-BC08-89E6-C84E-96F0A98FB60B}|Assembly-CSharp.csproj|solutionrelative:assets\\script\\event\\eventcardcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{EFC21178-BC08-89E6-C84E-96F0A98FB60B}|Assembly-CSharp.csproj|D:\\unitycourses\\X-City\\assets\\script\\cardpoolmanager.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{EFC21178-BC08-89E6-C84E-96F0A98FB60B}|Assembly-CSharp.csproj|solutionrelative:assets\\script\\cardpoolmanager.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{EFC21178-BC08-89E6-C84E-96F0A98FB60B}|Assembly-CSharp.csproj|D:\\unitycourses\\X-City\\assets\\script\\event\\eventuimanager.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{EFC21178-BC08-89E6-C84E-96F0A98FB60B}|Assembly-CSharp.csproj|solutionrelative:assets\\script\\event\\eventuimanager.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{EFC21178-BC08-89E6-C84E-96F0A98FB60B}|Assembly-CSharp.csproj|D:\\unitycourses\\X-City\\assets\\script\\event\\eventlistmanager.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{EFC21178-BC08-89E6-C84E-96F0A98FB60B}|Assembly-CSharp.csproj|solutionrelative:assets\\script\\event\\eventlistmanager.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{EFC21178-BC08-89E6-C84E-96F0A98FB60B}|Assembly-CSharp.csproj|d:\\unitycourses\\x-city\\assets\\script\\region\\mapmanager.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{EFC21178-BC08-89E6-C84E-96F0A98FB60B}|Assembly-CSharp.csproj|solutionrelative:assets\\script\\region\\mapmanager.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{EFC21178-BC08-89E6-C84E-96F0A98FB60B}|Assembly-CSharp.csproj|D:\\unitycourses\\X-City\\assets\\script\\event\\eventmanager.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{EFC21178-BC08-89E6-C84E-96F0A98FB60B}|Assembly-CSharp.csproj|solutionrelative:assets\\script\\event\\eventmanager.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{EFC21178-BC08-89E6-C84E-96F0A98FB60B}|Assembly-CSharp.csproj|d:\\unitycourses\\x-city\\assets\\script\\region\\regioninfo.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{EFC21178-BC08-89E6-C84E-96F0A98FB60B}|Assembly-CSharp.csproj|solutionrelative:assets\\script\\region\\regioninfo.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{EFC21178-BC08-89E6-C84E-96F0A98FB60B}|Assembly-CSharp.csproj|d:\\unitycourses\\x-city\\assets\\script\\region\\regiondata.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{EFC21178-BC08-89E6-C84E-96F0A98FB60B}|Assembly-CSharp.csproj|solutionrelative:assets\\script\\region\\regiondata.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{EFC21178-BC08-89E6-C84E-96F0A98FB60B}|Assembly-CSharp.csproj|D:\\unitycourses\\X-City\\assets\\script\\log\\eventlogui.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{EFC21178-BC08-89E6-C84E-96F0A98FB60B}|Assembly-CSharp.csproj|solutionrelative:assets\\script\\log\\eventlogui.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{EFC21178-BC08-89E6-C84E-96F0A98FB60B}|Assembly-CSharp.csproj|D:\\unitycourses\\X-City\\assets\\script\\tabbuttoncontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{EFC21178-BC08-89E6-C84E-96F0A98FB60B}|Assembly-CSharp.csproj|solutionrelative:assets\\script\\tabbuttoncontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{EFC21178-BC08-89E6-C84E-96F0A98FB60B}|Assembly-CSharp.csproj|D:\\unitycourses\\X-City\\assets\\script\\trait\\traiticondatabase.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{EFC21178-BC08-89E6-C84E-96F0A98FB60B}|Assembly-CSharp.csproj|solutionrelative:assets\\script\\trait\\traiticondatabase.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{EFC21178-BC08-89E6-C84E-96F0A98FB60B}|Assembly-CSharp.csproj|D:\\unitycourses\\X-City\\assets\\script\\tabmanager.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{EFC21178-BC08-89E6-C84E-96F0A98FB60B}|Assembly-CSharp.csproj|solutionrelative:assets\\script\\tabmanager.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{EFC21178-BC08-89E6-C84E-96F0A98FB60B}|Assembly-CSharp.csproj|D:\\unitycourses\\X-City\\assets\\script\\log\\eventlogmanager.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{EFC21178-BC08-89E6-C84E-96F0A98FB60B}|Assembly-CSharp.csproj|solutionrelative:assets\\script\\log\\eventlogmanager.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{EFC21178-BC08-89E6-C84E-96F0A98FB60B}|Assembly-CSharp.csproj|D:\\unitycourses\\X-City\\assets\\script\\tooltip\\tooltipmanager.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{EFC21178-BC08-89E6-C84E-96F0A98FB60B}|Assembly-CSharp.csproj|solutionrelative:assets\\script\\tooltip\\tooltipmanager.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{EFC21178-BC08-89E6-C84E-96F0A98FB60B}|Assembly-CSharp.csproj|D:\\unitycourses\\X-City\\assets\\script\\scrollresettotop.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{EFC21178-BC08-89E6-C84E-96F0A98FB60B}|Assembly-CSharp.csproj|solutionrelative:assets\\script\\scrollresettotop.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{EFC21178-BC08-89E6-C84E-96F0A98FB60B}|Assembly-CSharp.csproj|D:\\unitycourses\\X-City\\assets\\script\\trait\\charactercardcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{EFC21178-BC08-89E6-C84E-96F0A98FB60B}|Assembly-CSharp.csproj|solutionrelative:assets\\script\\trait\\charactercardcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{EFC21178-BC08-89E6-C84E-96F0A98FB60B}|Assembly-CSharp.csproj|D:\\unitycourses\\X-City\\assets\\script\\event\\narrativeevent.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{EFC21178-BC08-89E6-C84E-96F0A98FB60B}|Assembly-CSharp.csproj|solutionrelative:assets\\script\\event\\narrativeevent.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{EFC21178-BC08-89E6-C84E-96F0A98FB60B}|Assembly-CSharp.csproj|D:\\unitycourses\\X-City\\assets\\script\\trait\\traitcardcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{EFC21178-BC08-89E6-C84E-96F0A98FB60B}|Assembly-CSharp.csproj|solutionrelative:assets\\script\\trait\\traitcardcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{EFC21178-BC08-89E6-C84E-96F0A98FB60B}|Assembly-CSharp.csproj|D:\\unitycourses\\X-City\\assets\\script\\trait\\traitsystem.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{EFC21178-BC08-89E6-C84E-96F0A98FB60B}|Assembly-CSharp.csproj|solutionrelative:assets\\script\\trait\\traitsystem.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{EFC21178-BC08-89E6-C84E-96F0A98FB60B}|Assembly-CSharp.csproj|D:\\unitycourses\\X-City\\assets\\script\\trait\\traitbarmanager.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{EFC21178-BC08-89E6-C84E-96F0A98FB60B}|Assembly-CSharp.csproj|solutionrelative:assets\\script\\trait\\traitbarmanager.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{EFC21178-BC08-89E6-C84E-96F0A98FB60B}|Assembly-CSharp.csproj|D:\\unitycourses\\X-City\\assets\\script\\event\\challengesystem.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{EFC21178-BC08-89E6-C84E-96F0A98FB60B}|Assembly-CSharp.csproj|solutionrelative:assets\\script\\event\\challengesystem.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|D:\\unitycourses\\X-City\\Assets\\Script\\ClickCatcher.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:Assets\\Script\\ClickCatcher.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|D:\\unitycourses\\X-City\\Assets\\Script\\RegionInfo.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:Assets\\Script\\RegionInfo.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|D:\\unitycourses\\X-City\\Assets\\Script\\EventTriggerListener.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:Assets\\Script\\EventTriggerListener.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    }
+  ],
+  "DocumentGroupContainers": [
+    {
+      "Orientation": 0,
+      "VerticalTabListWidth": 256,
+      "DocumentGroups": [
+        {
+          "DockedWidth": 200,
+          "SelectedChildIndex": 2,
+          "Children": [
+            {
+              "$type": "Document",
+              "DocumentIndex": 7,
+              "Title": "RegionInfo.cs",
+              "DocumentMoniker": "D:\\unitycourses\\X-City\\Assets\\Script\\Region\\RegionInfo.cs",
+              "RelativeDocumentMoniker": "Assets\\Script\\Region\\RegionInfo.cs",
+              "ToolTip": "D:\\unitycourses\\X-City\\Assets\\Script\\Region\\RegionInfo.cs",
+              "RelativeToolTip": "Assets\\Script\\Region\\RegionInfo.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAkAAAAsAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-05-06T09:50:07.871Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
+              "Title": "MapManager.cs",
+              "DocumentMoniker": "D:\\unitycourses\\X-City\\Assets\\Script\\Region\\MapManager.cs",
+              "RelativeDocumentMoniker": "Assets\\Script\\Region\\MapManager.cs",
+              "ToolTip": "D:\\unitycourses\\X-City\\Assets\\Script\\Region\\MapManager.cs",
+              "RelativeToolTip": "Assets\\Script\\Region\\MapManager.cs",
+              "ViewState": "AgIAAAMAAAAAAAAAAAAAABAAAAAlAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-05-06T09:30:06.745Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "RegionPanelManager.cs",
+              "DocumentMoniker": "D:\\unitycourses\\X-City\\Assets\\Script\\Region\\RegionPanelManager.cs",
+              "RelativeDocumentMoniker": "Assets\\Script\\Region\\RegionPanelManager.cs",
+              "ToolTip": "D:\\unitycourses\\X-City\\Assets\\Script\\Region\\RegionPanelManager.cs",
+              "RelativeToolTip": "Assets\\Script\\Region\\RegionPanelManager.cs",
+              "ViewState": "AgIAACAAAAAAAAAAAAAiwDAAAABTAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-05-06T09:29:20.641Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "CardPoolManager.cs",
+              "DocumentMoniker": "D:\\unitycourses\\X-City\\Assets\\Script\\CardPoolManager.cs",
+              "RelativeDocumentMoniker": "Assets\\Script\\CardPoolManager.cs",
+              "ToolTip": "D:\\unitycourses\\X-City\\Assets\\Script\\CardPoolManager.cs",
+              "RelativeToolTip": "Assets\\Script\\CardPoolManager.cs",
+              "ViewState": "AgIAABAAAAAAAAAAAAAUwBoAAAAQAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-04-26T03:29:18.056Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "EventCardController.cs",
+              "DocumentMoniker": "D:\\unitycourses\\X-City\\Assets\\Script\\Event\\EventCardController.cs",
+              "RelativeDocumentMoniker": "Assets\\Script\\Event\\EventCardController.cs",
+              "ToolTip": "D:\\unitycourses\\X-City\\Assets\\Script\\Event\\EventCardController.cs",
+              "RelativeToolTip": "Assets\\Script\\Event\\EventCardController.cs",
+              "ViewState": "AgIAAEoAAAAAAAAAAADgv1YAAABAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-04-15T13:51:14.106Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "EventListManager.cs",
+              "DocumentMoniker": "D:\\unitycourses\\X-City\\Assets\\Script\\Event\\EventListManager.cs",
+              "RelativeDocumentMoniker": "Assets\\Script\\Event\\EventListManager.cs",
+              "ToolTip": "D:\\unitycourses\\X-City\\Assets\\Script\\Event\\EventListManager.cs",
+              "RelativeToolTip": "Assets\\Script\\Event\\EventListManager.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABcAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-04-15T13:44:05.838Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 6,
+              "Title": "EventManager.cs",
+              "DocumentMoniker": "D:\\unitycourses\\X-City\\Assets\\Script\\Event\\EventManager.cs",
+              "RelativeDocumentMoniker": "Assets\\Script\\Event\\EventManager.cs",
+              "ToolTip": "D:\\unitycourses\\X-City\\Assets\\Script\\Event\\EventManager.cs",
+              "RelativeToolTip": "Assets\\Script\\Event\\EventManager.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAkAAAAsAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-04-19T06:27:30.843Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "EventUIManager.cs",
+              "DocumentMoniker": "D:\\unitycourses\\X-City\\Assets\\Script\\Event\\EventUIManager.cs",
+              "RelativeDocumentMoniker": "Assets\\Script\\Event\\EventUIManager.cs",
+              "ToolTip": "D:\\unitycourses\\X-City\\Assets\\Script\\Event\\EventUIManager.cs",
+              "RelativeToolTip": "Assets\\Script\\Event\\EventUIManager.cs",
+              "ViewState": "AgIAAAgAAAAAAAAAAAAAwBUAAAAiAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-04-24T03:15:47.295Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 8,
+              "Title": "RegionData.cs",
+              "DocumentMoniker": "D:\\unitycourses\\X-City\\Assets\\Script\\Region\\RegionData.cs",
+              "RelativeDocumentMoniker": "Assets\\Script\\Region\\RegionData.cs",
+              "ToolTip": "D:\\unitycourses\\X-City\\Assets\\Script\\Region\\RegionData.cs",
+              "RelativeToolTip": "Assets\\Script\\Region\\RegionData.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAcAAAAkAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-05-06T09:25:32.303Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 23,
+              "Title": "RegionInfo.cs",
+              "DocumentMoniker": "D:\\unitycourses\\X-City\\Assets\\Script\\RegionInfo.cs",
+              "RelativeDocumentMoniker": "Assets\\Script\\RegionInfo.cs",
+              "ToolTip": "D:\\unitycourses\\X-City\\Assets\\Script\\RegionInfo.cs",
+              "RelativeToolTip": "Assets\\Script\\RegionInfo.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAsAAAAvAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-05-06T07:45:49.631Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 9,
+              "Title": "EventLogUI.cs",
+              "DocumentMoniker": "D:\\unitycourses\\X-City\\Assets\\Script\\Log\\EventLogUI.cs",
+              "RelativeDocumentMoniker": "Assets\\Script\\Log\\EventLogUI.cs",
+              "ToolTip": "D:\\unitycourses\\X-City\\Assets\\Script\\Log\\EventLogUI.cs",
+              "RelativeToolTip": "Assets\\Script\\Log\\EventLogUI.cs",
+              "ViewState": "AgIAAAYAAAAAAAAAAAAswBQAAAAQAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-04-27T10:48:22.219Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 22,
+              "Title": "ClickCatcher.cs",
+              "DocumentMoniker": "D:\\unitycourses\\X-City\\Assets\\Script\\ClickCatcher.cs",
+              "RelativeDocumentMoniker": "Assets\\Script\\ClickCatcher.cs",
+              "ToolTip": "D:\\unitycourses\\X-City\\Assets\\Script\\ClickCatcher.cs",
+              "RelativeToolTip": "Assets\\Script\\ClickCatcher.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA4AAAArAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-05-06T08:36:45.019Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 10,
+              "Title": "TabButtonController.cs",
+              "DocumentMoniker": "D:\\unitycourses\\X-City\\Assets\\Script\\TabButtonController.cs",
+              "RelativeDocumentMoniker": "Assets\\Script\\TabButtonController.cs",
+              "ToolTip": "D:\\unitycourses\\X-City\\Assets\\Script\\TabButtonController.cs",
+              "RelativeToolTip": "Assets\\Script\\TabButtonController.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABUAAAAbAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-04-19T08:35:58.873Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 13,
+              "Title": "EventLogManager.cs",
+              "DocumentMoniker": "D:\\unitycourses\\X-City\\Assets\\Script\\Log\\EventLogManager.cs",
+              "RelativeDocumentMoniker": "Assets\\Script\\Log\\EventLogManager.cs",
+              "ToolTip": "D:\\unitycourses\\X-City\\Assets\\Script\\Log\\EventLogManager.cs",
+              "RelativeToolTip": "Assets\\Script\\Log\\EventLogManager.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAcAAAAzAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-04-28T00:34:53.708Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 12,
+              "Title": "TabManager.cs",
+              "DocumentMoniker": "D:\\unitycourses\\X-City\\Assets\\Script\\TabManager.cs",
+              "RelativeDocumentMoniker": "Assets\\Script\\TabManager.cs",
+              "ToolTip": "D:\\unitycourses\\X-City\\Assets\\Script\\TabManager.cs",
+              "RelativeToolTip": "Assets\\Script\\TabManager.cs",
+              "ViewState": "AgIAAAUAAAAAAAAAAAAAwBEAAAAFAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-04-19T08:35:54.732Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 24,
+              "Title": "EventTriggerListener.cs",
+              "DocumentMoniker": "D:\\unitycourses\\X-City\\Assets\\Script\\EventTriggerListener.cs",
+              "RelativeDocumentMoniker": "Assets\\Script\\EventTriggerListener.cs",
+              "ToolTip": "D:\\unitycourses\\X-City\\Assets\\Script\\EventTriggerListener.cs",
+              "RelativeToolTip": "Assets\\Script\\EventTriggerListener.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAQAAABkAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-05-06T07:46:58.296Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 11,
+              "Title": "TraitIconDatabase.cs",
+              "DocumentMoniker": "D:\\unitycourses\\X-City\\Assets\\Script\\Trait\\TraitIconDatabase.cs",
+              "RelativeDocumentMoniker": "Assets\\Script\\Trait\\TraitIconDatabase.cs",
+              "ToolTip": "D:\\unitycourses\\X-City\\Assets\\Script\\Trait\\TraitIconDatabase.cs",
+              "RelativeToolTip": "Assets\\Script\\Trait\\TraitIconDatabase.cs",
+              "ViewState": "AgIAABIAAAAAAAAAAAAYwBMAAAAoAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-04-22T13:18:23.589Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 15,
+              "Title": "ScrollResetToTop.cs",
+              "DocumentMoniker": "D:\\unitycourses\\X-City\\Assets\\Script\\ScrollResetToTop.cs",
+              "RelativeDocumentMoniker": "Assets\\Script\\ScrollResetToTop.cs",
+              "ToolTip": "D:\\unitycourses\\X-City\\Assets\\Script\\ScrollResetToTop.cs",
+              "RelativeToolTip": "Assets\\Script\\ScrollResetToTop.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAoAAAAiAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-04-16T09:39:24.996Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 14,
+              "Title": "ToolTipManager.cs",
+              "DocumentMoniker": "D:\\unitycourses\\X-City\\Assets\\Script\\ToolTip\\ToolTipManager.cs",
+              "RelativeDocumentMoniker": "Assets\\Script\\ToolTip\\ToolTipManager.cs",
+              "ToolTip": "D:\\unitycourses\\X-City\\Assets\\Script\\ToolTip\\ToolTipManager.cs",
+              "RelativeToolTip": "Assets\\Script\\ToolTip\\ToolTipManager.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAEQAAAAuAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-04-19T08:55:09.728Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 16,
+              "Title": "CharacterCardController.cs",
+              "DocumentMoniker": "D:\\unitycourses\\X-City\\Assets\\Script\\Trait\\CharacterCardController.cs",
+              "RelativeDocumentMoniker": "Assets\\Script\\Trait\\CharacterCardController.cs",
+              "ToolTip": "D:\\unitycourses\\X-City\\Assets\\Script\\Trait\\CharacterCardController.cs",
+              "RelativeToolTip": "Assets\\Script\\Trait\\CharacterCardController.cs",
+              "ViewState": "AgIAAA4AAAAAAAAAAAAAwBcAAAAkAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-04-23T04:20:06.358Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 17,
+              "Title": "NarrativeEvent.cs",
+              "DocumentMoniker": "D:\\unitycourses\\X-City\\Assets\\Script\\Event\\NarrativeEvent.cs",
+              "RelativeDocumentMoniker": "Assets\\Script\\Event\\NarrativeEvent.cs",
+              "ToolTip": "D:\\unitycourses\\X-City\\Assets\\Script\\Event\\NarrativeEvent.cs",
+              "RelativeToolTip": "Assets\\Script\\Event\\NarrativeEvent.cs",
+              "ViewState": "AgIAABcAAAAAAAAAAAAgwCgAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-04-15T14:42:30.446Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 18,
+              "Title": "TraitCardController.cs",
+              "DocumentMoniker": "D:\\unitycourses\\X-City\\Assets\\Script\\Trait\\TraitCardController.cs",
+              "RelativeDocumentMoniker": "Assets\\Script\\Trait\\TraitCardController.cs",
+              "ToolTip": "D:\\unitycourses\\X-City\\Assets\\Script\\Trait\\TraitCardController.cs",
+              "RelativeToolTip": "Assets\\Script\\Trait\\TraitCardController.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAYAAAABAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-04-22T13:20:01.236Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 19,
+              "Title": "TraitSystem.cs",
+              "DocumentMoniker": "D:\\unitycourses\\X-City\\Assets\\Script\\Trait\\TraitSystem.cs",
+              "RelativeDocumentMoniker": "Assets\\Script\\Trait\\TraitSystem.cs",
+              "ToolTip": "D:\\unitycourses\\X-City\\Assets\\Script\\Trait\\TraitSystem.cs",
+              "RelativeToolTip": "Assets\\Script\\Trait\\TraitSystem.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAsAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-04-22T13:29:02.638Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 20,
+              "Title": "TraitBarManager.cs",
+              "DocumentMoniker": "D:\\unitycourses\\X-City\\Assets\\Script\\Trait\\TraitBarManager.cs",
+              "RelativeDocumentMoniker": "Assets\\Script\\Trait\\TraitBarManager.cs",
+              "ToolTip": "D:\\unitycourses\\X-City\\Assets\\Script\\Trait\\TraitBarManager.cs",
+              "RelativeToolTip": "Assets\\Script\\Trait\\TraitBarManager.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAADwAAAAvAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-04-22T13:47:42.335Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 21,
+              "Title": "ChallengeSystem.cs",
+              "DocumentMoniker": "D:\\unitycourses\\X-City\\Assets\\Script\\Event\\ChallengeSystem.cs",
+              "RelativeDocumentMoniker": "Assets\\Script\\Event\\ChallengeSystem.cs",
+              "ToolTip": "D:\\unitycourses\\X-City\\Assets\\Script\\Event\\ChallengeSystem.cs",
+              "RelativeToolTip": "Assets\\Script\\Event\\ChallengeSystem.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAoAAAAeAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-04-17T04:57:49.028Z"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

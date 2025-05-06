@@ -1,0 +1,37 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 30bd606990110e648b269e6bbe3bc667, type: 3}
+  m_Name: Demo_Begin_Origin_Corporate
+  m_EditorClassIdentifier: 
+  eventId: D_B_O_C
+  title: "\u8054\u5408\u679C\u54C1\u8349\u83C7\u52CB\u7AE0"
+  description: "\u4F60\u66FE\u662F\u8054\u5408\u679C\u54C1\u5B64\u513F\u57FA\u91D1\u4F1A\u7684\u201C\u8BD5\u70B9\u6848\u4F8B\u201D\u4E4B\u4E00\u3002\u957F\u6210\u4E86\u4E2A\u9AD8\u5927\u7684\u5C0F\u4F19\u5B50\uFF0C\u7ED3\u5B9E\u3001\u5B89\u9759\u3001\u542C\u8BDD\u3002\u4ED6\u4EEC\u9001\u4F60\u4E0A\u4E869\u67089\u65E5\u7684\u6218\u573A\u2014\u2014\u4E0D\u5728\u524D\u7EBF\uFF0C\u5728\u540E\u52E4\u3002\r\n\u4F60\u5728\u90A3\u513F\u9012\u6C34\u3001\u8FD0\u76D2\u5B50\u3001\u7B7E\u5B57\u3002\u6700\u540E\u6234\u7740\u8349\u83C7\u52CB\u7AE0\u56DE\u6765\uFF0C\u6362\u6765\u7684\u662F\u4E00\u4E2A\u5C0F\u9ED1\u5C4B\u529E\u516C\u5BA4\uFF0C\u8FD8\u6709\u4E00\u4E2A\u6709\u5B57\u7684\u5DE5\u724C\u3002"
+  tags: []
+  singleUse: 0
+  isImportant: 0
+  choices:
+  - text: "\u201C\u6211\u4E0D\u60F3\u518D\u4E0A\u6218\u573A\u4E86\uFF0C\u518D\u4E5F\u4E0D\u60F3\u201D"
+    description: "\u201C\u6218\u573A\u662F\u70BC\u72F1\uFF0C\u6218\u4E89\uFF0C\u6218\u4E89\u4ECE\u4E0D\u6539\u53D8\u3002\u201D"
+    nextEventId: Demo_Begin_1
+    isChallenge: 0
+    challengeTraitId: 
+    successChancePerPoint: 0
+    nextEventIdSuccess: 
+    nextEventIdFailure: 
+    traitRequirements: []
+    traitChanges:
+    - traitId: Talon
+      changeAmount: 2
+    - traitId: Thigmata
+      changeAmount: 2
+    characterChanges: []
+    priority: 1
