@@ -54,7 +54,6 @@ public class NarrativeEvent : ScriptableObject
     public string eventId;              // 事件 ID
     public string title;                // 事件标题
     [TextArea] public string description;  // HeadrCard事件描述
-    public List<string> tags;
     public bool singleUse;
     public bool isImportant;
     public List<EventChoice> choices;
