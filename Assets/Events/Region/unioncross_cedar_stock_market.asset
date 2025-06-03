@@ -1,0 +1,49 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 30bd606990110e648b269e6bbe3bc667, type: 3}
+  m_Name: unioncross_cedar_stock_market
+  m_EditorClassIdentifier: 
+  eventId: unioncross_cedar_stock_market
+  title: "\u201C\u96EA\u677E\u80A1\u7968\u4EA4\u6613\u6240\u201D"
+  description: "\u6765\u5F80\u8FDB\u51FA\u7684\u4F53\u9762\u4EBA\u58EB\uFF0C\u58F0\u5636\u529B\u7AED\u7684\u5486\u54EE\u58F0\uFF0C\u91D1\u78A7\u8F89\u714C\u7684\u5927\u95E8\u4E0E\u5C4B\u6A90\uFF0C\u77F3\u5934\u5DE8\u517D\u6B63\u5411\u6240\u6709\u884C\u4EBA\u5F20\u5F00\u5927\u53E3\u3002"
+  singleUse: 0
+  isImportant: 0
+  tags: 02000000
+  choices:
+  - text: "\u8FDB\u5165\u5EFA\u7B51"
+    description: "\u4F60\u51B3\u5B9A\u4E3A\u81EA\u5DF1\u7684\u672A\u6765\u4F5C\u4FDD\u969C\u3002"
+    nextEventId: cedar_stock_market_inside
+    isChallenge: 0
+    challengeTraitId: 
+    successChancePerPoint: 0
+    nextEventIdSuccess: 
+    nextEventIdFailure: 
+    traitRequirements: []
+    traitChanges: []
+    characterChanges: []
+    tagChanges: []
+    priority: 0
+    cardStyle: 0
+  - text: "\u5728\u95E8\u53E3\u8E72\u5B88"
+    description: "\u6211\u9700\u8981\u67D0\u4EBA\u7684\u4FE1\u606F\u3002"
+    nextEventId: 
+    isChallenge: 0
+    challengeTraitId: 
+    successChancePerPoint: 0
+    nextEventIdSuccess: 
+    nextEventIdFailure: 
+    traitRequirements: []
+    traitChanges: []
+    characterChanges: []
+    tagChanges: []
+    priority: 0
+    cardStyle: 0

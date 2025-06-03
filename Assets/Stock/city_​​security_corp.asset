@@ -1,0 +1,34 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f485b4551ceb8e744ad1ddf2782f362d, type: 3}
+  m_Name: "city_\u200B\u200Bsecurity_corp"
+  m_EditorClassIdentifier: 
+  totalShares: 26135105
+  stockId: "city_\u200B\u200Bsecurity_corp"
+  displayName: "\u57CE\u5E02\u5B89\u5168"
+  logo: {fileID: 21300000, guid: ecdde35de155a9e4a89ac5bfb891b832, type: 3}
+  volatility: 0.03
+  dropBias: 0.7
+  currentPrice: 903.6
+  historicalPrices:
+  - 1025.02
+  defaultShareholders:
+  - name: "\u6CBB\u5B89\u59D4\u5458\u4F1A"
+    percentage: 0.51
+  - name: "\u5317\u65B9\u5DE5\u4E1A"
+    percentage: 0.13
+  - name: "\u5E38\u8BD8\u6551\u6D4E\u4F1A"
+    percentage: 0.13
+  - name: "\u822A\u8FD0\u59D4\u5458\u4F1A"
+    percentage: 0.08
+  - name: "\u5927\u4F17\u80A1\u4E1C"
+    percentage: 0.15

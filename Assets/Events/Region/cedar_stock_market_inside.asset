@@ -1,0 +1,37 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 30bd606990110e648b269e6bbe3bc667, type: 3}
+  m_Name: cedar_stock_market_inside
+  m_EditorClassIdentifier: 
+  eventId: cedar_stock_market_inside
+  title: "\u96EA\u677E\u80A1\u7968\u4EA4\u6613\u6240"
+  description: "\u96EA\u677E\u4EA4\u6613\u6240\u5927\u5385\u4EBA\u58F0\u9F0E\u6CB8\uFF0C\u7A7A\u6C14\u4E2D\u5F25\u6F2B\u7740\u7126\u8E81\u4E0E\u9999\u6C34\u5473\u3002\u4E00\u5757\u5DE8\u5927\u7684\u6570\u5B57\u5C4F\u6B63\u65E0\u60C5\u5730\u64AD\u62A5\u7740\u67D0\u5BB6\u516C\u53F8\u201C\u9668\u843D\u5F0F\u589E\u53D1\u201D\u7684\u6700\u65B0\u8FDB\u5C55\u3002\u897F\u88C5\u7B14\u633A\u7684\u5206\u6790\u5E08\u5728\u7535\u8BDD\u90A3\u5934\u5927\u58F0\u5492\u9A82\uFF0C\u65C1\u8FB9\u7684\u5B9E\u4E60\u751F\u6B63\u5077\u5077\u5728\u7EC8\u7AEF\u4E0A\u4E0B\u6CE8\u8001\u677F\u5373\u5C06\u7834\u4EA7\u7684\u53EF\u80FD\u6027\u3002\u8FD9\u91CC\u6CA1\u6709\u8D62\u5BB6\uFF0C\u53EA\u6709\u63D0\u524D\u8DD1\u8DEF\u7684\u4EBA\u548C\u8FD8\u5728\u5E7B\u60F3\u7684\u4F60\u3002"
+  singleUse: 0
+  isImportant: 0
+  tags: 40000000
+  choices:
+  - text: "\u8FDB\u5165\u4EA4\u6613\u5927\u5385"
+    description: "\u7A7A\u6C14\u91CC\u662F\u5496\u5561\u3001\u6D88\u6BD2\u6C34\u4E0E\u5931\u8D25\u8005\u68A6\u60F3\u7684\u5473\u9053\u3002\u4F60\u62C9\u4E86\u62C9\u5EC9\u4EF7\u897F\u88C5\u7684\u9886\u53E3\uFF0C\u51C6\u5907\u5F00\u59CB\u4E00\u5929\u7684\u8C6A\u8D4C\u3002"
+    nextEventId: unioncross_cedar_stock_market
+    isChallenge: 0
+    challengeTraitId: 
+    successChancePerPoint: 0
+    nextEventIdSuccess: 
+    nextEventIdFailure: 
+    traitRequirements: []
+    traitChanges: []
+    characterChanges: []
+    tagChanges:
+    - tagName: StockMarketEntry
+      add: 1
+    priority: 0
+    cardStyle: 0

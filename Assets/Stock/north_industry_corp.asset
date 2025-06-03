@@ -1,0 +1,38 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f485b4551ceb8e744ad1ddf2782f362d, type: 3}
+  m_Name: north_industry_corp
+  m_EditorClassIdentifier: 
+  totalShares: 12324976298
+  stockId: north_industry_corp
+  displayName: "\u5317\u65B9\u5DE5\u4E1A"
+  logo: {fileID: 21300000, guid: 82f11599432003e4694f0c986e6f076b, type: 3}
+  volatility: 0.03
+  dropBias: 0.7
+  currentPrice: 37.33
+  historicalPrices:
+  - 42.18
+  defaultShareholders:
+  - name: "\u5317\u65B9\u5DE5\u4E1A"
+    percentage: 0.51
+  - name: "\u5E38\u8BD8\u6551\u6D4E\u4F1A"
+    percentage: 0.1
+  - name: "\u8054\u5408\u98DF\u54C1"
+    percentage: 0.03
+  - name: "\u8702\u5DE2\u65E5\u5316"
+    percentage: 0.03
+  - name: "\u5317\u65B9\u822A\u8FD0"
+    percentage: 0.03
+  - name: "\u6CBB\u5B89\u59D4\u5458\u4F1A"
+    percentage: 0.05
+  - name: "\u5927\u4F17\u80A1\u4E1C"
+    percentage: 0.25

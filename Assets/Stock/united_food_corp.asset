@@ -1,0 +1,40 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f485b4551ceb8e744ad1ddf2782f362d, type: 3}
+  m_Name: united_food_corp
+  m_EditorClassIdentifier: 
+  totalShares: 2147483647
+  stockId: united_food_corp
+  displayName: "\u8054\u5408\u98DF\u54C1"
+  logo: {fileID: 21300000, guid: 59c7afd9d4136d340b7e89b12f36d560, type: 3}
+  volatility: 0.03
+  dropBias: 0.7
+  currentPrice: 13.3
+  defaultShareholders:
+  - name: "\u5E38\u8BD8\u6551\u6D4E\u4F1A"
+    percentage: 0.21
+  - name: "\u8054\u5408\u98DF\u54C1"
+    percentage: 0.15
+  - name: "\u5317\u65B9\u5DE5\u4E1A"
+    percentage: 0.14
+  - name: "\u5317\u65B9\u822A\u8FD0"
+    percentage: 0.1
+  - name: "\u8702\u5DE2\u65E5\u5316"
+    percentage: 0.1
+  - name: "\u96EA\u677E\u516C\u53F8"
+    percentage: 0.05
+  - name: "\u7CBE\u70BC\u6750\u6599"
+    percentage: 0.05
+  - name: "\u6CBB\u5B89\u59D4\u5458\u4F1A"
+    percentage: 0.03
+  - name: "\u5927\u4F17\u80A1\u4E1C"
+    percentage: 0.17

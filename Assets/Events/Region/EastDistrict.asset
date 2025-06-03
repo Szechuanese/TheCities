@@ -1,0 +1,19 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 74a8a63ad8cc45a4d9b7d1ebda944188, type: 3}
+  m_Name: EastDistrict
+  m_EditorClassIdentifier: 
+  regionId: EastDistrict
+  regionDisplayName: "\u4E1C\u533A"
+  regionDescription: "\u8FD9\u91CC\u662F\u4E1C\u533A\uFF01\uFF01"
+  regionEvents:
+  - {fileID: 11400000, guid: a43c9f4c117d79042997900679511f0a, type: 2}

@@ -1,22 +1,35 @@
+# 忽略缓存和构建文件夹
 [Ll]ibrary/
 [Tt]emp/
 [Oo]bj/
 [Bb]uild/
 [Bb]uilds/
-[Ll]ogs/
 UserSettings/
 MemoryCaptures/
-.vscode/
+
+# 忽略系统文件
+.DS_Store
+Thumbs.db
+
+# 忽略VS和IDE生成的文件（可选）
 *.csproj
-*.sln
-*.user
 *.unityproj
-*.pidb
-*.booproj
+*.sln
 *.suo
 *.tmp
+*.user
 *.userprefs
-*.ncb
-*.pdb
-*.mdb
-.DS_Store
+*.pidb
+*.booproj
+*.svd
+
+# 允许.meta文件（Unity所需）
+!*.meta
+
+# 显式追踪Assets和ProjectSettings
+!Assets/
+!Assets/**/*
+!ProjectSettings/
+!ProjectSettings/**/*
+!Packages/
+!Packages/**/*
