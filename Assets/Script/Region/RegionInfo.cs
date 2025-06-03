@@ -10,4 +10,6 @@ public class RegionInfo
     public bool isUnlocked = true;   // 是否解锁
     public Button regionButton;      // 绑定的按钮对象
     public RegionData regionData;  //引用
+    public string requiredTraitId; // 需要的Trait
+    public int requiredTraitValue; // 最低值
 }

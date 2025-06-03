@@ -39,13 +39,31 @@ public class EventChoice
     public List<TraitChange> traitChanges = new List<TraitChange>();
     public List<CharacterChange> characterChanges = new List<CharacterChange>();
 
-    public ChoicePriority priority = ChoicePriority.Secondary; // 选项优先级
-    public enum ChoicePriority
+    [System.Serializable]
+    public class TagChange
+    {
+        public string tagName;
+        public bool add;   // true = AddTag, false = RemoveTag
+    }
+    public List<TagChange> tagChanges = new List<TagChange>();
+    public ChoicePriority priority = ChoicePriority.Secondary;
+    public enum ChoicePriority// 选项优先级
     {
         Primary,
         Secondary,
-        Hidden
+        Hidden,
     }
+
+    //Tag控制卡片样式（颜色）
+    public enum StoryCardStyle
+    {
+        Normal,    //默认
+        Combat,    //战斗/挑战
+        Important,  //重要
+        Repeatable,  //可重复
+    }
+
+    public StoryCardStyle cardStyle = StoryCardStyle.Normal;
 }
 
 [CreateAssetMenu(fileName = "NewEvent", menuName = "Narrative/Event")]
@@ -56,5 +74,25 @@ public class NarrativeEvent : ScriptableObject
     [TextArea] public string description;  // HeadrCard事件描述
     public bool singleUse;
     public bool isImportant;
-    public List<EventChoice> choices;
+
+    public List<EventTag> tags = new List<EventTag>();       // 事件标签
+    public List<EventChoice> choices = new List<EventChoice>();
+
+    //标签操作函数
+    public bool HasTag(EventTag tag)
+    {
+        return tags.Contains(tag);
+    }
+
+    public void AddTag(EventTag tag)
+    {
+        if (!tags.Contains(tag))
+            tags.Add(tag);
+    }
+
+    public void RemoveTag(EventTag tag)
+    {
+        if (tags.Contains(tag))
+            tags.Remove(tag);
+    }
 }

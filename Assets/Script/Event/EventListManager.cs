@@ -24,7 +24,7 @@ public class EventListManager : MonoBehaviour
 
         foreach (var e in allEvents)
         {
-            // ✅ 跳过已经被触发的当前事件（避免重复显示）
+            //跳过已经被触发的当前事件（避免重复显示）//这一段我没理解，可能需要修改。
             if (eventManager.CurrentEvent != null && e.eventId == eventManager.CurrentEvent.eventId)
                 continue;
 

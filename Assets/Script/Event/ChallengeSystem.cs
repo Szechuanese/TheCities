@@ -14,7 +14,7 @@ public class ChallengeSystem : MonoBehaviour
 
     public void ShowChallengeResult(bool success)
     {
-        challengeUIPanel.SetActive(true); // ✅ 确保先显示面板
+        challengeUIPanel.SetActive(true); //确保先显示面板
         StartCoroutine(ShowChallengeResultCoroutine(success));
     }
 

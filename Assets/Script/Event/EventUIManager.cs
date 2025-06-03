@@ -4,6 +4,7 @@ using UnityEngine;
 using UnityEngine.UI;
 using TMPro;
 using static EventChoice;
+using DG.Tweening;
 
 public class EventUIManager : MonoBehaviour
 {
@@ -18,7 +19,7 @@ public class EventUIManager : MonoBehaviour
     public TMP_Text headerEventTitle;
     public Button returnButton;
     public GameObject storyCardPrefab;
-    public Transform storyCardContainer;
+    public Transform storyBroad;
     public GameObject regionPanel;
 
     [Header("依赖")]
@@ -28,10 +29,35 @@ public class EventUIManager : MonoBehaviour
     [Header("对象池")]
     public CardPoolManager cardPoolManager;
 
+    [Header("滚动条绑定")]
+    public GameObject storyPanelScrollbar;
+    public GameObject regionPanelScrollbar;
+
     void Start()
     {
         returnButton.onClick.AddListener(() =>
         {
+            if (eventManager.CurrentEvent.HasTag(EventTag.Returnable))
+            {
+                eventManager.eventUIManager.ClearStoryCards();
+                eventManager.eventUIManager.storyPanel.SetActive(false);
+                eventManager.eventUIManager.HeaderCard.SetActive(false);
+
+                //优先按历史记录返回
+                if (eventManager.regionHistory.Count > 0)
+                {
+                    RegionInfo previous = eventManager.regionHistory.Pop();
+                    eventManager.lastRegion = previous;
+                    eventManager.regionPanelManager.ShowRegion(previous, disableHistoryPush: true);
+                }
+                else if (eventManager.lastRegion != null)
+                {
+                    //如果历史为空，回到 lastRegion
+                    eventManager.regionPanelManager.ShowRegion(eventManager.lastRegion);
+                }
+                return;
+            }
+
             if (isReturnBlocked)
             {
                 Debug.Log("返回按钮已被阻止");
@@ -39,6 +65,7 @@ public class EventUIManager : MonoBehaviour
             }
 
             storyPanel.SetActive(false);
+            RefreshLayout();
             HeaderCard.SetActive(true);
             RefreshLayout();
         });
@@ -59,23 +86,27 @@ public class EventUIManager : MonoBehaviour
         headerEventDescription.text = currentEvent.description;
 
         // 清空旧卡片
-        foreach (Transform child in storyCardContainer)
+        foreach (Transform child in storyBroad)
         {
             cardPoolManager.Release(child.gameObject);
         }
-        storyCardContainer.DetachChildren();
+        storyBroad.DetachChildren();
 
         foreach (var choice in currentEvent.choices)
         {
             GameObject card = cardPoolManager.GetCard();
             card.SetActive(true);
-            card.transform.SetParent(storyCardContainer, false);
+            card.transform.SetParent(storyBroad, false);
+
+            CardEntranceAnimator.Play(card, storyBroad, type: 3);//卡片进入动画调用CardEntranceAnimator.cs
 
             EventCardController controller = card.GetComponent<EventCardController>();
 
             string title = choice.text;
             string descriptionText = choice.description;
-            string tag = "";
+            string tag = currentEvent.tags != null && currentEvent.tags.Count > 0
+                ? string.Join(", ", currentEvent.tags)
+                : "";
 
             string requireText = GenerateRequirementText(choice);
 
@@ -100,9 +131,34 @@ public class EventUIManager : MonoBehaviour
             });
         }
 
-        returnButton.gameObject.SetActive(!currentEvent.isImportant);
-        isReturnBlocked = currentEvent.isImportant;
+        returnButton.gameObject.SetActive(true);
 
+        if (currentEvent.HasTag(EventTag.Returnable)) //如果拥有Returnable标签，则可以返回
+        {
+            isReturnBlocked = false;
+            returnButton.interactable = true;
+
+            ColorBlock colors = returnButton.colors;
+            colors.normalColor = new Color(57f / 255f, 54f / 255f, 111f / 255f, 1f);
+            colors.highlightedColor = new Color(91f / 255f, 88f / 255f, 156f / 255f, 1f);
+            colors.pressedColor = new Color(45f / 255f, 42f / 255f, 84f / 255f, 1f);
+            colors.selectedColor = new Color(91f / 255f, 88f / 255f, 156f / 255f, 1f);
+            returnButton.colors = colors;
+        }
+        else  //否则相反
+        {
+            isReturnBlocked = true;
+            returnButton.interactable = false;
+
+            ColorBlock colors = returnButton.colors;
+            colors.normalColor = new Color(0.6f, 0.6f, 0.6f, 0.5f);
+            colors.highlightedColor = new Color(0.5f, 0.5f, 0.5f, 0.5f);
+            returnButton.colors = colors;
+        }
+        //滚动条设定函数，切换页面切换不同的滚动条
+        if (storyPanelScrollbar != null) storyPanelScrollbar.SetActive(true);
+        if (regionPanelScrollbar != null) regionPanelScrollbar.SetActive(false);
+        //刷新布局函数
         StartCoroutine(RefreshLayoutDelayed());
     }
 
@@ -132,7 +188,7 @@ public class EventUIManager : MonoBehaviour
 
     void RefreshLayout()
     {
-        LayoutRebuilder.ForceRebuildLayoutImmediate(storyCardContainer.GetComponent<RectTransform>());
+        LayoutRebuilder.ForceRebuildLayoutImmediate(storyBroad.GetComponent<RectTransform>());
         LayoutRebuilder.ForceRebuildLayoutImmediate(storyPanel.GetComponent<RectTransform>());
     }
 
@@ -140,15 +196,16 @@ public class EventUIManager : MonoBehaviour
     {
         yield return null;
         LayoutRebuilder.ForceRebuildLayoutImmediate(storyPanel.GetComponent<RectTransform>());
-        LayoutRebuilder.ForceRebuildLayoutImmediate(storyCardContainer.GetComponent<RectTransform>());
+        LayoutRebuilder.ForceRebuildLayoutImmediate(storyBroad.GetComponent<RectTransform>());
     }
+
     public void ClearStoryCards()
     {
         if (cardPoolManager != null)
         {
-            cardPoolManager.ReclaimAllCards(storyPanel.transform); // 回收所有使用中的卡片到池中
+            cardPoolManager.ReclaimAllCards(storyPanel.transform);
         }
 
-        storyPanel.SetActive(false);   // 隐藏事件区域
+        storyPanel.SetActive(false);
     }
 }

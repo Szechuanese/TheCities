@@ -11,8 +11,8 @@ public class TabButtonController : MonoBehaviour, IPointerEnterHandler, IPointer
     public LayoutElement layoutElement;
 
     private Color normalColor = new Color32(22, 24, 34, 255);
-    private Color hoverColor = new Color32(40, 45, 70, 255); // #282D46
-    private Color activeTextColor = new Color32(200, 200, 255, 255);
+    private Color hoverColor = new Color32(40, 45, 70, 255); //#282D46
+    private Color activeTextColor = new Color32(200, 200, 255, 255);//ÁÁ»ÆÉ«(187, 202, 70, 255)
     private Color normalTextColor = new Color32(160, 160, 160, 255);
 
     private bool isActive = false;

@@ -1,51 +1,75 @@
 using System.Collections.Generic;
 using UnityEngine;
-
+//特质系统
 [System.Serializable]
 public class Trait
 {
-    public string id;              // 特质 ID，例如 "sanity"
-    public string displayName;     // 显示名称
+    public string id;
+    public string displayName;
     [Range(0f, 100f)]
-    public float value;            // 特质值（小数，范围 0 - 100）
+    public float value;
 }
 
 public class TraitSystem : MonoBehaviour
 {
-    public List<Trait> traits = new List<Trait>();
+    public delegate void TraitChangedHandler();
+    public event TraitChangedHandler OnTraitChanged;
 
-    // 获取指定特质的值
-    public float GetTrait(string id)
+    public List<Trait> traits = new List<Trait>();
+    private Dictionary<string, Trait> traitDict = new Dictionary<string, Trait>();
+
+    void Awake()
     {
-        var t = traits.Find(t => t.id == id);
-        return t != null ? t.value : 0f;
+        foreach (var t in traits)
+        {
+            if (!traitDict.ContainsKey(t.id))
+                traitDict[t.id] = t;
+        }
+
+        if (!traitDict.ContainsKey("money")) //money特殊化
+        {
+            var moneyTrait = new Trait { id = "money", displayName = "金币", value = 10000f };
+            traits.Add(moneyTrait);
+            traitDict["money"] = moneyTrait;
+        }
     }
 
-    // 修改指定特质的值（自动限制在 0 - 100）
+    public float GetTrait(string id)
+    {
+        if (id == "money" && !traitDict.ContainsKey("money")) //money特殊化
+        {
+            var moneyTrait = new Trait { id = "money", displayName = "金币", value = 10000f };
+            traits.Add(moneyTrait);
+            traitDict["money"] = moneyTrait;
+        }
+
+        return traitDict.TryGetValue(id, out Trait trait) ? trait.value : 0f;
+    }
+
     public void ModifyTrait(string id, float amount)
     {
-        var t = traits.Find(t => t.id == id);
-        if (t != null)
+        if (traitDict.TryGetValue(id, out Trait trait))
         {
-            t.value = Mathf.Clamp(t.value + amount, 0f, 100f);
+            trait.value = Mathf.Clamp(trait.value + amount, 0f, 100f);
         }
         else
         {
-            traits.Add(new Trait { id = id, displayName = id, value = Mathf.Clamp(amount, 0f, 100f) });
+            trait = new Trait { id = id, displayName = id, value = Mathf.Clamp(amount, 0f, 100f) };
+            traits.Add(trait);
+            traitDict[id] = trait;
         }
 
-        Debug.Log($"特质 [{id}] 当前值：{GetTrait(id):F1}");
+        Debug.Log($"特质 [{id}] 当前值：{trait.value:F1}");
+        OnTraitChanged?.Invoke();
     }
 
     public Dictionary<string, float> GetAllTraits()
     {
         Dictionary<string, float> result = new Dictionary<string, float>();
-        foreach (var trait in traits)
+        foreach (var kv in traitDict)
         {
-            result[trait.id] = trait.value;
+            result[kv.Key] = kv.Value.value;
         }
         return result;
-        /*traitSystem.ModifyTrait("sanity", 5.2f); // 增加 5.2
-        float currentSanity = traitSystem.GetTrait("sanity"); // 获取 float 值*/
     }
 }

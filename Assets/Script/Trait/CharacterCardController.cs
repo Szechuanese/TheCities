@@ -2,7 +2,7 @@
 using TMPro;
 using UnityEngine.UI;
 using UnityEngine.EventSystems;
-
+//与TraitCardController类同
 public class CharacterCardController : MonoBehaviour, IPointerEnterHandler, IPointerExitHandler
 {
     public TMP_Text nameText;
@@ -37,14 +37,11 @@ public class CharacterCardController : MonoBehaviour, IPointerEnterHandler, IPoi
     public void OnPointerEnter(PointerEventData eventData)
     {
         if (!string.IsNullOrEmpty(characterId))
-        {
-            Debug.Log($"🟢 显示 Tooltip：{characterId}");
-            TooltipManager.instance?.ShowById(characterId);
-        }
+            TraitToolTipManager.instance?.ShowById(characterId);
     }
 
     public void OnPointerExit(PointerEventData eventData)
     {
-        TooltipManager.instance?.Hide();
+        TraitToolTipManager.instance?.HideTooltip();
     }
 }

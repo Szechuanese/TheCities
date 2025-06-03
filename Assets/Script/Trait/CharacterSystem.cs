@@ -7,49 +7,59 @@ public class Character
     public string id;
     public string displayName;
     [Range(0f, 100f)]
-    public float value; // 支持浮点储存
+    public float value;
 }
 
 public class CharacterSystem : MonoBehaviour
 {
-    public List<Character> characters = new List<Character>();
+    public delegate void CharacterChangedHandler();
+    public event CharacterChangedHandler OnCharacterChanged;
 
-    // 获取角色特征值（四舍五入后返回 int）
+    public List<Character> characters = new List<Character>();
+    private Dictionary<string, Character> characterDict = new Dictionary<string, Character>();
+
+    void Awake()
+    {
+        foreach (var c in characters)
+        {
+            if (!characterDict.ContainsKey(c.id))
+                characterDict[c.id] = c;
+        }
+    }
+
     public int GetCharacter(string id)
     {
-        var c = characters.Find(c => c.id == id);
-        return c != null ? Mathf.RoundToInt(c.value) : 0;
+        return characterDict.TryGetValue(id, out Character c) ? Mathf.RoundToInt(c.value) : 0;
     }
 
-    // 获取原始 float 值（如需要）
     public float GetCharacterRaw(string id)
     {
-        var c = characters.Find(c => c.id == id);
-        return c != null ? c.value : 0f;
+        return characterDict.TryGetValue(id, out Character c) ? c.value : 0f;
     }
 
-    // 修改角色特征值（自动限制 0 ~ 100）
     public void ModifyCharacter(string id, float amount)
     {
-        var c = characters.Find(c => c.id == id);
-        if (c != null)
+        if (characterDict.TryGetValue(id, out Character c))
         {
-            c.value = Mathf.Clamp(c.value + amount, 0f, 10f);
+            c.value = Mathf.Clamp(c.value + amount, 0f, 100f);
         }
         else
         {
-            characters.Add(new Character { id = id, displayName = id, value = Mathf.Clamp(amount, 0f, 100f) });
+            c = new Character { id = id, displayName = id, value = Mathf.Clamp(amount, 0f, 100f) };
+            characters.Add(c);
+            characterDict[id] = c;
         }
 
-        Debug.Log($"🎯 [{id}] 当前值：{GetCharacter(id)}");
+        Debug.Log($"🎯 [{id}] 当前值：{Mathf.RoundToInt(c.value)}");
+        OnCharacterChanged?.Invoke();
     }
 
     public Dictionary<string, int> GetAllCharacters()
     {
         Dictionary<string, int> result = new Dictionary<string, int>();
-        foreach (var c in characters)
+        foreach (var kv in characterDict)
         {
-            result[c.id] = Mathf.RoundToInt(c.value);
+            result[kv.Key] = Mathf.RoundToInt(kv.Value.value);
         }
         return result;
     }

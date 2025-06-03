@@ -1,43 +1,51 @@
-﻿// ✅ RegionPanelManager.cs
-// 控制点击大地图区域后，显示区域内的事件卡片（StoryCard）列表
-
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using UnityEngine;
 using TMPro;
-
+using System.Collections;
+using UnityEngine.UI;
+//区域事件显示
 public class RegionPanelManager : MonoBehaviour
 {
     [Header("UI 组件")]
-    public GameObject regionPanel; // 主面板（显示/隐藏）
-    public TMP_Text regionTitleText; // 区域名称
+    public GameObject regionPanel;
+    public TMP_Text regionTitleText;
     public TMP_Text regionDescriptionText;
-    public Transform contentParent; // 卡片容器（RegionContent）
-    public GameObject storyCardPrefab; // 复用你已有的 StoryCard
-    public EventManager eventManager; // 事件管理器
+    public Transform contentParent;
+    public GameObject storyCardPrefab;
+    public EventManager eventManager;
+    public GameObject regionContent; //只用于精准定位刷新用
+    public Transform regionStoryBroad;
+
 
     [Header("依赖组件")]
-    public GameObject worldMapPanel; // 地图面板
+    public GameObject worldMapPanel;
 
     private List<GameObject> currentCards = new List<GameObject>();
 
-    // 调用这个函数来显示区域事件列表
-    public void ShowRegion(RegionData regionData)
+    public void ShowRegion(RegionInfo regionInfo, bool disableHistoryPush = false)
     {
-        if (regionData == null) return;
+        MapTooltipManager.instance?.HideTooltip();//进入区域时关闭按钮。
 
-        // ✅ 隐藏旧事件界面，并回收所有旧卡片
+
+        if (regionInfo == null) return;
+
+        //StartCoroutine(RefreshLayoutNextFrame());
         eventManager.eventUIManager.ClearStoryCards();
 
-        // ✅ 显示当前区域面板
+        //StartCoroutine(RefreshLayoutNextFrame());
         regionPanel.SetActive(true);
-        regionTitleText.text = regionData.regionDisplayName;
-        regionDescriptionText.text = regionData.regionDescription;
+        regionTitleText.text = regionInfo.regionData.regionDisplayName;
+        regionDescriptionText.text = regionInfo.regionData.regionDescription;
+        //滚动条切换（具体绑定在UIManager）
+        if (eventManager.eventUIManager.storyPanelScrollbar != null)
+            eventManager.eventUIManager.storyPanelScrollbar.SetActive(false);
 
-        // ✅ 清除旧区域卡片
+        if (eventManager.eventUIManager.regionPanelScrollbar != null)
+            eventManager.eventUIManager.regionPanelScrollbar.SetActive(true);
+        StartCoroutine(RefreshLayoutNextFrame());
         ClearCards();
 
-        // ✅ 动态生成卡片（不绑定跳转）
-        foreach (var e in regionData.regionEvents)
+        foreach (var e in regionInfo.regionData.regionEvents)
         {
             if (e == null) continue;
 
@@ -46,17 +54,30 @@ public class RegionPanelManager : MonoBehaviour
             if (controller != null)
             {
                 controller.eventUIManager = eventManager.eventUIManager;
-                controller.LoadEvent(e, eventManager, isPreview: true); // 只用于展示，不触发事件
+                controller.LoadEvent(e, eventManager, isPreview: true);
             }
+            CardEntranceAnimator.Play(card, regionStoryBroad, type: 3);//卡片进入动画调用CardEntranceAnimator.cs
             currentCards.Add(card);
         }
+
+        StartCoroutine(RefreshLayoutNextFrame());
+        if (!disableHistoryPush && eventManager.lastRegion != null)
+            eventManager.regionHistory.Push(eventManager.lastRegion);
+
+        eventManager.lastRegion = regionInfo;
+        eventManager.exploredRegionIds.Add(regionInfo.regionData.regionId);
+        EventLogManager.instance?.AddLog($"你来到了【{regionInfo.regionData.regionDisplayName}】");
+
+        //StartCoroutine(RefreshLayoutNextFrame());
     }
 
-    // 关闭面板 + 清空卡片
     public void CloseRegionPanel()
     {
         regionPanel.SetActive(false);
         ClearCards();
+        //关闭RegionPanel时候，关闭RegionPanel的滚动条
+        if (eventManager.eventUIManager.regionPanelScrollbar != null)
+            eventManager.eventUIManager.regionPanelScrollbar.SetActive(false);
     }
 
     private void ClearCards()
@@ -68,6 +89,14 @@ public class RegionPanelManager : MonoBehaviour
         currentCards.Clear();
     }
 
-    // 从地图按钮中调用此方法：ShowRegion(regionInfo.regionData);
+    private IEnumerator RefreshLayoutNextFrame()
+    {
+        yield return null;
+
+        //目前的布局刷新方法，暂时只需要RegionStoryBroad
+        //LayoutRebuilder.ForceRebuildLayoutImmediate(regionPanel.GetComponent<RectTransform>());
+        LayoutRebuilder.ForceRebuildLayoutImmediate(regionStoryBroad.GetComponent<RectTransform>());
+        //LayoutRebuilder.ForceRebuildLayoutImmediate(regionContent.GetComponent<RectTransform>());
+    }
 }
 

@@ -1,5 +1,6 @@
-using UnityEngine;
+ï»¿using UnityEngine;
 using System.Collections.Generic;
+using UnityEngine.UI;
 
 public class TabManager : MonoBehaviour
 {
@@ -8,14 +9,19 @@ public class TabManager : MonoBehaviour
     public GameObject authorizPanel;
     public GameObject burdenPanel;
 
-    public List<TabButtonController> tabButtons; // ËùÓĞ Tab °´Å¥¿ØÖÆÆ÷
-    private TabButtonController currentTab;       // µ±Ç°¼¤»îµÄ°´Å¥
+    public List<TabButtonController> tabButtons; // æ‰€æœ‰ Tab æŒ‰é’®æ§åˆ¶å™¨
+    private TabButtonController currentTab;       // å½“å‰æ¿€æ´»çš„æŒ‰é’®
 
     void Start()
     {
-        // Ä¬ÈÏÏÔÊ¾ Story Ò³Ãæ
+        // é»˜è®¤æ˜¾ç¤º Story é¡µé¢
         ShowStoryPanel(tabButtons[0]);
     }
+
+    public ScrollRect storyScrollRect;
+    public ScrollRect fileScrollRect;
+    public ScrollRect authorizScrollRect;
+    public ScrollRect burdenScrollRect;
 
     public void ShowStoryPanel(TabButtonController sender)
     {
@@ -23,6 +29,11 @@ public class TabManager : MonoBehaviour
         filePanel.SetActive(false);
         authorizPanel.SetActive(false);
         burdenPanel.SetActive(false);
+
+        // âœ… é‡ç½®ScrollBar
+        if (storyScrollRect != null)
+            storyScrollRect.verticalNormalizedPosition = 1f;
+
         SetActiveTab(sender);
     }
 
@@ -32,6 +43,10 @@ public class TabManager : MonoBehaviour
         filePanel.SetActive(true);
         authorizPanel.SetActive(false);
         burdenPanel.SetActive(false);
+
+        if (fileScrollRect != null)
+            fileScrollRect.verticalNormalizedPosition = 1f;
+
         SetActiveTab(sender);
     }
 
@@ -41,6 +56,10 @@ public class TabManager : MonoBehaviour
         filePanel.SetActive(false);
         authorizPanel.SetActive(true);
         burdenPanel.SetActive(false);
+
+        if (authorizScrollRect != null)
+            authorizScrollRect.verticalNormalizedPosition = 1f;
+
         SetActiveTab(sender);
     }
 
@@ -50,12 +69,16 @@ public class TabManager : MonoBehaviour
         filePanel.SetActive(false);
         authorizPanel.SetActive(false);
         burdenPanel.SetActive(true);
+
+        if (burdenScrollRect != null)
+            burdenScrollRect.verticalNormalizedPosition = 1f;
+
         SetActiveTab(sender);
     }
 
     void SetActiveTab(TabButtonController sender)
     {
-        // »Ö¸´ÉÏÒ»¸ö°´Å¥ÑùÊ½
+        // æ¢å¤ä¸Šä¸€ä¸ªæŒ‰é’®æ ·å¼
         if (currentTab != null && currentTab != sender)
             currentTab.SetInactiveStyle();
 
