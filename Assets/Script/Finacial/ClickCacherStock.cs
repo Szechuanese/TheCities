@@ -12,12 +12,17 @@ public class ClickCacherStock : MonoBehaviour
 
     public void OnClickCloseStock()
     {
-        //帮我进行修改，关闭股票页面时，打开StoryCanvas
+        //关闭股票页面时，打开StoryCanvas
         if (stockMarketCanvas != null)
         {
             stockMarketCanvas.gameObject.SetActive(false);
             FindObjectOfType<StockMarketManager>()?.SetCanvasOpen(false);
             FindObjectOfType<EventTagHandler>()?.ReturnToRegion();
+
+            //清空pendingEnterStockMarket状态
+            var eventManager = FindObjectOfType<EventManager>();
+            if (eventManager != null)
+                eventManager.SetPendingStockMarket(false);
         }
     }
 }

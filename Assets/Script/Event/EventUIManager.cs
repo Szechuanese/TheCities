@@ -21,10 +21,10 @@ public class EventUIManager : MonoBehaviour
     public GameObject storyCardPrefab;
     public Transform storyBroad;
     public GameObject regionPanel;
+    public ScrollRect storyPanelScrollRect;
 
     [Header("依赖")]
     public EventManager eventManager;
-    public ScrollResetToTop scrollResetter;
 
     [Header("对象池")]
     public CardPoolManager cardPoolManager;
@@ -40,8 +40,9 @@ public class EventUIManager : MonoBehaviour
             if (eventManager.CurrentEvent.HasTag(EventTag.Returnable))
             {
                 eventManager.eventUIManager.ClearStoryCards();
-                eventManager.eventUIManager.storyPanel.SetActive(false);
-                eventManager.eventUIManager.HeaderCard.SetActive(false);
+                //eventManager.eventUIManager.storyPanel.SetActive(false);
+                //eventManager.eventUIManager.HeaderCard.SetActive(false);
+                UIManager.Instance.SwitchState(UIManager.UIState.Region);
 
                 //优先按历史记录返回
                 if (eventManager.regionHistory.Count > 0)
@@ -64,9 +65,10 @@ public class EventUIManager : MonoBehaviour
                 return;
             }
 
-            storyPanel.SetActive(false);
+            //storyPanel.SetActive(false);
+            UIManager.Instance.SwitchState(UIManager.UIState.Region);
             RefreshLayout();
-            HeaderCard.SetActive(true);
+            //HeaderCard.SetActive(true);
             RefreshLayout();
         });
     }
@@ -79,8 +81,9 @@ public class EventUIManager : MonoBehaviour
             return;
         }
 
-        storyPanel.SetActive(true);
-        HeaderCard.SetActive(true);
+        //storyPanel.SetActive(true);
+        //HeaderCard.SetActive(true);
+        UIManager.Instance.SwitchState(UIManager.UIState.Story);
 
         headerEventTitle.text = currentEvent.title;
         headerEventDescription.text = currentEvent.description;
@@ -98,7 +101,7 @@ public class EventUIManager : MonoBehaviour
             card.SetActive(true);
             card.transform.SetParent(storyBroad, false);
 
-            CardEntranceAnimator.Play(card, storyBroad, type: 3);//卡片进入动画调用CardEntranceAnimator.cs
+            Animators.cardEntrancePlay(card, storyBroad, type: 3);//卡片进入动画调用CardEntranceAnimator.cs
 
             EventCardController controller = card.GetComponent<EventCardController>();
 
@@ -133,7 +136,7 @@ public class EventUIManager : MonoBehaviour
 
         returnButton.gameObject.SetActive(true);
 
-        if (currentEvent.HasTag(EventTag.Returnable)) //如果拥有Returnable标签，则可以返回
+        if (currentEvent.HasTag(EventTag.Returnable))//如果拥有Returnable标签，则可以返回
         {
             isReturnBlocked = false;
             returnButton.interactable = true;
@@ -160,6 +163,7 @@ public class EventUIManager : MonoBehaviour
         if (regionPanelScrollbar != null) regionPanelScrollbar.SetActive(false);
         //刷新布局函数
         StartCoroutine(RefreshLayoutDelayed());
+        UIManager.Instance.ScrollPanelToTop(storyPanelScrollRect);
     }
 
     string GenerateRequirementText(EventChoice choice)
@@ -180,12 +184,12 @@ public class EventUIManager : MonoBehaviour
     {
         foreach (var req in choice.traitRequirements)
         {
-            if (req != null && eventManager.traitSystem.GetTrait(req.traitId) < req.requiredValue)
+            if (req != null && eventManager.valueSystem.GetValue(req.traitId) < req.requiredValue)
                 return false;
         }
         return true;
     }
-
+    #region 刷新布局相关
     void RefreshLayout()
     {
         LayoutRebuilder.ForceRebuildLayoutImmediate(storyBroad.GetComponent<RectTransform>());
@@ -198,7 +202,7 @@ public class EventUIManager : MonoBehaviour
         LayoutRebuilder.ForceRebuildLayoutImmediate(storyPanel.GetComponent<RectTransform>());
         LayoutRebuilder.ForceRebuildLayoutImmediate(storyBroad.GetComponent<RectTransform>());
     }
-
+    #endregion
     public void ClearStoryCards()
     {
         if (cardPoolManager != null)
@@ -206,6 +210,6 @@ public class EventUIManager : MonoBehaviour
             cardPoolManager.ReclaimAllCards(storyPanel.transform);
         }
 
-        storyPanel.SetActive(false);
+        UIManager.Instance.SwitchState(UIManager.UIState.Region);
     }
 }

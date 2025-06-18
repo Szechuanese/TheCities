@@ -128,7 +128,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0a58d4c07d36ef84eb0f4931b8c0b942, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  nameText: {fileID: 6729212365412922248}
+  titleText: {fileID: 6729212365412922248}
   valueText: {fileID: 3919763261380853610}
   traitSlider: {fileID: 1909838771484236781}
   traitImage: {fileID: 5902842611513511987}

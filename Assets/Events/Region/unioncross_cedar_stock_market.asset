@@ -17,7 +17,7 @@ MonoBehaviour:
   description: "\u6765\u5F80\u8FDB\u51FA\u7684\u4F53\u9762\u4EBA\u58EB\uFF0C\u58F0\u5636\u529B\u7AED\u7684\u5486\u54EE\u58F0\uFF0C\u91D1\u78A7\u8F89\u714C\u7684\u5927\u95E8\u4E0E\u5C4B\u6A90\uFF0C\u77F3\u5934\u5DE8\u517D\u6B63\u5411\u6240\u6709\u884C\u4EBA\u5F20\u5F00\u5927\u53E3\u3002"
   singleUse: 0
   isImportant: 0
-  tags: 02000000
+  tags: 400000000200000001000000
   choices:
   - text: "\u8FDB\u5165\u5EFA\u7B51"
     description: "\u4F60\u51B3\u5B9A\u4E3A\u81EA\u5DF1\u7684\u672A\u6765\u4F5C\u4FDD\u969C\u3002"
@@ -28,9 +28,10 @@ MonoBehaviour:
     nextEventIdSuccess: 
     nextEventIdFailure: 
     traitRequirements: []
-    traitChanges: []
-    characterChanges: []
-    tagChanges: []
+    valueChanges: []
+    tagChanges:
+    - tagName: StockMarketEntry
+      add: 1
     priority: 0
     cardStyle: 0
   - text: "\u5728\u95E8\u53E3\u8E72\u5B88"
@@ -42,8 +43,7 @@ MonoBehaviour:
     nextEventIdSuccess: 
     nextEventIdFailure: 
     traitRequirements: []
-    traitChanges: []
-    characterChanges: []
+    valueChanges: []
     tagChanges: []
     priority: 0
     cardStyle: 0

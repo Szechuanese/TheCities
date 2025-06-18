@@ -1,4 +1,4 @@
-﻿// ✅ EventTagDrawer.cs
+﻿//EventTagDrawer.cs
 // 自定义 Inspector，允许 NarrativeEvent 中使用多选 Enum Tag（List<EventTag> 兼容版）
 
 using UnityEditor;
@@ -27,7 +27,7 @@ public class EventTagDrawer : Editor
         // 显示为多选枚举字段
         EventTag newCombined = (EventTag)EditorGUILayout.EnumFlagsField("事件标签 (Event Tags)", combined);
 
-        // ✅ 只有当变化时才写入 evt.tags，避免初始覆盖
+        //只有当变化时才写入 evt.tags，避免初始覆盖
         if (newCombined != combined)
         {
             evt.tags = new List<EventTag>();

@@ -2,7 +2,7 @@
 using DG.Tweening;
 //我第一个使用Dotween的脚本，我觉得十分有纪念意义
 public class MapInteractionController : MonoBehaviour
-{
+{//地图动画
     public static MapInteractionController Instance { get; private set; }
 
     private void Awake()

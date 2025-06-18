@@ -28,11 +28,12 @@ MonoBehaviour:
     nextEventIdSuccess: 
     nextEventIdFailure: 
     traitRequirements: []
-    traitChanges: []
-    characterChanges:
-    - characterId: Ambition_Home
+    valueChanges:
+    - id: Ambition_Home
       changeAmount: 1
+    tagChanges: []
     priority: 1
+    cardStyle: 0
   - text: "\u4E00\u679A\u80F8\u9488"
     description: "\u4F60\u684C\u4E0A\u653E\u7740\u4E00\u679A\u5EC9\u4EF7\u7684\u80F8\u9488\uFF0C\u6709\u7C97\u7CD9\u7684\u7EB9\u8DEF\u548C\u5F20\u626C\u7684\u6D41\u82CF"
     nextEventId: D_B_A_F
@@ -42,11 +43,12 @@ MonoBehaviour:
     nextEventIdSuccess: 
     nextEventIdFailure: 
     traitRequirements: []
-    traitChanges: []
-    characterChanges:
-    - characterId: Ambition_Fortuna
+    valueChanges:
+    - id: Ambition_Fortuna
       changeAmount: 1
+    tagChanges: []
     priority: 1
+    cardStyle: 0
   - text: "\u4E00\u6B21\u5192\u9669"
     description: "\u684C\u4E0A\u7684\u62A5\u7EB8\u5438\u5F15\u4E86\u4F60\u7684\u6CE8\u610F\uFF0C\u4E0A\u9762\u5199\u7740\u53C8\u4E00\u4F4D\u8457\u540D\u7684\u63A2\u9669\u8005\u5728\u7D2B\u6797\u5931\u8E2A"
     nextEventId: D_B_A_A
@@ -56,11 +58,12 @@ MonoBehaviour:
     nextEventIdSuccess: 
     nextEventIdFailure: 
     traitRequirements: []
-    traitChanges: []
-    characterChanges:
-    - characterId: Ambition_Adventure
+    valueChanges:
+    - id: Ambition_Adventure
       changeAmount: 1
+    tagChanges: []
     priority: 1
+    cardStyle: 0
   - text: "\u4E00\u6BB5\u8BB0\u5FC6"
     description: "\u4F60\u5934\u75DB\u6B32\u88C2\uFF0C\u4E00\u4E9B\u6A21\u7CCA\u7684\u5F71\u8C61\u5728\u4F60\u8111\u4E2D\u9707\u98A4"
     nextEventId: D_B_A_T
@@ -70,8 +73,9 @@ MonoBehaviour:
     nextEventIdSuccess: 
     nextEventIdFailure: 
     traitRequirements: []
-    traitChanges: []
-    characterChanges:
-    - characterId: Ambition_Truth
+    valueChanges:
+    - id: Ambition_Truth
       changeAmount: 1
+    tagChanges: []
     priority: 1
+    cardStyle: 0

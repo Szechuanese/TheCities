@@ -4,21 +4,25 @@ using UnityEngine.UI;
 
 public class BuySellPanelController : MonoBehaviour
 {
-    public TMP_Text currentPriceText;
-    public TMP_InputField quantityInput;
+    //这个脚本包含买卖股票的逻辑。以及可视化文本的语句
+
+    public TMP_Text currentPriceText; //当前价格
+    public TMP_InputField quantityInput;// 输入买入或卖出的数量
     public Button buyButton;
     public Button sellButton;
-    public TMP_Text holdingText;
+    public TMP_Text holdingText; //持有信息
 
-    public TraitSystem traitSystem;
+    public ValueSystem valueSystem;
     public PlayerPortfolio playerPortfolio;
 
     private RuntimeStockData currentStock;
+    public TMP_Text currentMoney;
 
     public void ShowStock(RuntimeStockData stock)
     {
         currentStock = stock;
         currentPriceText.text = $"当前价格：{stock.currentPrice:F2}";
+        currentMoney.text = $"当前资金：${valueSystem.GetValue("money"):F2}";
 
         float held = playerPortfolio.GetHoldingQuantity(stock.stockId);
         float cost = playerPortfolio.GetHoldingCost(stock.stockId);
@@ -34,11 +38,11 @@ public class BuySellPanelController : MonoBehaviour
             if (float.TryParse(quantityInput.text, out float qty) && qty > 0)
             {
                 float cost = currentStock.currentPrice * qty;
-                float money = traitSystem.GetTrait("money");
+                float money = valueSystem.GetValue("money");
 
                 if (money >= cost)
                 {
-                    traitSystem.ModifyTrait("money", -cost);
+                    valueSystem.ModifyValue("money", -cost);
                     playerPortfolio.Buy(currentStock.stockId, qty, currentStock.currentPrice);
                     ShowStock(currentStock);
                 }
@@ -59,7 +63,7 @@ public class BuySellPanelController : MonoBehaviour
                 if (owned >= qty)
                 {
                     float gain = currentStock.currentPrice * qty;
-                    traitSystem.ModifyTrait("money", gain);
+                    valueSystem.ModifyValue("money", gain);
                     playerPortfolio.Sell(currentStock.stockId, qty);
                     ShowStock(currentStock);
                 }

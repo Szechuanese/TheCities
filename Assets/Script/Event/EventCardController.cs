@@ -2,6 +2,7 @@
 using TMPro;
 using UnityEngine.UI;
 using static EventChoice;
+using JetBrains.Annotations;
 //Tag控制卡片样式在单个卡片控制器
 public class EventCardController : MonoBehaviour//选项控制器
 {
@@ -46,7 +47,7 @@ public class EventCardController : MonoBehaviour//选项控制器
             }
 
             // 计算成功率
-            float traitValue = eventUIManager.eventManager.traitSystem.GetTrait(choice.challengeTraitId);
+            float traitValue = eventUIManager.eventManager.valueSystem.GetValue(choice.challengeTraitId);
             float successChance = traitValue * choice.successChancePerPoint;
             successChance = Mathf.Clamp01(successChance);
             challengeText.text = $"你的成功率为 {Mathf.RoundToInt(successChance * 100)}%";//.1为10%
@@ -61,24 +62,9 @@ public class EventCardController : MonoBehaviour//选项控制器
         }
 
         // Tag控制卡片样式，样式设置
-        var bg = GetComponent<Image>();
-        if (bg != null)
+        if (goButton != null)
         {
-            switch (choice.cardStyle)
-            {
-                case StoryCardStyle.Combat:
-                    bg.color = new Color(0.8f, 0.2f, 0.2f, 1f);   //战斗 红色
-                    break;
-                case StoryCardStyle.Important:
-                    bg.color = new Color(0.8f, 0.8f, 0.2f, 1f);   //重要 黄色
-                    break;
-                case StoryCardStyle.Repeatable:
-                    bg.color = new Color(0.2f, 0.2f, 0.8f, 1f);   //重复事件 蓝色
-                    break;
-                default:
-                    bg.color = new Color32(62, 70, 103, 255);     //默认色
-                    break;
-            }
+            ApplyCardStyle(choice.cardStyle);
         }
     }
 
@@ -119,16 +105,19 @@ public class EventCardController : MonoBehaviour//选项控制器
         }
         if (challengeIcon != null) challengeIcon.gameObject.SetActive(false);
         if (challengeText != null) challengeText.gameObject.SetActive(false);
+
+        // 假如事件有choices，取第一个的cardStyle（或者你自己想的逻辑）
+        if (goButton != null)
+        {
+            EventChoice.StoryCardStyle style = EventChoice.StoryCardStyle.Normal;
+            if (e.choices != null && e.choices.Count > 0)
+                style = e.choices[0].cardStyle;
+
+            ApplyCardStyle(style);
+        }
     }
     public void SetUnavailableStyle()//按钮不可用
     {
-        // 背景灰色
-        var bg = GetComponent<Image>();
-        if (bg != null)
-        {
-            bg.color = new Color(0.6f, 0.6f, 0.6f, 0.7f); // 半透明灰
-        }
-
         // 按钮透明度降低
         if (goButton != null)
         {
@@ -148,20 +137,14 @@ public class EventCardController : MonoBehaviour//选项控制器
     }
     public void SetAvailableStyle()//按钮可用
     {
-        //背景
-        var bg = GetComponent<Image>();
-        if (bg != null)
-        {
-            bg.color = new Color32(62, 70, 103, 255);
-        }
         //按钮
         if (goButton != null)
         {
             var colors = goButton.colors;
-            colors.normalColor = new Color32(57, 54, 111, 255);
-            colors.highlightedColor = new Color32(91, 88, 156, 255);
-            colors.pressedColor = new Color32(45, 42, 84, 255);
-            colors.selectedColor = new Color32(91, 88, 156, 255);
+            colors.normalColor = new Color32(62, 70, 103, 255);
+            colors.highlightedColor = new Color32(91, 98, 146, 255);
+            colors.pressedColor = new Color32(45, 50, 77, 255);
+            colors.selectedColor = new Color32(91, 98, 146, 255);
             goButton.colors = colors;
         }
         //字体
@@ -171,6 +154,40 @@ public class EventCardController : MonoBehaviour//选项控制器
         if (storyDescription != null) storyDescription.color = normal;
         if (tagText != null) tagText.color = normal;
         if (challengeText != null) challengeText.color = normal;
+    }
+
+    /// 根据 StoryCardStyle 赋值按钮的颜色样式
+    private void ApplyCardStyle(EventChoice.StoryCardStyle style)
+    {
+        var colors = goButton.colors;
+        switch (style)
+        {
+            case EventChoice.StoryCardStyle.Combat:
+                colors.normalColor = new Color32(204, 51, 51, 255);   // 战斗红
+                colors.highlightedColor = new Color32(230, 80, 80, 255);
+                colors.pressedColor = new Color32(150, 40, 40, 255);
+                colors.selectedColor = new Color32(204, 51, 51, 255);
+                break;
+            case EventChoice.StoryCardStyle.Important:
+                colors.normalColor = new Color32(204, 204, 51, 255); // 重要黄
+                colors.highlightedColor = new Color32(220, 220, 90, 255);
+                colors.pressedColor = new Color32(180, 180, 40, 255);
+                colors.selectedColor = new Color32(204, 204, 51, 255);
+                break;
+            case EventChoice.StoryCardStyle.Repeatable:
+                colors.normalColor = new Color32(51, 51, 204, 255); // 重复蓝
+                colors.highlightedColor = new Color32(80, 80, 230, 255);
+                colors.pressedColor = new Color32(40, 40, 150, 255);
+                colors.selectedColor = new Color32(51, 51, 204, 255);
+                break;
+            default:
+                colors.normalColor = new Color32(62, 70, 103, 255);//默认颜色
+                colors.highlightedColor = new Color32(91, 98, 146, 255);
+                colors.pressedColor = new Color32(45, 50, 77, 255);
+                colors.selectedColor = new Color32(91, 98, 146, 255);
+                break;
+        }
+        goButton.colors = colors;
     }
 
 }

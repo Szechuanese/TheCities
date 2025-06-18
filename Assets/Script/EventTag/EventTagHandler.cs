@@ -1,4 +1,5 @@
 ﻿using UnityEngine;
+using static UIManager;
 
 public class EventTagHandler : MonoBehaviour
 {
@@ -20,23 +21,14 @@ public class EventTagHandler : MonoBehaviour
         switch (tag)
         {
             case EventTag.StockMarketEntry:
-                Debug.Log("📈 StockMarketEntry 触发");
+                Debug.Log("StockMarketEntry 触发");
                 manager.SetPendingStockMarket(true);
                 break;
         }
     }
     public void ReturnToRegion()
     {
-        //打开 StoryCanvas
-        if (storyCanvas != null) storyCanvas.gameObject.SetActive(true);
-
-        //同时打开 RegionPanel，并返回区域
-        if (regionPanel != null) regionPanel.SetActive(true);
-
-        if (cachedLastRegion != null && regionPanelManager != null)
-        {
-            regionPanelManager.ShowRegion(cachedLastRegion, disableHistoryPush: true);
-        }
+        UIManager.Instance.SwitchState(UIState.Region);
     }
 
     public void ExecuteStockMarketTransition(RegionInfo lastRegion)
@@ -46,13 +38,7 @@ public class EventTagHandler : MonoBehaviour
         cachedLastRegion = lastRegion;
 
         // 完整关闭 StoryCanvas
-        if (storyCanvas != null) storyCanvas.gameObject.SetActive(false);
-
-        if (regionPanel != null) regionPanel.SetActive(false);
-        if (stockMarketCanvas != null)
-        {
-            stockMarketCanvas.gameObject.SetActive(true);
-            FindObjectOfType<StockMarketManager>()?.SetCanvasOpen(true);
-        }
+        UIManager.Instance.SwitchState(UIState.StockMarket);
+        FindObjectOfType<StockMarketManager>()?.SetCanvasOpen(true);
     }
 }

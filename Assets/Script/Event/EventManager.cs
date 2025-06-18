@@ -5,14 +5,12 @@ using static EventChoice;
 
 public class EventManager : MonoBehaviour
 {
-    public TraitSystem traitSystem;
-    public CharacterSystem characterSystem;
     public EventUIManager eventUIManager;
     public ChallengeSystem challengeManager;
     public List<NarrativeEvent> allEvents;
+    public ValueSystem valueSystem;
 
     public RegionInfo lastRegion;
-
     public Stack<RegionInfo> regionHistory = new Stack<RegionInfo>();
     public HashSet<string> exploredRegionIds = new HashSet<string>();
 
@@ -23,14 +21,11 @@ public class EventManager : MonoBehaviour
 
     private HashSet<string> triggeredEventIds = new HashSet<string>();
     private bool challengeInProgress = false;
-
-
-    private bool pendingEnterStockMarket = false; //用于暂存是否要在下一个 StartEventDetail 中触发股市逻辑
+    private bool pendingEnterStockMarket = false;
     public EventTagHandler tagHandler;
 
     void Start()
     {
-
         if (allEvents == null || allEvents.Count == 0)
             return;
 
@@ -56,11 +51,9 @@ public class EventManager : MonoBehaviour
 
         currentEvent = e;
 
-        // ✅ 检查是否是 pending 触发的股市跳转
         if (pendingEnterStockMarket)
         {
             pendingEnterStockMarket = false;
-
             Debug.Log("📈 由选项触发 → 准备进入股市");
             tagHandler?.ExecuteStockMarketTransition(lastRegion);
             return;
@@ -72,8 +65,9 @@ public class EventManager : MonoBehaviour
 
     public void SelectChoiceFrom(NarrativeEvent evt, int index)
     {
-        currentEvent.RemoveTag(EventTag.Returnable); //阻止之后返回区域
-        eventUIManager.ShowEvent(currentEvent); //刷新返回按钮状态
+        currentEvent.RemoveTag(EventTag.Returnable);
+        eventUIManager.ShowEvent(currentEvent);
+
         if (challengeInProgress)
         {
             Debug.Log("⚠️ 当前挑战进行中，禁止重复选择！");
@@ -88,6 +82,7 @@ public class EventManager : MonoBehaviour
 
         StartCoroutine(SelectChoiceCoroutine(evt, index));
     }
+
     public void SelectChoiceDirect(EventChoice choice)
     {
         if (choice == null) return;
@@ -95,7 +90,7 @@ public class EventManager : MonoBehaviour
         bool meetsAllRequirements = true;
         foreach (var req in choice.traitRequirements)
         {
-            if (traitSystem.GetTrait(req.traitId) < req.requiredValue)
+            if (valueSystem.GetValue(req.traitId) < req.requiredValue)
             {
                 meetsAllRequirements = false;
                 break;
@@ -109,73 +104,62 @@ public class EventManager : MonoBehaviour
         }
 
         EventLogManager.instance?.AddLog($"选择了【{choice.text}】");
-        //选项导致特质改变
-        if (choice.traitChanges != null)
+
+        foreach (var vc in choice.valueChanges)
         {
-            foreach (var tc in choice.traitChanges)
-            {
-                traitSystem.ModifyTrait(tc.traitId, tc.changeAmount);
-                EventLogManager.instance?.AddLog($"🧬 特质【{tc.traitId}】变化 {(tc.changeAmount >= 0 ? "+" : "")}{tc.changeAmount}");
-            }
+            valueSystem.ModifyValue(vc.id, vc.changeAmount);
+            EventLogManager.instance?.AddLog($"🧬 状态【{vc.id}】变化 {(vc.changeAmount >= 0 ? "+" : "")}{vc.changeAmount}");
         }
-        //选项导致个性改变
-        if (choice.characterChanges != null)
-        {
-            foreach (var cc in choice.characterChanges)
-            {
-                characterSystem.ModifyCharacter(cc.characterId, cc.changeAmount);
-                EventLogManager.instance?.AddLog($"👤 个性【{cc.characterId}】变化 {(cc.changeAmount >= 0 ? "+" : "")}{cc.changeAmount}");
-            }
-        }
+        Debug.Log($"开始处理tagChanges，数量: {choice.tagChanges?.Count ?? 0}");
+        Debug.Log($"TagHandler是否为空: {tagHandler == null}");
 
-
-
-        //执行 TagChange
         if (choice.tagChanges != null)
         {
             foreach (var tagChange in choice.tagChanges)
             {
-                EventTag parsedTag;
-                if (System.Enum.TryParse(tagChange.tagName, out parsedTag))
+                if (System.Enum.TryParse(tagChange.tagName, out EventTag parsedTag))
                 {
                     if (tagChange.add)
                     {
                         currentEvent.AddTag(parsedTag);
-
                         tagHandler?.Handle(parsedTag, this);
                     }
-                    if (parsedTag == EventTag.StockMarketEntry)
+
+                    if (parsedTag == EventTag.StockMarketEntry)//警告！！
+                                                               //股市跳转需要Tag-EntryPoint!，因为所有RegionPanel内的都需要
+                                                               //不只是StockMarketEntry和tagChange-StockMarketEntry
                     {
                         Debug.Log("📈 立即执行股市跳转");
                         tagHandler?.ExecuteStockMarketTransition(lastRegion);
                         return;
                     }
                 }
+
             }
         }
+
 
         if (choice.isChallenge)
         {
             if (!challengeInProgress)
             {
-                StartCoroutine(HandleChallenge(choice)); //执行挑战逻辑
+                StartCoroutine(HandleChallenge(choice));
             }
         }
         else
         {
             if (!string.IsNullOrEmpty(choice.nextEventId))
             {
-                currentEvent.RemoveTag(EventTag.Returnable);  //禁止继续返回
-                StartEvent(choice.nextEventId); // 跳转下一事件
+                currentEvent.RemoveTag(EventTag.Returnable);
+                StartEvent(choice.nextEventId);
             }
         }
     }
 
     private IEnumerator SelectChoiceCoroutine(NarrativeEvent evt, int index)
     {
-        yield return null; // 延迟一帧，确保事件数据稳定
-
-        currentEvent = evt; // 再赋值，避免中途变化
+        yield return null;
+        currentEvent = evt;
         SelectChoice(index);
     }
 
@@ -198,7 +182,7 @@ public class EventManager : MonoBehaviour
         bool meetsAllRequirements = true;
         foreach (var req in choice.traitRequirements)
         {
-            if (traitSystem.GetTrait(req.traitId) < req.requiredValue)
+            if (valueSystem.GetValue(req.traitId) < req.requiredValue)
             {
                 meetsAllRequirements = false;
                 break;
@@ -209,30 +193,17 @@ public class EventManager : MonoBehaviour
         {
             EventLogManager.instance?.AddLog($"选择了【{choice.text}】");
 
-            if (choice.traitChanges != null)
+            foreach (var vc in choice.valueChanges)
             {
-                foreach (var tc in choice.traitChanges)
-                {
-                    traitSystem.ModifyTrait(tc.traitId, tc.changeAmount);
-                    EventLogManager.instance?.AddLog($"🧬 特质【{tc.traitId}】变化 {(tc.changeAmount >= 0 ? "+" : "")}{tc.changeAmount}");
-                }
+                valueSystem.ModifyValue(vc.id, vc.changeAmount);
+                EventLogManager.instance?.AddLog($"🧬 状态【{vc.id}】变化 {(vc.changeAmount >= 0 ? "+" : "")}{vc.changeAmount}");
             }
 
-            if (choice.characterChanges != null)
-            {
-                foreach (var cc in choice.characterChanges)
-                {
-                    characterSystem.ModifyCharacter(cc.characterId, cc.changeAmount);
-                    EventLogManager.instance?.AddLog($"👤 个性【{cc.characterId}】变化 {(cc.changeAmount >= 0 ? "+" : "")}{cc.changeAmount}");
-                }
-            }
-            // ✅ 执行 TagChange
             if (choice.tagChanges != null)
             {
                 foreach (var tagChange in choice.tagChanges)
                 {
-                    EventTag parsedTag;
-                    if (System.Enum.TryParse(tagChange.tagName, out parsedTag))
+                    if (System.Enum.TryParse(tagChange.tagName, out EventTag parsedTag))
                     {
                         if (tagChange.add)
                             currentEvent.AddTag(parsedTag);
@@ -246,7 +217,7 @@ public class EventManager : MonoBehaviour
                 }
             }
 
-            if (choice.isChallenge)//挑战
+            if (choice.isChallenge)
             {
                 if (!challengeInProgress)
                 {
@@ -269,7 +240,7 @@ public class EventManager : MonoBehaviour
     {
         challengeInProgress = true;
 
-        float traitValue = traitSystem.GetTrait(choice.challengeTraitId);
+        float traitValue = valueSystem.GetValue(choice.challengeTraitId);
         float successChance = traitValue * choice.successChancePerPoint;
         float roll = Random.Range(0f, 1f);
         bool success = roll <= successChance;
@@ -301,20 +272,36 @@ public class EventManager : MonoBehaviour
 
     public bool CanEnterEvent(NarrativeEvent e)
     {
+        if (e == null)
+            return false;
+
+        //若标记为“入口事件”或“股市入口”，则默认可进入
+        if (e.HasTag(EventTag.Entrypoint) || e.HasTag(EventTag.StockMarketEntry))
+            return true;
+
+        //若没有 choices，则不可进入（避免空引用）
+        if (e.choices == null || e.choices.Count == 0)
+            return false;
+
         foreach (var choice in e.choices)
         {
+            if (choice == null || choice.traitRequirements == null)
+                return true;
+
             bool meetsAll = true;
             foreach (var req in choice.traitRequirements)
             {
-                if (traitSystem.GetTrait(req.traitId) < req.requiredValue)
+                if (valueSystem.GetValue(req.traitId) < req.requiredValue)
                 {
                     meetsAll = false;
                     break;
                 }
             }
 
-            if (meetsAll) return true;
+            if (meetsAll)
+                return true;
         }
+
         return false;
     }
 
@@ -327,6 +314,7 @@ public class EventManager : MonoBehaviour
     {
         triggeredEventIds.Add(eventId);
     }
+
     public void SetPendingStockMarket(bool value)
     {
         pendingEnterStockMarket = value;

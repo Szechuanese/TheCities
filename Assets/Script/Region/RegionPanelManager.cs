@@ -3,7 +3,7 @@ using UnityEngine;
 using TMPro;
 using System.Collections;
 using UnityEngine.UI;
-//区域事件显示
+//区域起始事件显示
 public class RegionPanelManager : MonoBehaviour
 {
     [Header("UI 组件")]
@@ -15,6 +15,7 @@ public class RegionPanelManager : MonoBehaviour
     public EventManager eventManager;
     public GameObject regionContent; //只用于精准定位刷新用
     public Transform regionStoryBroad;
+    public ScrollRect regionPanelScroll;
 
 
     [Header("依赖组件")]
@@ -29,11 +30,9 @@ public class RegionPanelManager : MonoBehaviour
 
         if (regionInfo == null) return;
 
-        //StartCoroutine(RefreshLayoutNextFrame());
         eventManager.eventUIManager.ClearStoryCards();
 
-        //StartCoroutine(RefreshLayoutNextFrame());
-        regionPanel.SetActive(true);
+        UIManager.Instance.SwitchState(UIManager.UIState.Region);
         regionTitleText.text = regionInfo.regionData.regionDisplayName;
         regionDescriptionText.text = regionInfo.regionData.regionDescription;
         //滚动条切换（具体绑定在UIManager）
@@ -56,7 +55,7 @@ public class RegionPanelManager : MonoBehaviour
                 controller.eventUIManager = eventManager.eventUIManager;
                 controller.LoadEvent(e, eventManager, isPreview: true);
             }
-            CardEntranceAnimator.Play(card, regionStoryBroad, type: 3);//卡片进入动画调用CardEntranceAnimator.cs
+            Animators.cardEntrancePlay(card, regionStoryBroad, type: 3);//卡片进入动画调用CardEntranceAnimator.cs
             currentCards.Add(card);
         }
 
@@ -68,12 +67,12 @@ public class RegionPanelManager : MonoBehaviour
         eventManager.exploredRegionIds.Add(regionInfo.regionData.regionId);
         EventLogManager.instance?.AddLog($"你来到了【{regionInfo.regionData.regionDisplayName}】");
 
-        //StartCoroutine(RefreshLayoutNextFrame());
+        UIManager.Instance.ScrollPanelToTop(regionPanelScroll);
     }
 
     public void CloseRegionPanel()
     {
-        regionPanel.SetActive(false);
+        UIManager.Instance.SwitchState(UIManager.UIState.Story);
         ClearCards();
         //关闭RegionPanel时候，关闭RegionPanel的滚动条
         if (eventManager.eventUIManager.regionPanelScrollbar != null)
@@ -88,7 +87,7 @@ public class RegionPanelManager : MonoBehaviour
         }
         currentCards.Clear();
     }
-
+    #region 刷新布局相关
     private IEnumerator RefreshLayoutNextFrame()
     {
         yield return null;
@@ -98,5 +97,6 @@ public class RegionPanelManager : MonoBehaviour
         LayoutRebuilder.ForceRebuildLayoutImmediate(regionStoryBroad.GetComponent<RectTransform>());
         //LayoutRebuilder.ForceRebuildLayoutImmediate(regionContent.GetComponent<RectTransform>());
     }
+    #endregion
 }
 

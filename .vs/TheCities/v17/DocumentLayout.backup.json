@@ -3,24 +3,28 @@
   "WorkspaceRootPath": "D:\\unitycourses\\TheCities\\",
   "Documents": [
     {
+      "AbsoluteMoniker": "D:0:0:{B3F4D6C5-3531-EAD8-E443-C92A54F3D488}|Assembly-CSharp.csproj|d:\\unitycourses\\thecities\\assets\\script\\tabmanager.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{B3F4D6C5-3531-EAD8-E443-C92A54F3D488}|Assembly-CSharp.csproj|solutionrelative:assets\\script\\tabmanager.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{B3F4D6C5-3531-EAD8-E443-C92A54F3D488}|Assembly-CSharp.csproj|d:\\unitycourses\\thecities\\assets\\script\\event\\eventstorycardbuttonselected.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{B3F4D6C5-3531-EAD8-E443-C92A54F3D488}|Assembly-CSharp.csproj|solutionrelative:assets\\script\\event\\eventstorycardbuttonselected.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{B3F4D6C5-3531-EAD8-E443-C92A54F3D488}|Assembly-CSharp.csproj|d:\\unitycourses\\thecities\\assets\\script\\event\\eventuimanager.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{B3F4D6C5-3531-EAD8-E443-C92A54F3D488}|Assembly-CSharp.csproj|solutionrelative:assets\\script\\event\\eventuimanager.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{B3F4D6C5-3531-EAD8-E443-C92A54F3D488}|Assembly-CSharp.csproj|d:\\unitycourses\\thecities\\assets\\script\\region\\mapinteractioncontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{B3F4D6C5-3531-EAD8-E443-C92A54F3D488}|Assembly-CSharp.csproj|solutionrelative:assets\\script\\region\\mapinteractioncontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{B3F4D6C5-3531-EAD8-E443-C92A54F3D488}|Assembly-CSharp.csproj|d:\\unitycourses\\thecities\\assets\\script\\animators.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{B3F4D6C5-3531-EAD8-E443-C92A54F3D488}|Assembly-CSharp.csproj|solutionrelative:assets\\script\\animators.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
       "AbsoluteMoniker": "D:0:0:{B3F4D6C5-3531-EAD8-E443-C92A54F3D488}|Assembly-CSharp.csproj|d:\\unitycourses\\thecities\\assets\\script\\filepanelui\\filepanelmanager.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{B3F4D6C5-3531-EAD8-E443-C92A54F3D488}|Assembly-CSharp.csproj|solutionrelative:assets\\script\\filepanelui\\filepanelmanager.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{B3F4D6C5-3531-EAD8-E443-C92A54F3D488}|Assembly-CSharp.csproj|D:\\unitycourses\\TheCities\\assets\\script\\region\\regionpanelmanager.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{B3F4D6C5-3531-EAD8-E443-C92A54F3D488}|Assembly-CSharp.csproj|solutionrelative:assets\\script\\region\\regionpanelmanager.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{B3F4D6C5-3531-EAD8-E443-C92A54F3D488}|Assembly-CSharp.csproj|D:\\unitycourses\\TheCities\\assets\\script\\scrollresettotop.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{B3F4D6C5-3531-EAD8-E443-C92A54F3D488}|Assembly-CSharp.csproj|solutionrelative:assets\\script\\scrollresettotop.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{B3F4D6C5-3531-EAD8-E443-C92A54F3D488}|Assembly-CSharp.csproj|D:\\unitycourses\\TheCities\\assets\\script\\filepanelui\\filenavscrollwatcher.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{B3F4D6C5-3531-EAD8-E443-C92A54F3D488}|Assembly-CSharp.csproj|solutionrelative:assets\\script\\filepanelui\\filenavscrollwatcher.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{B3F4D6C5-3531-EAD8-E443-C92A54F3D488}|Assembly-CSharp.csproj|D:\\unitycourses\\TheCities\\assets\\script\\filepanelui\\filenavcollision.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{B3F4D6C5-3531-EAD8-E443-C92A54F3D488}|Assembly-CSharp.csproj|solutionrelative:assets\\script\\filepanelui\\filenavcollision.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
   "DocumentGroupContainers": [
@@ -30,68 +34,85 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 1,
+          "SelectedChildIndex": 0,
           "Children": [
             {
               "$type": "Document",
-              "DocumentIndex": 1,
-              "Title": "RegionPanelManager.cs",
-              "DocumentMoniker": "D:\\unitycourses\\TheCities\\Assets\\Script\\Region\\RegionPanelManager.cs",
-              "RelativeDocumentMoniker": "Assets\\Script\\Region\\RegionPanelManager.cs",
-              "ToolTip": "D:\\unitycourses\\TheCities\\Assets\\Script\\Region\\RegionPanelManager.cs",
-              "RelativeToolTip": "Assets\\Script\\Region\\RegionPanelManager.cs",
-              "ViewState": "AgIAACUAAAAAAAAAAAAQwCwAAAAIAAAAAAAAAA==",
+              "DocumentIndex": 0,
+              "Title": "TabManager.cs",
+              "DocumentMoniker": "D:\\unitycourses\\TheCities\\Assets\\Script\\TabManager.cs",
+              "RelativeDocumentMoniker": "Assets\\Script\\TabManager.cs",
+              "ToolTip": "D:\\unitycourses\\TheCities\\Assets\\Script\\TabManager.cs",
+              "RelativeToolTip": "Assets\\Script\\TabManager.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-05-28T09:50:04.442Z"
+              "WhenOpened": "2025-06-18T05:02:13.005Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 0,
+              "DocumentIndex": 5,
               "Title": "FilePanelManager.cs",
               "DocumentMoniker": "D:\\unitycourses\\TheCities\\Assets\\Script\\FilePanelUI\\FilePanelManager.cs",
               "RelativeDocumentMoniker": "Assets\\Script\\FilePanelUI\\FilePanelManager.cs",
               "ToolTip": "D:\\unitycourses\\TheCities\\Assets\\Script\\FilePanelUI\\FilePanelManager.cs",
               "RelativeToolTip": "Assets\\Script\\FilePanelUI\\FilePanelManager.cs",
-              "ViewState": "AgIAABcAAAAAAAAAAAAxwCsAAABAAAAAAAAAAA==",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABYAAAAdAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-05-28T09:46:22.537Z",
+              "WhenOpened": "2025-06-18T04:56:49.18Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "MapInteractionController.cs",
+              "DocumentMoniker": "D:\\unitycourses\\TheCities\\Assets\\Script\\Region\\MapInteractionController.cs",
+              "RelativeDocumentMoniker": "Assets\\Script\\Region\\MapInteractionController.cs",
+              "ToolTip": "D:\\unitycourses\\TheCities\\Assets\\Script\\Region\\MapInteractionController.cs",
+              "RelativeToolTip": "Assets\\Script\\Region\\MapInteractionController.cs",
+              "ViewState": "AgIAAAwAAAAAAAAAAAAYwBIAAABAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-06-18T04:48:25.114Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 2,
-              "Title": "ScrollResetToTop.cs",
-              "DocumentMoniker": "D:\\unitycourses\\TheCities\\Assets\\Script\\ScrollResetToTop.cs",
-              "RelativeDocumentMoniker": "Assets\\Script\\ScrollResetToTop.cs",
-              "ToolTip": "D:\\unitycourses\\TheCities\\Assets\\Script\\ScrollResetToTop.cs",
-              "RelativeToolTip": "Assets\\Script\\ScrollResetToTop.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA0AAAAFAAAAAAAAAA==",
+              "Title": "EventUIManager.cs",
+              "DocumentMoniker": "D:\\unitycourses\\TheCities\\Assets\\Script\\Event\\EventUIManager.cs",
+              "RelativeDocumentMoniker": "Assets\\Script\\Event\\EventUIManager.cs",
+              "ToolTip": "D:\\unitycourses\\TheCities\\Assets\\Script\\Event\\EventUIManager.cs",
+              "RelativeToolTip": "Assets\\Script\\Event\\EventUIManager.cs",
+              "ViewState": "AgIAAFwAAAAAAAAAAAAgwGcAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-05-28T09:08:36.473Z"
+              "WhenOpened": "2025-06-18T04:48:17.679Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "EventStoryCardButtonSelected.cs",
+              "DocumentMoniker": "D:\\unitycourses\\TheCities\\Assets\\Script\\Event\\EventStoryCardButtonSelected.cs",
+              "RelativeDocumentMoniker": "Assets\\Script\\Event\\EventStoryCardButtonSelected.cs",
+              "ToolTip": "D:\\unitycourses\\TheCities\\Assets\\Script\\Event\\EventStoryCardButtonSelected.cs",
+              "RelativeToolTip": "Assets\\Script\\Event\\EventStoryCardButtonSelected.cs",
+              "ViewState": "AgIAAAMAAAAAAAAAAAAAAAkAAAAXAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-06-18T04:48:12.605Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 4,
-              "Title": "FileNavCollision.cs",
-              "DocumentMoniker": "D:\\unitycourses\\TheCities\\Assets\\Script\\FilePanelUI\\FileNavCollision.cs",
-              "RelativeDocumentMoniker": "Assets\\Script\\FilePanelUI\\FileNavCollision.cs",
-              "ToolTip": "D:\\unitycourses\\TheCities\\Assets\\Script\\FilePanelUI\\FileNavCollision.cs",
-              "RelativeToolTip": "Assets\\Script\\FilePanelUI\\FileNavCollision.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA4AAAAQAAAAAAAAAA==",
+              "Title": "Animators.cs",
+              "DocumentMoniker": "D:\\unitycourses\\TheCities\\Assets\\Script\\Animators.cs",
+              "RelativeDocumentMoniker": "Assets\\Script\\Animators.cs",
+              "ToolTip": "D:\\unitycourses\\TheCities\\Assets\\Script\\Animators.cs",
+              "RelativeToolTip": "Assets\\Script\\Animators.cs",
+              "ViewState": "AgIAAAsAAAAAAAAAAAAAwGQAAAAOAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-05-28T09:01:01.804Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 3,
-              "Title": "FileNavScrollWatcher.cs",
-              "DocumentMoniker": "D:\\unitycourses\\TheCities\\Assets\\Script\\FilePanelUI\\FileNavScrollWatcher.cs",
-              "RelativeDocumentMoniker": "Assets\\Script\\FilePanelUI\\FileNavScrollWatcher.cs",
-              "ToolTip": "D:\\unitycourses\\TheCities\\Assets\\Script\\FilePanelUI\\FileNavScrollWatcher.cs",
-              "RelativeToolTip": "Assets\\Script\\FilePanelUI\\FileNavScrollWatcher.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAsAAAARAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-05-28T08:13:17.14Z"
+              "WhenOpened": "2025-06-18T04:47:46.795Z",
+              "EditorCaption": ""
             }
           ]
         }

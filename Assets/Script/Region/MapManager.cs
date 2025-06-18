@@ -28,7 +28,7 @@ public class MapManager : MonoBehaviour
 
     public void ShowMap()
     {
-        worldMapPanel.SetActive(true);
+        UIManager.Instance.SwitchState(UIManager.UIState.WorldMap);
 
         var controller = MapInteractionController.GetOrCreateInstance();
 
@@ -63,14 +63,14 @@ public class MapManager : MonoBehaviour
 
     private void Start()
     {
-        worldMapPanel.SetActive(false);
+        UIManager.Instance.SwitchState(UIManager.UIState.WorldMap);
         foreach (var region in regionInfos)
         {
             if (region.regionButton == null) continue;
 
             if (!string.IsNullOrEmpty(region.requiredTraitId))
             {
-                float traitValue = eventManager.traitSystem.GetTrait(region.requiredTraitId);
+                float traitValue = eventManager.valueSystem.GetValue(region.requiredTraitId);
                 region.isUnlocked = traitValue >= region.requiredTraitValue;
             }
 
@@ -94,7 +94,7 @@ public class MapManager : MonoBehaviour
             {
                 if (region.regionData != null)
                 {
-                    worldMapPanel.SetActive(false);
+                    UIManager.Instance.SwitchState(UIManager.UIState.Region);//点击相应区域的按钮切换位置
                     eventManager.regionHistory.Clear();
                     regionPanelManager.ShowRegion(region, disableHistoryPush: true);
                 }

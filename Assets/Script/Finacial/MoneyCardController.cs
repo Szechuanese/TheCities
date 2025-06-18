@@ -9,19 +9,19 @@ public class MoneyCardController : MonoBehaviour
     public Image iconImage;
 
     private string traitId = "money";
-    private TraitSystem traitSystem;
+    private ValueSystem valueSystem;
 
     void Start()
     {
-        traitSystem = GameObject.FindObjectOfType<TraitSystem>();
+        valueSystem = GameObject.FindObjectOfType<ValueSystem>();
         nameText.text = "资金"; // 这个才能显示出来，
     }
 
     void Update()
     {
-        if (traitSystem != null)
+        if (valueSystem != null)
         {
-            float moneyValue = traitSystem.GetTrait(traitId);
+            float moneyValue = valueSystem.GetValue(traitId);
             valueText.text = $"${Mathf.RoundToInt(moneyValue)}";
         }
     }

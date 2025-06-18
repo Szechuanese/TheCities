@@ -18,6 +18,7 @@ public class TabManager : MonoBehaviour
         ShowStoryPanel(tabButtons[0]);
     }
 
+    [Header("各种ScrollRect")]
     public ScrollRect storyScrollRect;
     public ScrollRect fileScrollRect;
     public ScrollRect authorizScrollRect;
@@ -30,10 +31,8 @@ public class TabManager : MonoBehaviour
         authorizPanel.SetActive(false);
         burdenPanel.SetActive(false);
 
-        // ✅ 重置ScrollBar
-        if (storyScrollRect != null)
-            storyScrollRect.verticalNormalizedPosition = 1f;
 
+        UIManager.Instance.ScrollPanelToTop(storyScrollRect);
         SetActiveTab(sender);
     }
 
@@ -44,9 +43,8 @@ public class TabManager : MonoBehaviour
         authorizPanel.SetActive(false);
         burdenPanel.SetActive(false);
 
-        if (fileScrollRect != null)
-            fileScrollRect.verticalNormalizedPosition = 1f;
 
+        UIManager.Instance.ScrollPanelToTop(fileScrollRect);
         SetActiveTab(sender);
     }
 
@@ -57,8 +55,6 @@ public class TabManager : MonoBehaviour
         authorizPanel.SetActive(true);
         burdenPanel.SetActive(false);
 
-        if (authorizScrollRect != null)
-            authorizScrollRect.verticalNormalizedPosition = 1f;
 
         SetActiveTab(sender);
     }
@@ -70,15 +66,13 @@ public class TabManager : MonoBehaviour
         authorizPanel.SetActive(false);
         burdenPanel.SetActive(true);
 
-        if (burdenScrollRect != null)
-            burdenScrollRect.verticalNormalizedPosition = 1f;
 
         SetActiveTab(sender);
     }
 
     void SetActiveTab(TabButtonController sender)
     {
-        // 恢复上一个按钮样式
+        //恢复上一个按钮样式
         if (currentTab != null && currentTab != sender)
             currentTab.SetInactiveStyle();
 

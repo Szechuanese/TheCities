@@ -1,133 +1,116 @@
-﻿using System.Collections;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using UnityEngine;
+using TMPro;
+using System.Collections;
 using UnityEngine.UI;
 
 public class FilePanelManager : MonoBehaviour
 {
-    [Header("Value绑定")]
-    public Transform fileTraitBox;         // File_TraitBox
-    public Transform fileCharacterBox;     // File_CharacterBox
+    [Header("绑定对象")]
+    public Transform fileTraitBox;         //File_TraitBox
+    public Transform fileCharacterBox;     //File_CharacterBox
+    public GameObject fileContent;         //FileContent
 
     [Header("预制体")]
-    public GameObject valueItemPrefab;     //ValueItem专属预制体
+    public GameObject valueItemPrefab;     //ValueItem 预制体
 
     [Header("系统引用")]
-    public TraitSystem traitSystem;
-    public CharacterSystem characterSystem;
-    public IconDatabase iconDatabase;      //TraitIconDatabase
-    [Header("UI界面相关")]
-    public ScrollRect filePanelScrollRect;
-    public Transform filePanelContent;
-
-    [System.Serializable]
-    public class ValueDescriptionEntry
-    {
-        public string id;
-        [TextArea]
-        public string description;
-    }
-
-    [Header("Value 描述配置")]
-    public List<ValueDescriptionEntry> valueDescriptions = new List<ValueDescriptionEntry>();
+    public ValueSystem valueSystem;        //ValueSystem
+    public IconDatabase iconDatabase;      //图标数据库
 
     private void Start()
     {
+        GenerateFileValues();
+
+        if (valueSystem != null)
+            valueSystem.OnValueChanged += GenerateFileValues;
         StartCoroutine(RefreshLayoutNextFrame());
-        GenerateFileTraits();
-        GenerateFileCharacters();
-
-        if (filePanelScrollRect != null)
-        {
-            StartCoroutine(RefreshLayoutNextFrame());
-            Canvas.ForceUpdateCanvases(); // 确保内容已经生成完毕
-            filePanelScrollRect.verticalNormalizedPosition = 1f;
-            Debug.Log("FileScrollRect 已自动滚动到顶部");
-
-        }
-    }
-
-
-    private void OnEnable()
-    {
-        if (traitSystem != null)
-            traitSystem.OnTraitChanged += GenerateFileTraits;
-        if (characterSystem != null)
-            characterSystem.OnCharacterChanged += GenerateFileCharacters;
     }
 
     private void OnDisable()
     {
-        if (traitSystem != null)
-            traitSystem.OnTraitChanged -= GenerateFileTraits;
-        if (characterSystem != null)
-            characterSystem.OnCharacterChanged -= GenerateFileCharacters;
-    }
-
-
-    private string GetDescriptionById(string id, string defaultDescription)
-    {
-        var entry = valueDescriptions.Find(e => e.id == id);
-        return entry != null ? entry.description : defaultDescription;
+        if (valueSystem != null)
+            valueSystem.OnValueChanged -= GenerateFileValues;
     }
 
     /// <summary>
-    /// 动态生成所有 Trait ValueItems
+    /// 统一生成 Trait 与 Character ValueItems
     /// </summary>
-    public void GenerateFileTraits()
+    public void GenerateFileValues()
     {
-        // 清空旧物体
-        foreach (Transform child in fileTraitBox)
-            Destroy(child.gameObject);
+        // 清空旧Item
+        foreach (Transform child in fileTraitBox) Destroy(child.gameObject);
+        foreach (Transform child in fileCharacterBox) Destroy(child.gameObject);
 
-        // 遍历特质系统
-        foreach (var trait in traitSystem.traits)
+        // Trait 类型
+        foreach (var val in valueSystem.GetValuesByType(ValueType.Trait))
         {
-            if (trait.value >= 1f)
+            if (val.value >= 1f)
             {
                 GameObject item = Instantiate(valueItemPrefab, fileTraitBox);
                 ValueItemController controller = item.GetComponent<ValueItemController>();
                 controller.iconDatabase = iconDatabase;
-                controller.SetData(
-                trait.id,
-                trait.displayName,
-                trait.value,
-                GetDescriptionById(trait.id, "这是一个特质")
-            );
+                controller.SetData(val.id, val.displayName, val.value, GetDescriptionById(val.id));
+            }
+        }
+
+        // Character 类型
+        foreach (var val in valueSystem.GetValuesByType(ValueType.Character))
+        {
+            if (val.value >= 1f)
+            {
+                GameObject item = Instantiate(valueItemPrefab, fileCharacterBox);
+                ValueItemController controller = item.GetComponent<ValueItemController>();
+                controller.iconDatabase = iconDatabase;
+                controller.SetData(val.id, val.displayName, val.value, GetDescriptionById(val.id));
             }
         }
     }
 
     /// <summary>
-    /// 动态生成所有 Character ValueItems
+    /// 获取描述文本（可按ID自定义扩展）
     /// </summary>
-    public void GenerateFileCharacters()
+    private string GetDescriptionById(string id)
     {
-        // 清空旧物体
-        foreach (Transform child in fileCharacterBox)
-            Destroy(child.gameObject);
-
-        // 遍历角色系统
-        foreach (var character in characterSystem.characters)
+        switch (id)
         {
-            if (character.value >= 1f)
-            {
-                GameObject item = Instantiate(valueItemPrefab, fileCharacterBox);
-                ValueItemController controller = item.GetComponent<ValueItemController>();
-                controller.iconDatabase = iconDatabase;
-                controller.SetData(
-                character.id,
-                character.displayName,
-                character.value,
-                GetDescriptionById(character.id, "这是一个个性")
-            );
-            }
-        }
-    }
-    private IEnumerator RefreshLayoutNextFrame()
-    {
-        yield return null;
+            //Trait 类型
+            case "Fang":
+                return "咧出笑容，轻露利齿，人会不自觉地被感染,模仿你的口吻。";
+            case "Talon":
+                return "暴力是一种控制的方式，但要注意，不要被这种方式所控制。";
+            case "Pelt":
+                return "学士们证明，古狈涪尔阏人有更长的毛发，用于抵御严寒，现在则没有。";
+            case "Thigmata":
+                return "风拂过你的肌肤，传来一股腐烂的味道。";
+            case "Wing":
+                return "我遥远的祖先啊，你们是怎么穿过无边的海洋，来到柱良帛的呢？——慕古絮";
+            case "Tail":
+                return "某些狈涪尔阏和亘尔阏人的脊椎会分出一条新的骨骼，具有这种特征的人精力会额外旺盛；没人知道为什么。";
+            case "Spore":
+                return "每年夏天，失温河都会解冻，雨会停止，河谷里的空气也会浮起成片黑色的绒毛。";
+            case "Rhizome":
+                return "“大树下有一百具骸骨，我的祖母就在其中”——洛温民谣”";
+            //Parts类型
 
-        LayoutRebuilder.ForceRebuildLayoutImmediate(filePanelContent.GetComponent<RectTransform>());
+            //Character类型
+
+            //Effort类型
+
+
+            //Favor类型
+
+            //Parts类型
+        }
+        StartCoroutine(RefreshLayoutNextFrame());
+        // TODO：你可以接入自定义描述表或switch语句
+        return "这是一个Value项";
     }
+    #region 刷新布局相关
+    public IEnumerator RefreshLayoutNextFrame() 
+    {
+        yield return null; // 等待下一帧，确保布局更新
+        LayoutRebuilder.ForceRebuildLayoutImmediate(fileContent.GetComponent<RectTransform>());
+    }
+    #endregion
 }

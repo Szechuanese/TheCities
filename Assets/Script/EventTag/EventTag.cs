@@ -1,4 +1,4 @@
-//定义所有 NarrativeEvent 的枚举型标签
+//定义所有 NarrativeEvent每一个Event的枚举型标签
 
 public enum EventTag
 {

@@ -2,7 +2,7 @@ using UnityEngine;
 using UnityEngine.UI;
 
 public class FileNavScrollWatcher : MonoBehaviour
-{
+{//控制filePanel触发浮动界面
     public ScrollRect scrollRect;
     public GameObject fileNavBox;
     public GameObject fileNavBoxF;
@@ -14,7 +14,7 @@ public class FileNavScrollWatcher : MonoBehaviour
         if (scrollRect == null) return;
 
         // verticalNormalizedPosition == 1 表示滑动到了顶部
-        bool nowAtTop = scrollRect.verticalNormalizedPosition >= .7f;
+        bool nowAtTop = scrollRect.verticalNormalizedPosition >= .45f;//加一个ValueBox就加0.5
 
         if (nowAtTop && !isAtTop)
         {
