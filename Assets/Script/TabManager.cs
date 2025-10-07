@@ -26,6 +26,7 @@ public class TabManager : MonoBehaviour
 
     public void ShowStoryPanel(TabButtonController sender)
     {
+        AudioManager.Instance.PlaySFX("Tabs_Click"); // 播放点击音效
         storyPanel.SetActive(true);
         filePanel.SetActive(false);
         authorizPanel.SetActive(false);
@@ -38,6 +39,7 @@ public class TabManager : MonoBehaviour
 
     public void ShowFilePanel(TabButtonController sender)
     {
+        AudioManager.Instance.PlaySFX("Tabs_Click");
         storyPanel.SetActive(false);
         filePanel.SetActive(true);
         authorizPanel.SetActive(false);
@@ -50,6 +52,7 @@ public class TabManager : MonoBehaviour
 
     public void ShowAuthorizPanel(TabButtonController sender)
     {
+        AudioManager.Instance.PlaySFX("Tabs_Click");
         storyPanel.SetActive(false);
         filePanel.SetActive(false);
         authorizPanel.SetActive(true);
@@ -61,6 +64,7 @@ public class TabManager : MonoBehaviour
 
     public void ShowBurdenPanel(TabButtonController sender)
     {
+        AudioManager.Instance.PlaySFX("Tabs_Click");
         storyPanel.SetActive(false);
         filePanel.SetActive(false);
         authorizPanel.SetActive(false);
@@ -72,6 +76,7 @@ public class TabManager : MonoBehaviour
 
     void SetActiveTab(TabButtonController sender)
     {
+        AudioManager.Instance.PlaySFX("Tabs_Click");
         //恢复上一个按钮样式
         if (currentTab != null && currentTab != sender)
             currentTab.SetInactiveStyle();

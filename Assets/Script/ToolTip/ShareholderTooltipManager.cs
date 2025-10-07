@@ -13,7 +13,8 @@ public class ShareholderTooltipManager : MonoBehaviour
 
 
     [Header("偏移设置")]
-    private Vector2 offset = new Vector2(150f, -100f); //根据鼠标位置偏移
+    //根据鼠标位置偏移
+    private Vector2 offset = new Vector2(150f, -100f);
 
     void Awake()
     {
@@ -50,18 +51,6 @@ public class ShareholderTooltipManager : MonoBehaviour
         float canvasHeight = canvasRect.rect.height;
         float tooltipWidth = tooltipRect.rect.width;
         float tooltipHeight = tooltipRect.rect.height;
-
-        // 调整 X 坐标，防止超出右边界
-        //if (targetPosition.x + tooltipWidth > canvasWidth / 2)
-        //{
-        //    targetPosition.x = localPoint.x - offset.x - tooltipWidth;
-        //}
-
-        //// 调整 Y 坐标，防止超出下边界
-        //if (targetPosition.y - tooltipHeight < -canvasHeight / 2)
-        //{
-        //    targetPosition.y = localPoint.y - offset.y + tooltipHeight;
-        //}
 
         tooltipRect.anchoredPosition = targetPosition;
     }

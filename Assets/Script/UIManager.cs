@@ -3,7 +3,9 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
-
+/// <summary>
+/// UIManager负责管理游戏中的所有UI面板和状态切换。
+/// </summary>
 public class UIManager : MonoBehaviour
 {
     //UI状态机控制所有面板切换，
@@ -27,14 +29,36 @@ public class UIManager : MonoBehaviour
     public ScrollRect authorizScrollRect;
     public ScrollRect burdenScrollRect;
 
+    /// <summary>
+    /// UI状态枚举，定义了游戏中可能的UI状态。
+    /// </summary>
     public enum UIState
     {
+        /// <summary>
+        /// 主菜单状态，未完成
+        /// </summary>
         MainMenu,
         //Setting,
+
+        /// <summary>
+        /// RegionPanel
+        /// </summary>
         Region,
+        /// <summary>
+        /// StoryPanel
+        /// </summary>
         Story,
+        /// <summary>
+        /// 股票市场状态
+        /// </summary>
         StockMarket,
+        /// <summary>
+        /// FilePanel
+        /// </summary>
         File,
+        /// <summary>
+        /// MapPanel
+        /// </summary>
         WorldMap,
         None
     }
@@ -48,7 +72,6 @@ public class UIManager : MonoBehaviour
         else
             Destroy(gameObject);
     }
-
     public void SwitchState(UIState nextState)
     {
         if (currentState == nextState) return;
@@ -101,7 +124,7 @@ public class UIManager : MonoBehaviour
         return currentState;
     }
 
-    #region 滚动置顶
+    #region 滚动置顶方法
     public void ScrollPanelToTop(ScrollRect scrollRect)
     {
         StartCoroutine(ScrollToTopAfterFrame(scrollRect));

@@ -21,7 +21,8 @@ public class EventCardController : MonoBehaviour//选项控制器
     [HideInInspector] public EventUIManager eventUIManager;
 
     public void SetDataFromChoice(string title, string requireText, string descriptionText, string tag, bool interactable, EventChoice choice)
-    {//oringin事件生成函数
+    {
+        //绑定各项数值，描述等等。
         if (titleText != null) titleText.text = title;
         if (storyRequireValue != null) storyRequireValue.text = requireText;
         if (storyDescription != null) storyDescription.text = descriptionText;
@@ -68,8 +69,10 @@ public class EventCardController : MonoBehaviour//选项控制器
         }
     }
 
-    public void LoadEvent(NarrativeEvent e, EventManager manager, bool isPreview = false)//regionPanel事件生成;
+    //regionPanel事件生成;
+    public void LoadEvent(NarrativeEvent e, EventManager manager, bool isPreview = false)
     {
+
         linkedEvent = e;
         eventManager = manager;
 
@@ -84,12 +87,18 @@ public class EventCardController : MonoBehaviour//选项控制器
 
         bool isEntryPoint = e.HasTag(EventTag.Entrypoint);
 
+        //判断RegionPanel入口事件允许点击
         if (canAccess)
         {
-            if (!isPreview || isEntryPoint) //入口事件允许点击
+            if (!isPreview || isEntryPoint) 
             {
                 goButton.onClick.AddListener(() =>
                 {
+
+                    //播放选择音效//这里只能控制RegionPanel里StoryCard的音效
+                    AudioManager.Instance.PlaySFX("GoButton_Click"); 
+
+
                     manager.StartEventDetail(linkedEvent);
                     eventUIManager?.StartCoroutine(eventUIManager.RefreshLayoutDelayed());
                     eventUIManager.regionPanel.SetActive(false);
@@ -106,7 +115,7 @@ public class EventCardController : MonoBehaviour//选项控制器
         if (challengeIcon != null) challengeIcon.gameObject.SetActive(false);
         if (challengeText != null) challengeText.gameObject.SetActive(false);
 
-        // 假如事件有choices，取第一个的cardStyle（或者你自己想的逻辑）
+        //假如事件有choices，取第一个的cardStyle（或者你自己想的逻辑）
         if (goButton != null)
         {
             EventChoice.StoryCardStyle style = EventChoice.StoryCardStyle.Normal;
@@ -116,7 +125,8 @@ public class EventCardController : MonoBehaviour//选项控制器
             ApplyCardStyle(style);
         }
     }
-    public void SetUnavailableStyle()//按钮不可用
+    //按钮不可用样式改变
+    public void SetUnavailableStyle()
     {
         // 按钮透明度降低
         if (goButton != null)
@@ -135,7 +145,8 @@ public class EventCardController : MonoBehaviour//选项控制器
         if (tagText != null) tagText.color = faded;
         if (challengeText != null) challengeText.color = faded;
     }
-    public void SetAvailableStyle()//按钮可用
+    //按钮可用（我不确定这条是否应该删除，因与样式控制或有冲突）
+    public void SetAvailableStyle()
     {
         //按钮
         if (goButton != null)
@@ -156,7 +167,7 @@ public class EventCardController : MonoBehaviour//选项控制器
         if (challengeText != null) challengeText.color = normal;
     }
 
-    /// 根据 StoryCardStyle 赋值按钮的颜色样式
+    //根据 NarrativeEvent.cs StoryCardStyle() 赋值按钮的颜色样式
     private void ApplyCardStyle(EventChoice.StoryCardStyle style)
     {
         var colors = goButton.colors;

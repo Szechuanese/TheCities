@@ -28,12 +28,7 @@ MonoBehaviour:
     nextEventIdSuccess: 
     nextEventIdFailure: 
     traitRequirements: []
-    traitChanges:
-    - traitId: Fang
-      changeAmount: 2
-    - traitId: Thigmata
-      changeAmount: 2
-    characterChanges: []
-    priority: 1
+    valueChanges: []
     tagChanges: []
+    priority: 1
     cardStyle: 0

@@ -1,7 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-//名片关闭与开启
+//名片关闭与开启，已经弃用。
 public class BusinessCardButton : MonoBehaviour
 {
     public GameObject businessCardBox_Float;

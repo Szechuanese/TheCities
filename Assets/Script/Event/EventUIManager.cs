@@ -8,6 +8,8 @@ using DG.Tweening;
 
 public class EventUIManager : MonoBehaviour
 {
+
+    //初始化与页面绑定
     [Header("返回控制")]
     public bool isReturnBlocked = false;
     public void BlockReturn(bool block) => isReturnBlocked = block;
@@ -35,13 +37,17 @@ public class EventUIManager : MonoBehaviour
 
     void Start()
     {
+        //返回按钮包裹
         returnButton.onClick.AddListener(() =>
         {
+            //返回按钮点击音效
+            AudioManager.Instance.PlaySFX("ReturnButton_Click");
+            //检测当前事件是否具有 Returnable 标签，（返回标签）
             if (eventManager.CurrentEvent.HasTag(EventTag.Returnable))
             {
+                //收回卡片
                 eventManager.eventUIManager.ClearStoryCards();
-                //eventManager.eventUIManager.storyPanel.SetActive(false);
-                //eventManager.eventUIManager.HeaderCard.SetActive(false);
+                //如果当前事件具有 Returnable 标签，则返回到区域面板
                 UIManager.Instance.SwitchState(UIManager.UIState.Region);
 
                 //优先按历史记录返回
@@ -51,40 +57,40 @@ public class EventUIManager : MonoBehaviour
                     eventManager.lastRegion = previous;
                     eventManager.regionPanelManager.ShowRegion(previous, disableHistoryPush: true);
                 }
+                //如果历史为空，回到 lastRegion
                 else if (eventManager.lastRegion != null)
                 {
-                    //如果历史为空，回到 lastRegion
                     eventManager.regionPanelManager.ShowRegion(eventManager.lastRegion);
                 }
                 return;
             }
-
+            //
             if (isReturnBlocked)
             {
                 Debug.Log("返回按钮已被阻止");
                 return;
             }
 
-            //storyPanel.SetActive(false);
+            //返回区域面板
             UIManager.Instance.SwitchState(UIManager.UIState.Region);
             RefreshLayout();
-            //HeaderCard.SetActive(true);
             RefreshLayout();
         });
     }
 
+
+    //显示当前Event方法
     public void ShowEvent(NarrativeEvent currentEvent)
     {
+        //如果当前事件为空，则返回错误信息
         if (currentEvent == null)
         {
             Debug.LogError("当前事件为空！");
             return;
         }
-
-        //storyPanel.SetActive(true);
-        //HeaderCard.SetActive(true);
+        //切换至StoryPanel
         UIManager.Instance.SwitchState(UIManager.UIState.Story);
-
+        //装载描述文本
         headerEventTitle.text = currentEvent.title;
         headerEventDescription.text = currentEvent.description;
 
@@ -94,7 +100,7 @@ public class EventUIManager : MonoBehaviour
             cardPoolManager.Release(child.gameObject);
         }
         storyBroad.DetachChildren();
-
+        //遍历当前事件的选择项，生成卡片
         foreach (var choice in currentEvent.choices)
         {
             GameObject card = cardPoolManager.GetCard();
@@ -123,6 +129,9 @@ public class EventUIManager : MonoBehaviour
             controller.goButton.onClick.RemoveAllListeners();
             controller.goButton.onClick.AddListener(() =>
             {
+
+                AudioManager.Instance.PlaySFX("GoButton_Click");//播放选择音效
+
                 if (CheckRequirements(localChoice))
                 {
                     eventManager.SelectChoiceDirect(localChoice);
@@ -136,7 +145,8 @@ public class EventUIManager : MonoBehaviour
 
         returnButton.gameObject.SetActive(true);
 
-        if (currentEvent.HasTag(EventTag.Returnable))//如果拥有Returnable标签，则可以返回
+        //如果拥有Returnable标签，则可以返回
+        if (currentEvent.HasTag(EventTag.Returnable))
         {
             isReturnBlocked = false;
             returnButton.interactable = true;
@@ -148,7 +158,8 @@ public class EventUIManager : MonoBehaviour
             colors.selectedColor = new Color(91f / 255f, 88f / 255f, 156f / 255f, 1f);
             returnButton.colors = colors;
         }
-        else  //否则相反
+        //否则则无法返回，并修改按钮（卡片整体，因为按钮就是整张卡片）样式
+        else
         {
             isReturnBlocked = true;
             returnButton.interactable = false;
@@ -165,7 +176,7 @@ public class EventUIManager : MonoBehaviour
         StartCoroutine(RefreshLayoutDelayed());
         UIManager.Instance.ScrollPanelToTop(storyPanelScrollRect);
     }
-
+    //生成需要的Value值得文本
     string GenerateRequirementText(EventChoice choice)
     {
         if (choice.traitRequirements == null || choice.traitRequirements.Count == 0)
@@ -179,7 +190,7 @@ public class EventUIManager : MonoBehaviour
         }
         return string.Join("，", requirements);
     }
-
+    //检查选择项的要求是否满足
     bool CheckRequirements(EventChoice choice)
     {
         foreach (var req in choice.traitRequirements)
@@ -203,6 +214,7 @@ public class EventUIManager : MonoBehaviour
         LayoutRebuilder.ForceRebuildLayoutImmediate(storyBroad.GetComponent<RectTransform>());
     }
     #endregion
+    //清除所有故事卡片方法
     public void ClearStoryCards()
     {
         if (cardPoolManager != null)

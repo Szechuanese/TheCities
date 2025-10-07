@@ -1,0 +1,33 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 313e33c23a154394d9224801a8f8e499, type: 3}
+  m_Name: ValueIconDatabase
+  m_EditorClassIdentifier: 
+  icons:
+  - id: Talon
+    icon: {fileID: 21300000, guid: 7a29be1c925abe24ea99f3748805d52f, type: 3}
+  - id: Fang
+    icon: {fileID: 21300000, guid: c24668e9259004640b6624d6c7dad1d4, type: 3}
+  - id: Pelt
+    icon: {fileID: 0}
+  - id: Thigmata
+    icon: {fileID: 0}
+  - id: Wing
+    icon: {fileID: 21300000, guid: 1c0193e3e681ecf4083d6f2baf0af078, type: 3}
+  - id: Tail
+    icon: {fileID: 0}
+  - id: Spore
+    icon: {fileID: 0}
+  - id: Rhizome
+    icon: {fileID: 0}
+  - id: Rifle
+    icon: {fileID: 0}

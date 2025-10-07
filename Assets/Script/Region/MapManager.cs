@@ -2,11 +2,16 @@
 using UnityEngine;
 using UnityEngine.UI;
 using TMPro;
+using UnityEngine.UIElements;
+using UnityEngine.EventSystems;
 
 public class MapManager : MonoBehaviour
 {
+   //初始化与绑定
     public static MapManager Instance { get; private set; }
+    public UnityEngine.UI.Button openMapButton;
 
+    
     private void Awake()
     {
         if (Instance != null && Instance != this)
@@ -28,8 +33,12 @@ public class MapManager : MonoBehaviour
 
     public void ShowMap()
     {
-        UIManager.Instance.SwitchState(UIManager.UIState.WorldMap);
+        // 播放地图打开音效
+        AudioManager.Instance.PlaySFX("Map_Open"); 
 
+        //切换至地图
+        UIManager.Instance.SwitchState(UIManager.UIState.WorldMap);
+        //调用动画
         var controller = MapInteractionController.GetOrCreateInstance();
 
         if (eventManager.lastRegion != null &&
@@ -59,6 +68,48 @@ public class MapManager : MonoBehaviour
         {
             Debug.LogWarning("❗ lastRegion或MapInteractionController未初始化，地图无法聚焦");
         }
+    }
+    //调用无法打开地图时的提示方法——CannotOpenMapToolTipManager.cs;我为什么一开始会把这个方法添加在MapManager里呢。我不明白。
+    //我明白了，因为StoryPanel里的按钮是通过MapManager来控制的，所以我把这个方法放在这里。
+    public void CanNotShowMap() 
+    {
+        //透明度降低
+        var colors = openMapButton.colors;
+        colors.normalColor = new Color(0.5f, 0.5f, 0.5f);
+        colors.highlightedColor = new Color(0.5f, 0.5f, 0.5f);
+        openMapButton.colors = colors;
+
+        // 注册鼠标事件（只注册一次，避免重复添加）
+        var trigger = openMapButton.gameObject.GetComponent<EventTrigger>();
+        if (trigger == null)
+            trigger = openMapButton.gameObject.AddComponent<EventTrigger>();
+        if (trigger.triggers == null)
+            trigger.triggers = new List<EventTrigger.Entry>();
+        else
+            trigger.triggers.Clear();
+
+        // 鼠标移入显示
+        var entryEnter = new EventTrigger.Entry
+        {
+            eventID = EventTriggerType.PointerEnter
+        };
+        entryEnter.callback.AddListener((e) => {
+            CannotOpenMapToolTipManager.Instance.ShowToolTip();
+        });
+        trigger.triggers.Add(entryEnter);
+
+        // 鼠标移出隐藏
+        var entryExit = new EventTrigger.Entry
+        {
+            eventID = EventTriggerType.PointerExit
+        };
+        entryExit.callback.AddListener((e) => {
+            CannotOpenMapToolTipManager.Instance.HideToolTip();
+        });
+        trigger.triggers.Add(entryExit);
+
+        //先隐藏
+        CannotOpenMapToolTipManager.Instance.HideToolTip();
     }
 
     private void Start()

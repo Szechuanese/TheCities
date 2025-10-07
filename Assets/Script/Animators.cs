@@ -1,9 +1,10 @@
 ﻿using UnityEngine;
 using UnityEngine.UI;
 using DG.Tweening;
-//StoryCard生成动画代码
+//动画器。
 public static class Animators
 {
+    //StoryCard生成动画代码
     #region 卡牌进入动画
     private static int cardCounter = 0; //用于Type3动画的顺序延迟
 

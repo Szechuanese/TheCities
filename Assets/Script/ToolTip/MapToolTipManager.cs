@@ -33,7 +33,7 @@ public class MapTooltipManager : MonoBehaviour
                 Input.mousePosition,
                 null,
                 out localPoint);
-
+            //根据鼠标位置偏移
             tooltipRect.anchoredPosition = localPoint + new Vector2(200f, -150f);
         }
     }
@@ -47,8 +47,10 @@ public class MapTooltipManager : MonoBehaviour
     //title
     public void ShowTooltip(string title, string description)
     {
-        if (MapToolTipTitle != null) MapToolTipTitle.text = title;
-        if (MapToolTipText != null) MapToolTipText.text = description;
+        if (MapToolTipTitle != null) 
+            MapToolTipTitle.text = title;
+        if (MapToolTipText != null) 
+            MapToolTipText.text = description;
 
         MapToolTipPanel?.SetActive(true);
     }

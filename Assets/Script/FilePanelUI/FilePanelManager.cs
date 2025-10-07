@@ -68,10 +68,11 @@ public class FilePanelManager : MonoBehaviour
     }
 
     /// <summary>
-    /// 获取描述文本（可按ID自定义扩展）
+    /// 获取描述文本，目前只用于FilePanel
     /// </summary>
     private string GetDescriptionById(string id)
     {
+        //没有Bear类型的Value，Bear类型的Value在FileCarriesBox里
         switch (id)
         {
             //Trait 类型
@@ -91,6 +92,8 @@ public class FilePanelManager : MonoBehaviour
                 return "每年夏天，失温河都会解冻，雨会停止，河谷里的空气也会浮起成片黑色的绒毛。";
             case "Rhizome":
                 return "“大树下有一百具骸骨，我的祖母就在其中”——洛温民谣”";
+            case "Rifle":
+                return"酒馆里依旧有人在低声吟唱XXX(战争英雄)的歌谣，人们口口相传他手持步枪就义的那天。";
             //Parts类型
 
             //Character类型

@@ -13,7 +13,7 @@ public class RegionPanelManager : MonoBehaviour
     public Transform contentParent;
     public GameObject storyCardPrefab;
     public EventManager eventManager;
-    public GameObject regionContent; //只用于精准定位刷新用
+    public GameObject regionContent; //只用于精准定位刷新用，绑定的RegionStory_Content
     public Transform regionStoryBroad;
     public ScrollRect regionPanelScroll;
 
@@ -25,6 +25,7 @@ public class RegionPanelManager : MonoBehaviour
 
     public void ShowRegion(RegionInfo regionInfo, bool disableHistoryPush = false)
     {
+
         MapTooltipManager.instance?.HideTooltip();//进入区域时关闭按钮。
 
 
@@ -32,7 +33,9 @@ public class RegionPanelManager : MonoBehaviour
 
         eventManager.eventUIManager.ClearStoryCards();
 
+        //切换到Region状态
         UIManager.Instance.SwitchState(UIManager.UIState.Region);
+        //设置RegionPanel的标题和描述
         regionTitleText.text = regionInfo.regionData.regionDisplayName;
         regionDescriptionText.text = regionInfo.regionData.regionDescription;
         //滚动条切换（具体绑定在UIManager）
@@ -41,9 +44,11 @@ public class RegionPanelManager : MonoBehaviour
 
         if (eventManager.eventUIManager.regionPanelScrollbar != null)
             eventManager.eventUIManager.regionPanelScrollbar.SetActive(true);
+        //刷新页面，清楚卡片
         StartCoroutine(RefreshLayoutNextFrame());
         ClearCards();
 
+        //遍历区域信息，区域数据，区域事件
         foreach (var e in regionInfo.regionData.regionEvents)
         {
             if (e == null) continue;
@@ -58,20 +63,24 @@ public class RegionPanelManager : MonoBehaviour
             Animators.cardEntrancePlay(card, regionStoryBroad, type: 3);//卡片进入动画调用CardEntranceAnimator.cs
             currentCards.Add(card);
         }
-
+        //再次刷新页面
         StartCoroutine(RefreshLayoutNextFrame());
+        //
         if (!disableHistoryPush && eventManager.lastRegion != null)
             eventManager.regionHistory.Push(eventManager.lastRegion);
 
         eventManager.lastRegion = regionInfo;
         eventManager.exploredRegionIds.Add(regionInfo.regionData.regionId);
         EventLogManager.instance?.AddLog($"你来到了【{regionInfo.regionData.regionDisplayName}】");
-
+        //调用UIManager方法让滚动条向上
         UIManager.Instance.ScrollPanelToTop(regionPanelScroll);
+        //再次刷新页面
+        StartCoroutine(RefreshLayoutNextFrame());
     }
 
     public void CloseRegionPanel()
     {
+        //调用UIManager切换状态到Story
         UIManager.Instance.SwitchState(UIManager.UIState.Story);
         ClearCards();
         //关闭RegionPanel时候，关闭RegionPanel的滚动条

@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 using TMPro;
+//这个脚本只用于File上右方的Carries面板。
 
 public class FileCarriesController : MonoBehaviour
 {

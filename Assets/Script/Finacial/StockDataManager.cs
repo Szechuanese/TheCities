@@ -1,9 +1,9 @@
 using System.Collections.Generic;
 using UnityEngine;
 
+//股票数据管理器
 public class StockDataManager : MonoBehaviour
 {
-    //股票数据管理器
     public List<CompanyStock> stockTemplates; // 在 Inspector 中绑定所有原始股票模板
     private Dictionary<string, RuntimeStockData> runtimeData = new Dictionary<string, RuntimeStockData>();
     private Dictionary<string, CompanyStock> templateLookup = new Dictionary<string, CompanyStock>();

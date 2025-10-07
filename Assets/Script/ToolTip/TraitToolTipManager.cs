@@ -1,7 +1,7 @@
 ﻿using System.Collections.Generic;
 using UnityEngine;
 using TMPro;
-//特质悬浮提示管理器
+//TraitBar特质悬浮提示管理器,以后会修改成为时间Nav上的Trait控制。
 public class TraitToolTipManager : MonoBehaviour
 {
     public static TraitToolTipManager instance;
@@ -16,13 +16,16 @@ public class TraitToolTipManager : MonoBehaviour
 
     [Header("Tooltip设置")]
     public GameObject traitToolTipPanel;
-    public TMP_Text traitToolTipText;
+    public TMP_Text traitToolTipDescription;
+    public TMP_Text traitToolTipHeader;
+    public TMP_Text numerical_value;
 
     [System.Serializable]
     public class TooltipEntry
     {
         public string id;
         [TextArea]
+        public string header;
         public string description;
     }
 
@@ -44,7 +47,7 @@ public class TraitToolTipManager : MonoBehaviour
                 null,
                 out localPoint);
 
-            tooltipRect.anchoredPosition = localPoint + new Vector2(200f, -120f); //鼠标相对位置偏移
+            tooltipRect.anchoredPosition = localPoint + new Vector2(100f, -120f); //鼠标相对位置偏移
         }
     }
 
@@ -56,7 +59,14 @@ public class TraitToolTipManager : MonoBehaviour
         var entry = entries.Find(e => e.id == id);
         if (entry != null)
         {
-            traitToolTipText.text = entry.description;
+            //标题和描述
+            traitToolTipHeader.text = entry.header;
+            traitToolTipDescription.text = entry.description;
+            //显示动态数值
+            var vs = FindObjectOfType<ValueSystem>();
+            float currentVal = vs != null ? vs.GetValue(id) : 0f;
+            numerical_value.text = Mathf.RoundToInt(currentVal).ToString();
+
             traitToolTipPanel?.SetActive(true);
 
             //恢复 CanvasGroup逻辑
@@ -69,7 +79,7 @@ public class TraitToolTipManager : MonoBehaviour
         }
         else
         {
-            traitToolTipText.text = $"未知ID：{id}";
+            traitToolTipDescription.text = $"未知ID：{id}";
             traitToolTipPanel?.SetActive(true);
 
             var canvasGroup = traitToolTipPanel.GetComponent<CanvasGroup>();

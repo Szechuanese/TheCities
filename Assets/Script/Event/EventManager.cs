@@ -5,24 +5,24 @@ using static EventChoice;
 
 public class EventManager : MonoBehaviour
 {
-    public EventUIManager eventUIManager;
-    public ChallengeSystem challengeManager;
-    public List<NarrativeEvent> allEvents;
-    public ValueSystem valueSystem;
+    public EventUIManager eventUIManager;   //绑定事件UI界面
+    public ChallengeSystem challengeManager;//绑定挑战系统
+    public List<NarrativeEvent> allEvents;  //所有事件列表
+    public ValueSystem valueSystem;         //绑定特质系统
 
-    public RegionInfo lastRegion;
-    public Stack<RegionInfo> regionHistory = new Stack<RegionInfo>();
-    public HashSet<string> exploredRegionIds = new HashSet<string>();
+    public RegionInfo lastRegion;           //上次所在区域
+    public Stack<RegionInfo> regionHistory = new Stack<RegionInfo>(); //区域历史记录
+    public HashSet<string> exploredRegionIds = new HashSet<string>(); //已探索区域ID集合
 
-    public RegionPanelManager regionPanelManager;
+    public RegionPanelManager regionPanelManager;       //绑定区域面板管理器
 
-    private NarrativeEvent currentEvent;
-    public NarrativeEvent CurrentEvent { get { return currentEvent; } }
+    private NarrativeEvent currentEvent;                //当前事件
+    public NarrativeEvent CurrentEvent { get { return currentEvent; } }     //
 
-    private HashSet<string> triggeredEventIds = new HashSet<string>();
-    private bool challengeInProgress = false;
-    private bool pendingEnterStockMarket = false;
-    public EventTagHandler tagHandler;
+    private HashSet<string> triggeredEventIds = new HashSet<string>();  //已触发事件ID集合
+    private bool challengeInProgress = false;               //是否有挑战进行中
+    private bool pendingEnterStockMarket = false;           //进入股市面板判断
+    public EventTagHandler tagHandler;                      //协助进入股市绑定脚本
 
     void Start()
     {
@@ -36,6 +36,8 @@ public class EventManager : MonoBehaviour
             Debug.LogError("🚫 未找到 eventId 为 'start_event' 的事件！");
     }
 
+
+    //
     public void StartEvent(string eventId)
     {
         currentEvent = allEvents.Find(e => e.eventId == eventId);
@@ -45,6 +47,8 @@ public class EventManager : MonoBehaviour
             Debug.LogError($"事件 {eventId} 没有找到！");
     }
 
+
+    //
     public void StartEventDetail(NarrativeEvent e)
     {
         if (challengeInProgress) return;

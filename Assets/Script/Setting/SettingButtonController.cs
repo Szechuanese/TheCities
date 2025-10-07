@@ -11,10 +11,12 @@ public class SettingButtonController : MonoBehaviour
 
     public void OpensettingPanel() 
     {
+        AudioManager.Instance.PlaySFX("Setting_OpenClose"); // 播放点击音效
         settingPanel.SetActive(true);
     }
     public void CloseSettingPanel()
     {
+        AudioManager.Instance.PlaySFX("Setting_OpenClose"); // 播放点击音效
         settingPanel.SetActive(false);
     }
 }

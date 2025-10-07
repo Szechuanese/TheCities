@@ -1,6 +1,10 @@
 ﻿using UnityEngine;
 using System.Collections.Generic;
-
+//股票页面系统，等待大改。
+//大改方向，与原Story的互动，时间系统的互动，背包系统的互动（等待金钱系统的完善）
+//搞清楚存储框架，确定好存储数据的方式。
+//UI改动，股票涨跌改动逻辑运算改动等等。
+//目前所有方向，除了UI，都比较稚嫩。
 public class StockMarketManager : MonoBehaviour
 {
     //股票交易管理器
