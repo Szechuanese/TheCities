@@ -2,7 +2,6 @@ using System.Collections.Generic;
 using UnityEngine;
 
 [CreateAssetMenu(fileName = "IconDatabase", menuName = "UI/Icon Database")]
-//traitBar的Card的图像控制//目前隐藏中
 public class IconDatabase : ScriptableObject
 {
     [System.Serializable]

@@ -1,8 +1,6 @@
 ﻿using UnityEngine;
 using TMPro;
 using UnityEngine.UI;
-using static EventChoice;
-using JetBrains.Annotations;
 //Tag控制卡片样式在单个卡片控制器
 public class EventCardController : MonoBehaviour//选项控制器
 {
@@ -151,20 +149,21 @@ public class EventCardController : MonoBehaviour//选项控制器
         //按钮
         if (goButton != null)
         {
-            var colors = goButton.colors;
-            colors.normalColor = new Color32(62, 70, 103, 255);
-            colors.highlightedColor = new Color32(91, 98, 146, 255);
-            colors.pressedColor = new Color32(45, 50, 77, 255);
-            colors.selectedColor = new Color32(91, 98, 146, 255);
-            goButton.colors = colors;
+            //我会将所有控制按钮颜色的语句注释，因为我要使用自己的设计的图片，不然就会有颜色重叠的现象。
+            //var colors = goButton.colors;
+            //colors.normalColor = new Color32(62, 70, 103, 255);
+            //colors.highlightedColor = new Color32(91, 98, 146, 255);
+            //colors.pressedColor = new Color32(45, 50, 77, 255);
+            //colors.selectedColor = new Color32(91, 98, 146, 255);
+            //goButton.colors = colors;
         }
         //字体
-        Color normal = Color.black;
-        if (titleText != null) titleText.color = normal;
-        if (storyRequireValue != null) storyRequireValue.color = normal;
-        if (storyDescription != null) storyDescription.color = normal;
-        if (tagText != null) tagText.color = normal;
-        if (challengeText != null) challengeText.color = normal;
+        //Color normal = Color.black;
+        //if (titleText != null) titleText.color = normal;
+        //if (storyRequireValue != null) storyRequireValue.color = normal;
+        //if (storyDescription != null) storyDescription.color = normal;
+        //if (tagText != null) tagText.color = normal;
+        //if (challengeText != null) challengeText.color = normal;
     }
 
     //根据 NarrativeEvent.cs StoryCardStyle() 赋值按钮的颜色样式
@@ -192,10 +191,10 @@ public class EventCardController : MonoBehaviour//选项控制器
                 colors.selectedColor = new Color32(51, 51, 204, 255);
                 break;
             default:
-                colors.normalColor = new Color32(62, 70, 103, 255);//默认颜色
-                colors.highlightedColor = new Color32(91, 98, 146, 255);
-                colors.pressedColor = new Color32(45, 50, 77, 255);
-                colors.selectedColor = new Color32(91, 98, 146, 255);
+                //colors.normalColor = new Color32(62, 70, 103, 255);//默认颜色
+                //colors.highlightedColor = new Color32(91, 98, 146, 255);
+                //colors.pressedColor = new Color32(45, 50, 77, 255);
+                //colors.selectedColor = new Color32(91, 98, 146, 255);
                 break;
         }
         goButton.colors = colors;

@@ -13,6 +13,7 @@ GameObject:
   - component: {fileID: 5394653796711790010}
   - component: {fileID: 3982942017269931298}
   - component: {fileID: 7386683450484321146}
+  - component: {fileID: 3974654912930001777}
   m_Layer: 5
   m_Name: PortraitPrefab
   m_TagString: Untagged
@@ -118,7 +119,6 @@ MonoBehaviour:
   portraitPrefab: {fileID: 6404384794674822905}
   portraitID: SuitMan
   portraitImage: {fileID: 7386683450484321146}
-  portraitPanel: {fileID: 0}
 --- !u!114 &7386683450484321146
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -149,3 +149,15 @@ MonoBehaviour:
   m_FillOrigin: 0
   m_UseSpriteMesh: 0
   m_PixelsPerUnitMultiplier: 1
+--- !u!114 &3974654912930001777
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6404384794674822905}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4ec70747054789a48930bc2c1e54afca, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 

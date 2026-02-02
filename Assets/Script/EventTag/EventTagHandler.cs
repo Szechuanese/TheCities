@@ -37,7 +37,7 @@ public class EventTagHandler : MonoBehaviour
         //控制股票面板和区域面板的切换
         cachedLastRegion = lastRegion;
 
-        // 完整关闭 StoryCanvas
+        //完整关闭 StoryCanvas
         UIManager.Instance.SwitchState(UIState.StockMarket);
         FindObjectOfType<StockMarketManager>()?.SetCanvasOpen(true);
     }

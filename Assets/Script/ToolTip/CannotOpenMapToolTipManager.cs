@@ -1,6 +1,6 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
+
+//这玩意儿是否太耗费性能了？我认为需要先修改，不能让他一直在update里面检测。
 
 public class CannotOpenMapToolTipManager : MonoBehaviour
 {

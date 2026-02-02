@@ -1,5 +1,4 @@
 ﻿using UnityEngine;
-using System.Collections.Generic;
 //股票页面系统，等待大改。
 //大改方向，与原Story的互动，时间系统的互动，背包系统的互动（等待金钱系统的完善）
 //搞清楚存储框架，确定好存储数据的方式。

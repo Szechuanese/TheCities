@@ -14,19 +14,29 @@ public class RegionPanelManager : MonoBehaviour
     public GameObject storyCardPrefab;
     public EventManager eventManager;
     public GameObject regionContent; //只用于精准定位刷新用，绑定的RegionStory_Content
+    public RectTransform regionContentTransform;//用来告诉unity
     public Transform regionStoryBroad;
     public ScrollRect regionPanelScroll;
 
 
     [Header("依赖组件")]
     public GameObject worldMapPanel;
-
     private List<GameObject> currentCards = new List<GameObject>();
 
     public void ShowRegion(RegionInfo regionInfo, bool disableHistoryPush = false)
     {
+        #region 起手动作，保证UI正确刷新
+        //告诉Unity,ScrollRect换content
+        regionPanelScroll.content = regionContentTransform;
+        //强制刷新Layout确保高度计算正确
+        Canvas.ForceUpdateCanvases();
+        LayoutRebuilder.ForceRebuildLayoutImmediate(regionContentTransform);
+        //等一帧再刷新
+        StartCoroutine(RefreshLayoutNextFrame());
+        #endregion
 
-        MapTooltipManager.instance?.HideTooltip();//进入区域时关闭按钮。
+        //进入区域时关闭按钮。
+        MapTooltipManager.instance?.HideTooltip();
 
 
         if (regionInfo == null) return;
@@ -102,9 +112,9 @@ public class RegionPanelManager : MonoBehaviour
         yield return null;
 
         //目前的布局刷新方法，暂时只需要RegionStoryBroad
-        //LayoutRebuilder.ForceRebuildLayoutImmediate(regionPanel.GetComponent<RectTransform>());
+        LayoutRebuilder.ForceRebuildLayoutImmediate(regionPanel.GetComponent<RectTransform>());
         LayoutRebuilder.ForceRebuildLayoutImmediate(regionStoryBroad.GetComponent<RectTransform>());
-        //LayoutRebuilder.ForceRebuildLayoutImmediate(regionContent.GetComponent<RectTransform>());
+        LayoutRebuilder.ForceRebuildLayoutImmediate(regionContent.GetComponent<RectTransform>());
     }
     #endregion
 }

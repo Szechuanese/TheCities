@@ -31,6 +31,9 @@ MonoBehaviour:
     - traitId: Talon
       requiredValue: 1
     valueChanges: []
+    burdenItemChanges: []
+    burdenItemChangesSuccess: []
+    burdenItemChangesFailure: []
     tagChanges: []
     priority: 2
     cardStyle: 1
@@ -39,11 +42,18 @@ MonoBehaviour:
     nextEventId: 
     isChallenge: 1
     challengeTraitId: Talon
-    successChancePerPoint: 0.25
+    successChancePerPoint: 0.5
     nextEventIdSuccess: Test_Challenge_Win_1
     nextEventIdFailure: Test_Challenge_Fail_1
     traitRequirements: []
     valueChanges: []
+    burdenItemChanges: []
+    burdenItemChangesSuccess:
+    - itemId: Mymushroom
+      amount: 1
+    burdenItemChangesFailure:
+    - itemId: Myship
+      amount: -1
     tagChanges: []
     priority: 1
     cardStyle: 2
@@ -57,6 +67,9 @@ MonoBehaviour:
     nextEventIdFailure: 
     traitRequirements: []
     valueChanges: []
+    burdenItemChanges: []
+    burdenItemChangesSuccess: []
+    burdenItemChangesFailure: []
     tagChanges: []
     priority: 0
     cardStyle: 3
@@ -72,6 +85,9 @@ MonoBehaviour:
     - traitId: Talon
       requiredValue: 2
     valueChanges: []
+    burdenItemChanges: []
+    burdenItemChangesSuccess: []
+    burdenItemChangesFailure: []
     tagChanges: []
     priority: 0
     cardStyle: 2
@@ -91,6 +107,9 @@ MonoBehaviour:
     - traitId: Fang
       requiredValue: 2
     valueChanges: []
+    burdenItemChanges: []
+    burdenItemChangesSuccess: []
+    burdenItemChangesFailure: []
     tagChanges: []
     priority: 1
     cardStyle: 3
@@ -106,6 +125,9 @@ MonoBehaviour:
     - traitId: Talon
       requiredValue: 2
     valueChanges: []
+    burdenItemChanges: []
+    burdenItemChangesSuccess: []
+    burdenItemChangesFailure: []
     tagChanges:
     - tagName: Combat
       add: 1

@@ -1,8 +1,5 @@
 ﻿using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.UI;
-using TMPro;
-using UnityEngine.UIElements;
 using UnityEngine.EventSystems;
 
 public class MapManager : MonoBehaviour
@@ -33,7 +30,7 @@ public class MapManager : MonoBehaviour
 
     public void ShowMap()
     {
-        // 播放地图打开音效
+        //播放地图打开音效
         AudioManager.Instance.PlaySFX("Map_Open"); 
 
         //切换至地图
@@ -50,23 +47,17 @@ public class MapManager : MonoBehaviour
             RectTransform targetButton = targetRegion.regionButton.GetComponent<RectTransform>();
             if (targetButton != null)
             {
-                Vector3 targetPos = targetButton.position;
-                Vector3 mapCenter = worldMapPanel.GetComponent<RectTransform>().position;
-                Vector3 offset = mapCenter - targetPos;
-                Vector3 targetContainerPos = controller.mapZoomContainerTransform.position + offset;
-
-                controller.MoveToPosition(targetContainerPos);
-
-                Debug.Log($"✅ 地图已聚焦到区域：{targetRegion.regionData.regionDisplayName}");
+                controller.FocusOnButton(targetButton, 2.5f, 0.5f);
+                Debug.Log($"地图已聚焦到区域：{eventManager.lastRegion.regionData.regionDisplayName}");
             }
             else
             {
-                Debug.LogWarning("❗ targetRegion.regionButton 无法获取 RectTransform");
+                Debug.LogWarning("targetRegion.regionButton 无法获取 RectTransform");
             }
         }
         else
         {
-            Debug.LogWarning("❗ lastRegion或MapInteractionController未初始化，地图无法聚焦");
+            Debug.LogWarning("lastRegion或MapInteractionController未初始化，地图无法聚焦");
         }
     }
     //调用无法打开地图时的提示方法——CannotOpenMapToolTipManager.cs;我为什么一开始会把这个方法添加在MapManager里呢。我不明白。
@@ -88,7 +79,7 @@ public class MapManager : MonoBehaviour
         else
             trigger.triggers.Clear();
 
-        // 鼠标移入显示
+        //鼠标移入显示
         var entryEnter = new EventTrigger.Entry
         {
             eventID = EventTriggerType.PointerEnter
@@ -98,7 +89,7 @@ public class MapManager : MonoBehaviour
         });
         trigger.triggers.Add(entryEnter);
 
-        // 鼠标移出隐藏
+        //鼠标移出隐藏
         var entryExit = new EventTrigger.Entry
         {
             eventID = EventTriggerType.PointerExit

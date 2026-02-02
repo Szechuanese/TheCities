@@ -1,0 +1,29 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9baf6d1bb3e428a40ad2a5c6426cb0fa, type: 3}
+  m_Name: PortraitIconDatabase
+  m_EditorClassIdentifier: 
+  portraitIcons:
+  - portraitId: Detective
+    portraitIcon: {fileID: 21300000, guid: 2f7459c95605dea45af0020e080cfe20, type: 3}
+  - portraitId: GentleMan
+    portraitIcon: {fileID: 21300000, guid: 918fbfaffbc49cc40ba3eeebc7d7536c, type: 3}
+  - portraitId: Maiden
+    portraitIcon: {fileID: 21300000, guid: 82fbaada524cf234f8e3ee0eb890b237, type: 3}
+  - portraitId: ShepherdGirl
+    portraitIcon: {fileID: 21300000, guid: ffb2800a6558a6b45a000d29ece9da4a, type: 3}
+  - portraitId: Soldier
+    portraitIcon: {fileID: 21300000, guid: cf1d550935ef9fa428d47fafeea5058e, type: 3}
+  - portraitId: StriveHoodMan
+    portraitIcon: {fileID: 21300000, guid: 00dae4b28f9ffbd4aa5637c0d800456a, type: 3}
+  - portraitId: SuitMan
+    portraitIcon: {fileID: 21300000, guid: df6437d6bfb6bae40b51049f32a42b1b, type: 3}

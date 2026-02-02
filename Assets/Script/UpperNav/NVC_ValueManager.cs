@@ -1,4 +1,3 @@
-using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
@@ -64,7 +63,6 @@ public class NVC_ValueManager : MonoBehaviour
                 //调用重载，传入 id + Sprite
                 controller.GetId(value.id, icon);
                 traitIcons[value.id] = controller;
-
             }
             AdjustSpacing(traitIcons.Count);
         }

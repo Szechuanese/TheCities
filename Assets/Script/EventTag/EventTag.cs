@@ -5,7 +5,7 @@
 /// </summary>
 public enum EventTag
 {
-    None = 0,            // 显式保留 None
+    None = 0,            
     /// <summary>
     /// 可以返回到区域面板，实现
     /// </summary>

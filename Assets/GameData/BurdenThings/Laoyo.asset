@@ -1,0 +1,25 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 02740b34e32af114bb1a804b3aba025d, type: 3}
+  m_Name: Laoyo
+  m_EditorClassIdentifier: 
+  category: 7
+  id: Laoyo
+  displayName: "\u8001\u54DF\u7684\u8FAB\u5B50"
+  description: "\u8FD9\u662F\u6211\u7684\u8239\uFF0C\u5F88\u5927\uFF01"
+  icon: {fileID: 21300000, guid: 21897931dd3ec5b4aa52d12ac2357dc2, type: 3}
+  stackable: 0
+  equipable: 1
+  slot: 6
+  valueModifiers:
+  - valueId: Pelt
+    delta: -20

@@ -29,10 +29,7 @@ MonoBehaviour:
     nextEventIdSuccess: 
     nextEventIdFailure: 
     traitRequirements: []
-    traitChanges:
-    - traitId: 
-      changeAmount: 0
-    characterChanges:
-    - characterId: Ambitious
-      changeAmount: 1
+    valueChanges: []
+    tagChanges: []
     priority: 1
+    cardStyle: 0

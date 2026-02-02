@@ -14,20 +14,20 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   icons:
   - id: Talon
-    icon: {fileID: 21300000, guid: 7a29be1c925abe24ea99f3748805d52f, type: 3}
+    icon: {fileID: 21300000, guid: 6f04f8c2a4997924d95ef851b1e1dd76, type: 3}
   - id: Fang
-    icon: {fileID: 21300000, guid: c24668e9259004640b6624d6c7dad1d4, type: 3}
+    icon: {fileID: 21300000, guid: 7d040120b852849428e9ab9c98cc052b, type: 3}
   - id: Pelt
-    icon: {fileID: 0}
+    icon: {fileID: 21300000, guid: 5eefa4c5880d9b145b9d2ded377d0be2, type: 3}
   - id: Thigmata
-    icon: {fileID: 0}
+    icon: {fileID: 21300000, guid: c829f8e1193e78f46a467c9c409189e3, type: 3}
   - id: Wing
-    icon: {fileID: 21300000, guid: 1c0193e3e681ecf4083d6f2baf0af078, type: 3}
+    icon: {fileID: 21300000, guid: b18d4dd809d3f9b4b8336e2d78a6004f, type: 3}
   - id: Tail
-    icon: {fileID: 0}
+    icon: {fileID: 21300000, guid: f8cf47fe8e93532429028271eff08a9a, type: 3}
   - id: Spore
-    icon: {fileID: 0}
+    icon: {fileID: 21300000, guid: d37fdd74892f78644ac85ffeaae4c381, type: 3}
   - id: Rhizome
-    icon: {fileID: 0}
+    icon: {fileID: 21300000, guid: d9cae7a856368514d9dc747c277bb897, type: 3}
   - id: Rifle
-    icon: {fileID: 0}
+    icon: {fileID: 21300000, guid: cc3d2eb8c16992d4cbf1369d3ca8f15d, type: 3}

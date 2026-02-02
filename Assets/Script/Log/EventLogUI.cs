@@ -2,32 +2,37 @@
 using TMPro;
 using UnityEngine.UI;
 using System.Collections.Generic;
-using UnityEngine.EventSystems;
-using System.Collections;
 
 public class EventLogUI : MonoBehaviour
 {
+    [Header("绑定组件")]
     public TMP_Text logText;
-    public GameObject logPanel;
+    public GameObject LogRectWithImg;
     public GameObject logCloseButton;
     public GameObject aPageButton;
     public Transform logCardScrollController; // Content容器
     public GameObject logCardPrefab; // LogCard预制体
     public ScrollRect scrollRect; // 日志ScrollView
 
+    public GameObject ClickCatchcerLog;
+    public GameObject LogBroad;
+
     private List<GameObject> activeLogCards = new List<GameObject>();
-    public void Start()
+    public void ShowLogPanel()
     {
-        logPanel.SetActive(false);
-    }
-    public void showLogPanel()
-    {
-        logPanel.SetActive(true);
+        AudioManager.Instance.PlaySFX("Log_OpenAndClose");
+        LogBroad.SetActive(true);
         RefreshLogs();
     }
     public void hideLogPanel()
     {
-        logPanel.SetActive(false);
+        AudioManager.Instance.PlaySFX("Log_OpenAndClose");
+        LogBroad.SetActive(false);
+    }
+    public void hideLogPanelClickCatcher()
+    {
+        AudioManager.Instance.PlaySFX("Log_OpenAndClose");
+        LogBroad.SetActive(false);
     }
     public void RefreshLogs()
     {

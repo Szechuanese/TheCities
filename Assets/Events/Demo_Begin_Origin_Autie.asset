@@ -20,7 +20,7 @@ MonoBehaviour:
   tags: 
   choices:
   - text: "\u201C\u591A\u5584\u826F\u7684\u5973\u58EB\uFF01\u53EF\u60DC\u5979\u53BB\u5E74\u5C31\u6B7B\u4E86\u201D"
-    description: "\u201C\u6211\u4F9D\u7136\u80FD\u60F3\u8D77\u5979\u624B\u4E2D\u7684\u8863\u9488\uFF0C\u55D2\u54D2\u78B0\u649E\u201D"
+    description: "\u201C\u6211\u4F9D\u7136\u80FD\u60F3\u8D77\u5979\u624B\u4E2D\u7684\u8863\u9488\uFF0C\u556A\u55D2\u78B0\u649E\u201D"
     nextEventId: Demo_Begin_1
     isChallenge: 0
     challengeTraitId: 
@@ -28,12 +28,8 @@ MonoBehaviour:
     nextEventIdSuccess: 
     nextEventIdFailure: 
     traitRequirements: []
-    traitChanges:
-    - traitId: Fang
-      changeAmount: 2
-    - traitId: pelt
-      changeAmount: 2
-    characterChanges: []
-    priority: 1
+    valueChanges: []
+    burdenItemChanges: []
     tagChanges: []
+    priority: 1
     cardStyle: 0

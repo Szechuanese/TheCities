@@ -5,9 +5,9 @@ using UnityEngine.SceneManagement;
 
 public class ButtonScript : MonoBehaviour
 {
-    public void StartGame(int index)
+    public void LoadScene(string scene)
     {
-        SceneManager.LoadScene(index);
+        SceneManager.LoadScene(scene);
     }
 
     public void QuitGame()

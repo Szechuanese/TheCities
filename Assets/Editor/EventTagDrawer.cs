@@ -17,7 +17,7 @@ public class EventTagDrawer : Editor
         EditorGUILayout.Space();
         EditorGUILayout.LabelField("[标签设置 - Tag Editor]", EditorStyles.boldLabel);
 
-        // 将 List<EventTag> 合并为单个 EnumFlags 值
+        //将List<EventTag> 合并为单个 EnumFlags 值
         EventTag combined = 0;
         foreach (var tag in evt.tags)
         {

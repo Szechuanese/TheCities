@@ -1,17 +1,19 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 using TMPro;
 //ToolTIp系统,控制排版
+//这个用在了顶部栏trait的Icon弹出的tooltip上
 public class ToolTip : MonoBehaviour
 {
     //绑定组件
     public TextMeshProUGUI headerField;
     public TextMeshProUGUI descriptionField;
     public LayoutElement layoutElement;
+    
     //确认字体包裹限制;
     public int characterWrapLimit;
+
+    
 
 
     private void Update()

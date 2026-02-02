@@ -1,16 +1,14 @@
 using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
 /// <summary>
 /// UIManager负责管理游戏中的所有UI面板和状态切换。
-/// </summary>
+/// </summary
 public class UIManager : MonoBehaviour
 {
     //UI状态机控制所有面板切换，
     public static UIManager Instance { get; private set; }
-
 
     [Header("各种Canvas和Panel")]
     public GameObject storyPanel;
@@ -28,6 +26,11 @@ public class UIManager : MonoBehaviour
     public ScrollRect fileScrollRect;
     public ScrollRect authorizScrollRect;
     public ScrollRect burdenScrollRect;
+
+
+    //简单的标签，用于判断当前是否在区域面板，以改变UIManager.cs的返回按钮颜色以及让其无法使用
+    //没有用到
+    //bool isInRegion = false;
 
     /// <summary>
     /// UI状态枚举，定义了游戏中可能的UI状态。
@@ -88,7 +91,7 @@ public class UIManager : MonoBehaviour
         // 打开目标面板
         switch (nextState)
         {
-            case UIState.Story:
+            case UIState.Story: 
                 storyPanel.gameObject.SetActive(true);
                 break;
             case UIState.Region:

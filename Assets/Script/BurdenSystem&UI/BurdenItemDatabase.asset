@@ -1,0 +1,18 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 17ccd55de4b703d41b3a13f907d45ef7, type: 3}
+  m_Name: BurdenItemDatabase
+  m_EditorClassIdentifier: 
+  items:
+  - {fileID: 11400000, guid: 8943e50ec279e034489c59f3502880e3, type: 2}
+  - {fileID: 11400000, guid: 1322680aa87e7764eb83c3625bd0ccd1, type: 2}
+  - {fileID: 11400000, guid: 30018ac951f991748aafe277a3d78f51, type: 2}

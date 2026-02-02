@@ -3,14 +3,13 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 using TMPro;
-using static EventChoice;
-using DG.Tweening;
 
 public class EventUIManager : MonoBehaviour
 {
 
     //初始化与页面绑定
     [Header("返回控制")]
+
     public bool isReturnBlocked = false;
     public void BlockReturn(bool block) => isReturnBlocked = block;
 
@@ -49,7 +48,6 @@ public class EventUIManager : MonoBehaviour
                 eventManager.eventUIManager.ClearStoryCards();
                 //如果当前事件具有 Returnable 标签，则返回到区域面板
                 UIManager.Instance.SwitchState(UIManager.UIState.Region);
-
                 //优先按历史记录返回
                 if (eventManager.regionHistory.Count > 0)
                 {
@@ -57,7 +55,7 @@ public class EventUIManager : MonoBehaviour
                     eventManager.lastRegion = previous;
                     eventManager.regionPanelManager.ShowRegion(previous, disableHistoryPush: true);
                 }
-                //如果历史为空，回到 lastRegion
+                //如果历史不为空，回到 lastRegion
                 else if (eventManager.lastRegion != null)
                 {
                     eventManager.regionPanelManager.ShowRegion(eventManager.lastRegion);
@@ -151,12 +149,13 @@ public class EventUIManager : MonoBehaviour
             isReturnBlocked = false;
             returnButton.interactable = true;
 
-            ColorBlock colors = returnButton.colors;
-            colors.normalColor = new Color(57f / 255f, 54f / 255f, 111f / 255f, 1f);
-            colors.highlightedColor = new Color(91f / 255f, 88f / 255f, 156f / 255f, 1f);
-            colors.pressedColor = new Color(45f / 255f, 42f / 255f, 84f / 255f, 1f);
-            colors.selectedColor = new Color(91f / 255f, 88f / 255f, 156f / 255f, 1f);
-            returnButton.colors = colors;
+            //我注释掉这段代码，因为按钮已经有图片了。再加颜色会叠色
+            //ColorBlock colors = returnButton.colors;
+            //colors.normalColor = new Color(57f / 255f, 54f / 255f, 111f / 255f, 1f);
+            //colors.highlightedColor = new Color(91f / 255f, 88f / 255f, 156f / 255f, 1f);
+            //colors.pressedColor = new Color(45f / 255f, 42f / 255f, 84f / 255f, 1f);
+            //colors.selectedColor = new Color(91f / 255f, 88f / 255f, 156f / 255f, 1f);
+            //returnButton.colors = colors;
         }
         //否则则无法返回，并修改按钮（卡片整体，因为按钮就是整张卡片）样式
         else
@@ -176,7 +175,7 @@ public class EventUIManager : MonoBehaviour
         StartCoroutine(RefreshLayoutDelayed());
         UIManager.Instance.ScrollPanelToTop(storyPanelScrollRect);
     }
-    //生成需要的Value值得文本
+    //生成需要的Value值的文本
     string GenerateRequirementText(EventChoice choice)
     {
         if (choice.traitRequirements == null || choice.traitRequirements.Count == 0)
@@ -214,7 +213,7 @@ public class EventUIManager : MonoBehaviour
         LayoutRebuilder.ForceRebuildLayoutImmediate(storyBroad.GetComponent<RectTransform>());
     }
     #endregion
-    //清除所有故事卡片方法
+    //清除所有故事卡片来到Region页面
     public void ClearStoryCards()
     {
         if (cardPoolManager != null)

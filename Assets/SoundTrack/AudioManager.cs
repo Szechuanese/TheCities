@@ -1,14 +1,13 @@
-using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
 public class AudioManager : MonoBehaviour
 {
-    // 单例模式
+    //单例模式
     public static AudioManager Instance { get; private set; }
 
     // 音效资源表（手动在 Inspector 里拖拽设置）
-    public List<AudioClip> audioClips; // 在Inspector里手动添加
+    public List<AudioClip> audioClips; //在Inspector里手动添加
     private Dictionary<string, AudioClip> clipDict = new Dictionary<string, AudioClip>();
 
     private AudioSource audioSource;
@@ -27,7 +26,7 @@ public class AudioManager : MonoBehaviour
         audioSource = gameObject.AddComponent<AudioSource>();
         audioSource.playOnAwake = false;
 
-        // 生成字典，方便用名字调用
+        //生成字典，方便用名字调用
         foreach (var clip in audioClips)
         {
             if (clip != null && !clipDict.ContainsKey(clip.name))

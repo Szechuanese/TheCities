@@ -1,6 +1,5 @@
 ﻿using System.Collections.Generic;
 using UnityEngine;
-using TMPro;  // 确保引入 TMPro
 
 
 [CreateAssetMenu(menuName = "Stock/CompanyStock")]

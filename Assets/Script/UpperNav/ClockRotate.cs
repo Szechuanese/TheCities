@@ -1,6 +1,5 @@
 using UnityEngine;
-using UnityEngine.UI;
-
+//这个脚本用于顶部钟指针的旋转，以后我给这个世界添加时间系统。
 public class ClockRotate : MonoBehaviour
 {
     [Header("旋转速度（度/秒）")]
@@ -24,6 +23,7 @@ public class ClockRotate : MonoBehaviour
     {
         if (rectTransform != null)
         {
+            //Rotate(围绕的轴，速度*时间);
             rectTransform.Rotate(rotateAxis, rotateSpeed * Time.deltaTime);
         }
     }

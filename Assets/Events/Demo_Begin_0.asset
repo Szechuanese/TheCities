@@ -17,7 +17,7 @@ MonoBehaviour:
   description: "\u4F60\u660F\u660F\u6C89\u6C89\uFF0C\u5BBF\u9189\u4E00\u591C\u2014\u2014\u3002\u773C\u524D\u604D\u604D\u60DA\u60DA\uFF0C\u684C\u9762\u6587\u5177\u6563\u843D\u56DB\u5904\u3002\u4F60\u7684\u4EBA\u4E8B\u6863\u6848\u6A21\u7CCA\u4E0D\u6E05\uFF0C\u8C03\u4EE4\u4E0A\u76D6\u7740\u4E00\u679A\u5DF2\u7ECF\u505C\u7528\u7684\u5370\u7AE0\u2014\u2014\u770B\u6765\u4F60\u5373\u5C06\u88AB\u8C03\u5F80\u8054\u5408\u98DF\u54C1\u7B2C\u4E03\u90E8\u95E8\u2014\u2014\u7279\u6B8A\u5173\u7CFB\u90E8\u3002\u4F60\u544A\u8BC9\u81EA\u5DF1\uFF0C\u4F60\u662F\u2014\u2014"
   singleUse: 0
   isImportant: 0
-  tags: 01000000
+  tags: 0100000001000000
   choices:
   - text: "\u201C\u6211\u662F\u5B64\u513F\uFF01\u201D"
     description: "\u201C\u6211\u60F3\u8D77\u6765\u4E86\uFF0C\u6052\u8FA9\u5EAD\u7684\u7A79\u9876\uFF0C\u900F\u5149\u7684\u5F69\u8272\u73BB\u7483\uFF0C\u7A7F\u7740\u957F\u888D\u7684\u5B66\u58EB\u201D"
@@ -31,6 +31,17 @@ MonoBehaviour:
     valueChanges:
     - id: Origin_Orphan
       changeAmount: 1
+    - id: Relation_JinSi
+      changeAmount: 1
+    - id: money
+      changeAmount: 2000
+    - id: Rifle
+      changeAmount: 1
+    burdenItemChanges:
+    - itemId: Mymushroom
+      amount: 1
+    burdenItemChangesSuccess: []
+    burdenItemChangesFailure: []
     tagChanges: []
     priority: 1
     cardStyle: 0
@@ -46,6 +57,13 @@ MonoBehaviour:
     valueChanges:
     - id: Origin_Autie
       changeAmount: 1
+    - id: Relation_WeiTao
+      changeAmount: 1
+    burdenItemChanges:
+    - itemId: Myship
+      amount: 1
+    burdenItemChangesSuccess: []
+    burdenItemChangesFailure: []
     tagChanges: []
     priority: 1
     cardStyle: 0
@@ -61,6 +79,13 @@ MonoBehaviour:
     valueChanges:
     - id: Origin_Corporate
       changeAmount: 1
+    - id: Relation_HoHo
+      changeAmount: 1
+    burdenItemChanges:
+    - itemId: Laoyo
+      amount: 1
+    burdenItemChangesSuccess: []
+    burdenItemChangesFailure: []
     tagChanges: []
     priority: 1
     cardStyle: 0
@@ -76,6 +101,11 @@ MonoBehaviour:
     valueChanges:
     - id: Origin_Streets
       changeAmount: 1
+    - id: Relation_LittleWorm
+      changeAmount: 1
+    burdenItemChanges: []
+    burdenItemChangesSuccess: []
+    burdenItemChangesFailure: []
     tagChanges: []
     priority: 1
     cardStyle: 0

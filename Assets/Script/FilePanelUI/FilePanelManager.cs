@@ -1,15 +1,20 @@
-﻿using System.Collections.Generic;
-using UnityEngine;
-using TMPro;
+﻿using UnityEngine;
 using System.Collections;
 using UnityEngine.UI;
 
 public class FilePanelManager : MonoBehaviour
 {
-    [Header("绑定对象")]
+    [Header("各种box")]
     public Transform fileTraitBox;         //File_TraitBox
     public Transform fileCharacterBox;     //File_CharacterBox
+    public Transform fileRelationBox;    //File_RelationBox
+
+
+
     public GameObject fileContent;         //FileContent
+    public ScrollRect fileScrollRect;       //FileScrollRect
+    public Scrollbar filePanelScrollBar;
+    
 
     [Header("预制体")]
     public GameObject valueItemPrefab;     //ValueItem 预制体
@@ -24,7 +29,6 @@ public class FilePanelManager : MonoBehaviour
 
         if (valueSystem != null)
             valueSystem.OnValueChanged += GenerateFileValues;
-        StartCoroutine(RefreshLayoutNextFrame());
     }
 
     private void OnDisable()
@@ -41,6 +45,7 @@ public class FilePanelManager : MonoBehaviour
         // 清空旧Item
         foreach (Transform child in fileTraitBox) Destroy(child.gameObject);
         foreach (Transform child in fileCharacterBox) Destroy(child.gameObject);
+        foreach (Transform child in fileRelationBox) Destroy(child.gameObject);
 
         // Trait 类型
         foreach (var val in valueSystem.GetValuesByType(ValueType.Trait))
@@ -65,10 +70,21 @@ public class FilePanelManager : MonoBehaviour
                 controller.SetData(val.id, val.displayName, val.value, GetDescriptionById(val.id));
             }
         }
+        // Relation 类型
+        foreach (var val in valueSystem.GetValuesByType(ValueType.Relation))
+        {
+            if (val.value >= 1f)
+            {
+                GameObject item = Instantiate(valueItemPrefab, fileRelationBox);
+                ValueItemController controller = item.GetComponent<ValueItemController>();
+                controller.iconDatabase = iconDatabase;
+                controller.SetData(val.id, val.displayName, val.value, GetDescriptionById(val.id));
+            }
+        }
     }
 
     /// <summary>
-    /// 获取描述文本，目前只用于FilePanel
+    /// 获取描述文本，目前只用于FilePanel的ValueBox
     /// </summary>
     private string GetDescriptionById(string id)
     {
@@ -94,8 +110,17 @@ public class FilePanelManager : MonoBehaviour
                 return "“大树下有一百具骸骨，我的祖母就在其中”——洛温民谣”";
             case "Rifle":
                 return"酒馆里依旧有人在低声吟唱XXX(战争英雄)的歌谣，人们口口相传他手持步枪就义的那天。";
-            //Parts类型
-
+            //Relation类型
+            case "Relation_JinSi":
+                return "今司是你同在孤儿院长大的朋友，因为能流畅背诵缄节的自述全文，现在当上了学徒，还给你找了个房子。在这个世道，" +
+                    "你应该好好保护这段友谊。";
+            case "Relation_WeiTao":
+                return "未陶先生是个严肃的人，但总能逗乐你的姨妈，他一出现，她的脸上就有了笑容。" +
+                    "姨妈去世后，他负责打理姨妈的后事，这其中也包括你，你应该好好听他的话。";
+            case "Relation_HoHo":
+                return "。";
+            case "Relation_LittleWorm":
+                return "你常常回忆起和小蠕虫一起住在下水管道的日子，你们在污水与废气中奔跑，听着地面上人们的脚步声入眠。你们许久未见，往日的火花不知是否还在燃烧。";
             //Character类型
 
             //Effort类型

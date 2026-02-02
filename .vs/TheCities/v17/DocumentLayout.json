@@ -3,20 +3,24 @@
   "WorkspaceRootPath": "D:\\unitycourses\\TheCities\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{B3F4D6C5-3531-EAD8-E443-C92A54F3D488}|Assembly-CSharp.csproj|D:\\unitycourses\\TheCities\\assets\\script\\filepanelui\\portrait\\portraitsicon.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{B3F4D6C5-3531-EAD8-E443-C92A54F3D488}|Assembly-CSharp.csproj|solutionrelative:assets\\script\\filepanelui\\portrait\\portraitsicon.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{B3F4D6C5-3531-EAD8-E443-C92A54F3D488}|Assembly-CSharp.csproj|d:\\unitycourses\\thecities\\assets\\script\\event\\narrativeevent.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{B3F4D6C5-3531-EAD8-E443-C92A54F3D488}|Assembly-CSharp.csproj|solutionrelative:assets\\script\\event\\narrativeevent.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{B3F4D6C5-3531-EAD8-E443-C92A54F3D488}|Assembly-CSharp.csproj|D:\\unitycourses\\TheCities\\assets\\script\\filepanelui\\portrait\\portraitmanager.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{B3F4D6C5-3531-EAD8-E443-C92A54F3D488}|Assembly-CSharp.csproj|solutionrelative:assets\\script\\filepanelui\\portrait\\portraitmanager.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{B3F4D6C5-3531-EAD8-E443-C92A54F3D488}|Assembly-CSharp.csproj|d:\\unitycourses\\thecities\\assets\\script\\event\\challengesystem.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{B3F4D6C5-3531-EAD8-E443-C92A54F3D488}|Assembly-CSharp.csproj|solutionrelative:assets\\script\\event\\challengesystem.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{B3F4D6C5-3531-EAD8-E443-C92A54F3D488}|Assembly-CSharp.csproj|d:\\unitycourses\\thecities\\assets\\script\\filepanelui\\portrait\\portraitprefabcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{B3F4D6C5-3531-EAD8-E443-C92A54F3D488}|Assembly-CSharp.csproj|solutionrelative:assets\\script\\filepanelui\\portrait\\portraitprefabcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{B3F4D6C5-3531-EAD8-E443-C92A54F3D488}|Assembly-CSharp.csproj|d:\\unitycourses\\thecities\\assets\\script\\creatingpanel\\oringinbutton.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{B3F4D6C5-3531-EAD8-E443-C92A54F3D488}|Assembly-CSharp.csproj|solutionrelative:assets\\script\\creatingpanel\\oringinbutton.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{B3F4D6C5-3531-EAD8-E443-C92A54F3D488}|Assembly-CSharp.csproj|D:\\unitycourses\\TheCities\\assets\\script\\filepanelui\\portrait\\portraitpanelbuttoncontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{B3F4D6C5-3531-EAD8-E443-C92A54F3D488}|Assembly-CSharp.csproj|solutionrelative:assets\\script\\filepanelui\\portrait\\portraitpanelbuttoncontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{B3F4D6C5-3531-EAD8-E443-C92A54F3D488}|Assembly-CSharp.csproj|D:\\unitycourses\\TheCities\\assets\\script\\creatingpanel\\genderchange.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{B3F4D6C5-3531-EAD8-E443-C92A54F3D488}|Assembly-CSharp.csproj|solutionrelative:assets\\script\\creatingpanel\\genderchange.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{B3F4D6C5-3531-EAD8-E443-C92A54F3D488}|Assembly-CSharp.csproj|D:\\unitycourses\\TheCities\\assets\\script\\animation\\animationselected_bigger.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{B3F4D6C5-3531-EAD8-E443-C92A54F3D488}|Assembly-CSharp.csproj|solutionrelative:assets\\script\\animation\\animationselected_bigger.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
   "DocumentGroupContainers": [
@@ -26,59 +30,70 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 2,
+          "SelectedChildIndex": 0,
           "Children": [
             {
               "$type": "Document",
-              "DocumentIndex": 3,
-              "Title": "PortraitPanelButtonController.cs",
-              "DocumentMoniker": "D:\\unitycourses\\TheCities\\Assets\\Script\\FilePanelUI\\Portrait\\PortraitPanelButtonController.cs",
-              "RelativeDocumentMoniker": "Assets\\Script\\FilePanelUI\\Portrait\\PortraitPanelButtonController.cs",
-              "ToolTip": "D:\\unitycourses\\TheCities\\Assets\\Script\\FilePanelUI\\Portrait\\PortraitPanelButtonController.cs",
-              "RelativeToolTip": "Assets\\Script\\FilePanelUI\\Portrait\\PortraitPanelButtonController.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAoAAAAkAAAAAAAAAA==",
+              "DocumentIndex": 0,
+              "Title": "NarrativeEvent.cs",
+              "DocumentMoniker": "D:\\unitycourses\\TheCities\\Assets\\Script\\Event\\NarrativeEvent.cs",
+              "RelativeDocumentMoniker": "Assets\\Script\\Event\\NarrativeEvent.cs",
+              "ToolTip": "D:\\unitycourses\\TheCities\\Assets\\Script\\Event\\NarrativeEvent.cs",
+              "RelativeToolTip": "Assets\\Script\\Event\\NarrativeEvent.cs",
+              "ViewState": "AgIAACEAAAAAAAAAAAAYwDIAAAARAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-09-24T12:19:08.161Z",
+              "WhenOpened": "2026-01-26T05:24:44.091Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 1,
-              "Title": "PortraitManager.cs",
-              "DocumentMoniker": "D:\\unitycourses\\TheCities\\Assets\\Script\\FilePanelUI\\Portrait\\PortraitManager.cs",
-              "RelativeDocumentMoniker": "Assets\\Script\\FilePanelUI\\Portrait\\PortraitManager.cs",
-              "ToolTip": "D:\\unitycourses\\TheCities\\Assets\\Script\\FilePanelUI\\Portrait\\PortraitManager.cs",
-              "RelativeToolTip": "Assets\\Script\\FilePanelUI\\Portrait\\PortraitManager.cs",
-              "ViewState": "AgIAAC0AAAAAAAAAAAAYwEAAAAAvAAAAAAAAAA==",
+              "Title": "ChallengeSystem.cs",
+              "DocumentMoniker": "D:\\unitycourses\\TheCities\\Assets\\Script\\Event\\ChallengeSystem.cs",
+              "RelativeDocumentMoniker": "Assets\\Script\\Event\\ChallengeSystem.cs",
+              "ToolTip": "D:\\unitycourses\\TheCities\\Assets\\Script\\Event\\ChallengeSystem.cs",
+              "RelativeToolTip": "Assets\\Script\\Event\\ChallengeSystem.cs",
+              "ViewState": "AgIAAB0AAAAAAAAAAAAQwCwAAAANAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-09-24T09:34:02.619Z",
+              "WhenOpened": "2026-01-26T05:22:55.138Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 0,
-              "Title": "PortraitsIcon.cs",
-              "DocumentMoniker": "D:\\unitycourses\\TheCities\\Assets\\Script\\FilePanelUI\\Portrait\\PortraitsIcon.cs",
-              "RelativeDocumentMoniker": "Assets\\Script\\FilePanelUI\\Portrait\\PortraitsIcon.cs",
-              "ToolTip": "D:\\unitycourses\\TheCities\\Assets\\Script\\FilePanelUI\\Portrait\\PortraitsIcon.cs",
-              "RelativeToolTip": "Assets\\Script\\FilePanelUI\\Portrait\\PortraitsIcon.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAB0AAAAUAAAAAAAAAA==",
+              "DocumentIndex": 4,
+              "Title": "AnimationSelected_Bigger.cs",
+              "DocumentMoniker": "D:\\unitycourses\\TheCities\\Assets\\Script\\Animation\\AnimationSelected_Bigger.cs",
+              "RelativeDocumentMoniker": "Assets\\Script\\Animation\\AnimationSelected_Bigger.cs",
+              "ToolTip": "D:\\unitycourses\\TheCities\\Assets\\Script\\Animation\\AnimationSelected_Bigger.cs",
+              "RelativeToolTip": "Assets\\Script\\Animation\\AnimationSelected_Bigger.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-09-24T12:11:51.251Z",
-              "EditorCaption": ""
+              "WhenOpened": "2026-01-25T22:11:52.075Z"
             },
             {
               "$type": "Document",
               "DocumentIndex": 2,
-              "Title": "PortraitPrefabController.cs",
-              "DocumentMoniker": "D:\\unitycourses\\TheCities\\Assets\\Script\\FilePanelUI\\Portrait\\PortraitPrefabController.cs",
-              "RelativeDocumentMoniker": "Assets\\Script\\FilePanelUI\\Portrait\\PortraitPrefabController.cs",
-              "ToolTip": "D:\\unitycourses\\TheCities\\Assets\\Script\\FilePanelUI\\Portrait\\PortraitPrefabController.cs",
-              "RelativeToolTip": "Assets\\Script\\FilePanelUI\\Portrait\\PortraitPrefabController.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAsAAAAFAAAAAAAAAA==",
+              "Title": "OringinButton.cs",
+              "DocumentMoniker": "D:\\unitycourses\\TheCities\\Assets\\Script\\CreatingPanel\\OringinButton.cs",
+              "RelativeDocumentMoniker": "Assets\\Script\\CreatingPanel\\OringinButton.cs",
+              "ToolTip": "D:\\unitycourses\\TheCities\\Assets\\Script\\CreatingPanel\\OringinButton.cs",
+              "RelativeToolTip": "Assets\\Script\\CreatingPanel\\OringinButton.cs",
+              "ViewState": "AgIAADcAAAAAAAAAAAAiwEYAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-09-24T12:11:15.367Z",
+              "WhenOpened": "2026-01-25T21:55:59.369Z",
               "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "GenderChange.cs",
+              "DocumentMoniker": "D:\\unitycourses\\TheCities\\Assets\\Script\\CreatingPanel\\GenderChange.cs",
+              "RelativeDocumentMoniker": "Assets\\Script\\CreatingPanel\\GenderChange.cs",
+              "ToolTip": "D:\\unitycourses\\TheCities\\Assets\\Script\\CreatingPanel\\GenderChange.cs",
+              "RelativeToolTip": "Assets\\Script\\CreatingPanel\\GenderChange.cs",
+              "ViewState": "AgIAAAUAAAAAAAAAAAAcwBgAAAAjAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-01-25T21:36:42.835Z"
             }
           ]
         }

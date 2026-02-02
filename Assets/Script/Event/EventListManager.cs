@@ -24,13 +24,12 @@ public class EventListManager : MonoBehaviour
 
         foreach (var e in allEvents)
         {
-            //跳过已经被触发的当前事件（避免重复显示）//这一段我没理解，可能需要修改。
+            //如果目前事件为空，或者事件ID与当前事件ID相同，则跳过
             if (eventManager.CurrentEvent != null && e.eventId == eventManager.CurrentEvent.eventId)
                 continue;
-
+            //如果事件挂有 singleUse 标签，且事件已被触发，则跳过
             if (e.singleUse && eventManager.HasTriggered(e.eventId))
                 continue;
-
             GameObject card = Instantiate(cardPrefab, cardContainer);
             var controller = card.GetComponent<EventCardController>();
             controller.LoadEvent(e, eventManager);

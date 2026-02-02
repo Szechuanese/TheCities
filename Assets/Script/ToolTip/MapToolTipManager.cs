@@ -8,6 +8,8 @@ public class MapTooltipManager : MonoBehaviour
     public GameObject MapToolTipPanel;
     public TMP_Text MapToolTipTitle;      //标题文本
     public TMP_Text MapToolTipText;       //正文
+    public float offsetX = 60f;
+    public float offsetY = -60f;
 
     private void Awake()
     {
@@ -34,7 +36,7 @@ public class MapTooltipManager : MonoBehaviour
                 null,
                 out localPoint);
             //根据鼠标位置偏移
-            tooltipRect.anchoredPosition = localPoint + new Vector2(200f, -150f);
+            tooltipRect.anchoredPosition = localPoint + new Vector2(offsetX, offsetY);
         }
     }
 

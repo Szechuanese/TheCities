@@ -58,7 +58,7 @@ public class ChallengeSystem : MonoBehaviour
         resultText.color = success ? Color.green : Color.red;
 
 
-        //下面所有是什么我就不知道了
+
         float t = 0f;
         float scaleTime = 0.5f;
 

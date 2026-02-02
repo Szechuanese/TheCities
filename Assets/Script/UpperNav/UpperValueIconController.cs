@@ -1,5 +1,3 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.EventSystems;
 using UnityEngine.UI;
@@ -21,6 +19,7 @@ public class UpperValueIconController : MonoBehaviour, IPointerEnterHandler, IPo
     [Header("Hover 效果设置")]
     public float hoverScale = 1.2f;   //放大倍数
     public float animDuration = 0.2f;   //动画时长（秒）
+    //我暂时决定关闭AI协助我设置的顶部trait栏的发光效果，其不甚理想
     //public Color glowColor = Color.yellow;   //发光颜色
     //public float glowDistance = 5f;     //发光距离（像素）
 
@@ -29,10 +28,10 @@ public class UpperValueIconController : MonoBehaviour, IPointerEnterHandler, IPo
     private Canvas iconCanvas;//绑定Canvas用于让选中Icon浮于其他Icon之上
     void Awake()
     {
-        // 确保有 Canvas，并关闭 overrideSorting
+        //确保有 Canvas，并关闭 overrideSorting
         iconCanvas = GetComponent<Canvas>();
         iconCanvas.overrideSorting = false;
-        // 如果需要，还可以设置 iconCanvas.sortingLayerID
+        //如果需要，还可以设置 iconCanvas.sortingLayerID
     }
     void Start()
     {

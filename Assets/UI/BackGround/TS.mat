@@ -62,34 +62,34 @@ Material:
     m_Ints: []
     m_Floats:
     - _BumpScale: 1
-    - _Contrast: 3.76
+    - _Contrast: 3.7
     - _Cutoff: 0.5
     - _DetailNormalMapScale: 1
     - _DstBlend: 0
     - _GlossMapScale: 1
     - _Glossiness: 0.5
     - _GlossyReflections: 1
-    - _Gradual: 2
+    - _Gradual: 1.43
     - _Intensity: 2.26
     - _Metallic: 0
     - _Mode: 0
     - _OcclusionStrength: 1
     - _Parallax: 0.02
-    - _Scale1: 7.3
-    - _Scale2: 2.2
+    - _Scale1: 12
+    - _Scale2: 1.5
     - _SmoothnessTextureChannel: 0
     - _SpecularHighlights: 1
     - _SpinAmount: 2.06
     - _SpinSpeed: 0
     - _SrcBlend: 1
     - _UVSec: 0
-    - _Width1: 0.08
-    - _Width2: 0.154
+    - _Width1: 0.65
+    - _Width2: 0.09
     - _ZWrite: 1
     m_Colors:
     - _Color: {r: 1, g: 1, b: 1, a: 1}
-    - _Color1: {r: 0, g: 1, b: 0.10866952, a: 1}
-    - _Color2: {r: 0, g: 0, b: 1, a: 1}
+    - _Color1: {r: 0.13519046, g: 0.5849056, b: 0.18610163, a: 1}
+    - _Color2: {r: 0.10524209, g: 0.16272913, b: 0.4056604, a: 1}
     - _Color3: {r: 1, g: 1, b: 1, a: 1}
     - _Color4: {r: 0.08627451, g: 0.09411765, b: 0.13333334, a: 1}
     - _EmissionColor: {r: 0, g: 0, b: 0, a: 1}

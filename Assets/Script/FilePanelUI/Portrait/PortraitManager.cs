@@ -4,6 +4,7 @@ using UnityEngine.UI;
 
 public class PortraitManager : MonoBehaviour
 {
+    
     public PortraitsIcon portraitIconsDatabase;
     public Transform PortraitBroad;
     public GameObject PortraitPrefab;
@@ -14,6 +15,13 @@ public class PortraitManager : MonoBehaviour
     public GameObject portraitPanel;
     //批量修改头像
     public List<Image> targetImages = new List<Image>();
+
+    //背景控制器
+    public PortraitBackGroundController portraitBackGroundController;
+
+    public GameObject portraitClickCatcher;
+
+
     public void Start()
     {
         if(portraitIconsDatabase!= null)
@@ -49,7 +57,8 @@ public class PortraitManager : MonoBehaviour
             Button btn = portraitButton.GetComponent<Button>();
             if (btn != null)
             {
-                string id = entry.portraitId; // 避免闭包问题
+                //避免闭包问题
+                string id = entry.portraitId; 
                 btn.onClick.AddListener(() => SelectPortrait(id));
             }
         }
@@ -58,7 +67,7 @@ public class PortraitManager : MonoBehaviour
     //选择头像方法
     public void SelectPortrait(string id)
     {
-        
+        //这里要添加一个音效，代表改头换面
         currentPortraitId = id;
 
         var sprite = portraitIconsDatabase != null
@@ -76,15 +85,20 @@ public class PortraitManager : MonoBehaviour
                 img.enabled = true;
             }
         }
-
-        if(portraitPanel != null)
+        if (portraitBackGroundController != null)
+        {
+            portraitBackGroundController.ChangeBackGroundByPortraitId(id);
+        }
+        if (portraitPanel != null)
         {
             portraitPanel.SetActive(false);
+            portraitClickCatcher.SetActive(false);
 
         }
         else
         {
             portraitPanel.SetActive(false);
+            portraitClickCatcher.SetActive(false);
         }
     }
 }
