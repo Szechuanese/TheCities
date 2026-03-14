@@ -27,3 +27,5 @@ MonoBehaviour:
     portraitIcon: {fileID: 21300000, guid: 00dae4b28f9ffbd4aa5637c0d800456a, type: 3}
   - portraitId: SuitMan
     portraitIcon: {fileID: 21300000, guid: df6437d6bfb6bae40b51049f32a42b1b, type: 3}
+  - portraitId: CR
+    portraitIcon: {fileID: 21300000, guid: 1750d6abc21bf5a40bc2a5d9dec1d9c8, type: 3}

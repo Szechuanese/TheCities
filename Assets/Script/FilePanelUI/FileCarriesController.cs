@@ -40,7 +40,6 @@ public class FileCarriesController : MonoBehaviour
                     originTitle.text = val.displayName;
                     originDescription.text = "你被教会养大，现在你要自己寻找真理。";
                     homeName.text = "孤儿院的地下室";
-                    homeName.text = "老旧的孤儿院";
                     //下面这串描述应该用于人情 flavor
                     homeDescription.text = "";
                 }
@@ -48,7 +47,8 @@ public class FileCarriesController : MonoBehaviour
                 {
                     originTitle.text = val.displayName;
                     originDescription.text = "你被姨妈养大，她教会了你去歌唱、写作，去爱。";
-                    homeName.text = "未陶先生的单身公寓";
+                    homeName.text = "未陶先生单身公寓的衣帽间";
+                    homeDescription.text = "";
                     //下面这串描述应该用于人情 flavor
                     //homeDescription.text = "未陶先生是你姨妈的好朋友，你印象中姨妈是个悲观的人，但只要未陶先生一出现，" +
                     //    "她的脸上就有了笑容，他对你很好，但嘱咐你，不要碰房里的东西。";
@@ -56,16 +56,16 @@ public class FileCarriesController : MonoBehaviour
                 else if (val.id == "Origin_Corporate")
                 {
                     originTitle.text = val.displayName;
-                    originDescription.text = "你经历战争、纪律、绩效，已把命债结清，现在你只为自己而活。";
-                    homeName.text = "联合食品第五宿舍";
+                    originDescription.text = "你付出鲜血、青春、自由，已把命债结清，现在你只为自己而活。";
+                    homeName.text = "联合食品第五职员宿舍";
                     homeDescription.text = "";
                     
                 }
                 else if (val.id == "Origin_Streets")
                 {
                     originTitle.text = val.displayName;
-                    originDescription.text = "你白手起家，自力更生，你没有别人的捷径，也没有别人的负担。";
-                    homeName.text = "一处废弃工厂";
+                    originDescription.text = "你白手起家，自力更生，没有别人的捷径，也没有别人的负担。";
+                    homeName.text = "流浪汉的废弃工厂";
                 }
                 else if (val.id == "Ambition_Home")
                 {

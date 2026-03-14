@@ -14,7 +14,7 @@ public class OringinButton : MonoBehaviour
 
     public GameObject AmbitionButtonBox;
     public GameObject OringinTextBox;
-    private CanvasGroup canvasGroup;
+    private CanvasGroup AmbitionButtonBoxCG;
     private CanvasGroup OringinCG;
 
     public Image targetImg;
@@ -23,20 +23,39 @@ public class OringinButton : MonoBehaviour
     // 使用实例变量代替静态变量，配合逻辑实现全局一次性锁定
     private bool isImageChangeLocked = false;
 
-    void Start()
+    private void Awake()//这里我修改使用Awake来初始化，
+                        //确保在任何 Start 之前就设置好初始状态,因为使用Start似乎不能成功，导致我没法修改UI。
     {
         if (AmbitionButtonBox != null)
         {
-            canvasGroup = AmbitionButtonBox.GetComponent<CanvasGroup>();
+            AmbitionButtonBoxCG = AmbitionButtonBox.GetComponent<CanvasGroup>();
+            AmbitionButtonBoxCG.alpha = 0f;
             AmbitionButtonBox.SetActive(false);
         }
 
         if (OringinTextBox != null)
         {
             OringinCG = OringinTextBox.GetComponent<CanvasGroup>();
+            OringinCG.alpha = 0f;
             OringinTextBox.SetActive(false);
         }
     }
+    //void Start()
+    //{
+    //    if (AmbitionButtonBox != null)
+    //    {
+    //        AmbitionButtonBoxCG = AmbitionButtonBox.GetComponent<CanvasGroup>();
+    //        AmbitionButtonBoxCG.alpha = 0f;
+    //        AmbitionButtonBox.SetActive(false);
+    //    }
+
+    //    if (OringinTextBox != null)
+    //    {
+    //        OringinCG = OringinTextBox.GetComponent<CanvasGroup>();
+    //        OringinCG.alpha = 0f;
+    //        OringinTextBox.SetActive(false);
+    //    }
+    //}
 
     public void ContinueTelling()
     {
@@ -107,13 +126,13 @@ public class OringinButton : MonoBehaviour
 
     IEnumerator FadeIn()
     {
-        if (canvasGroup == null) yield break;
-        while (canvasGroup.alpha < 1f)
+        if (AmbitionButtonBoxCG == null) yield break;
+        while (AmbitionButtonBoxCG.alpha < 1f)
         {
-            canvasGroup.alpha += Time.deltaTime * 2f;
+            AmbitionButtonBoxCG.alpha += Time.deltaTime * 2f;
             yield return null;
         }
-        canvasGroup.alpha = 1f;
+        AmbitionButtonBoxCG.alpha = 1f;
     }
 
     IEnumerator OringinCGFadeIn()

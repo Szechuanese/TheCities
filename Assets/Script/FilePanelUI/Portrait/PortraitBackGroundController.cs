@@ -13,7 +13,8 @@ public class PortraitBackGroundController : MonoBehaviour
         shepherdGirl,
         maiden,
         gentleMan,
-        detective
+        detective,
+        CR
     }
     [Header("±³¾°Í¼Æ¬")]
     public Sprite striveHoodSprite;
@@ -23,6 +24,7 @@ public class PortraitBackGroundController : MonoBehaviour
     public Sprite maidenSprite;
     public Sprite gentleManSprite;
     public Sprite detectiveSprite;
+    public Sprite CRSprite;
     public void ChangeBackGround(E_BackGround backGround)
     {
         if (HeadShotBackGrounds == null || HeadShotBackGrounds.Count == 0)
@@ -56,6 +58,9 @@ public class PortraitBackGroundController : MonoBehaviour
                 break;
             case E_BackGround.detective:
                 target = detectiveSprite;
+                break;
+            case E_BackGround.CR:
+                target = CRSprite;
                 break;
         }
 
@@ -103,6 +108,9 @@ public class PortraitBackGroundController : MonoBehaviour
             case "Detective":
                 ChangeBackGround(E_BackGround.detective);
                 break;
+            case "CR":
+                ChangeBackGround(E_BackGround.CR);
+                break; 
         }
     }
 }

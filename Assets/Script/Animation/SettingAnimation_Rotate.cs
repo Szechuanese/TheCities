@@ -26,7 +26,7 @@ public class SettingAnimation_Rotate : MonoBehaviour,
     private void Awake()
     {
         if (upperGear == null)
-            upperGear = transform as RectTransform;   // 没拖就默认自己
+            upperGear = transform as RectTransform;   //没拖就默认自己
 
         originalRotationUpperGear = upperGear.localEulerAngles;
         originalRotationLowerGear = lowerGear.localEulerAngles;
